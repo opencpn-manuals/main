@@ -1,5 +1,4 @@
-# OpenCPN Developer Manual Antora Playbook
+# opencpn-plugins-manual
+Creating a new plugins manual, based on asciidoc format
 
-This repo contains the playbook which collects the various manual
-parts and builds the HTML. Committed documents in the docs/
-dir are available at https://leamas.github.io/ocpn-manuals/
+This is a WIP.
