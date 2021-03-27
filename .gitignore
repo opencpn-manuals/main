@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 docs
 build-loc\*.yml
-=======
 build
 cache
-
->>>>>>> 7bbe408 (ui-bundle)
