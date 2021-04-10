@@ -1,4 +1,7 @@
 docs
+<<<<<<< HEAD
 build-loc\*.yml
 build
 cache
+=======
+>>>>>>> 8788102 (update)
