@@ -25,7 +25,7 @@ case "$1" in
     restore) 
         while true; do
             read dir url commit || exit 0
-            test -d $dir || git clone $url
+            test -d $dir || git clone --depth 2 $url
             cd $dir
             git fetch origin $commit
             git checkout FETCH_HEAD
