@@ -20,6 +20,7 @@ statefile="$here/sources.state"
 test -d $here/sources || mkdir $here/sources
 
 cleanup_clone() {
+    if test -f .git/info/sparse-checkout; then return; fi
     for f in *; do
         case $f in
             manual|antora.yml|modules) true ;;
