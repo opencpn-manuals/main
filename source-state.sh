@@ -19,6 +19,15 @@ here=$(readlink -fn $(dirname $0))
 statefile="$here/sources.state"
 test -d $here/sources || mkdir $here/sources
 
+cleanup_clone() {
+    for f in *; do
+        case $f in
+            manual|antora.yml|modules) true ;;
+            *) rm -rf $f
+        esac
+    done
+}
+
 cd $here/sources
 git config advice.detachedHead false
 case "$1" in
@@ -29,6 +38,7 @@ case "$1" in
             cd $dir
             git fetch origin $commit
             git checkout FETCH_HEAD
+            cleanup_clone
             cd ..
         done < $statefile
         ;;
@@ -39,6 +49,7 @@ case "$1" in
             git remote update origin
             head=$(git rev-parse refs/remotes/origin/HEAD)
             git checkout $head
+            cleanup_clone
             cd ..
         done
         ;;
