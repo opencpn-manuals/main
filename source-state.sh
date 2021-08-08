@@ -44,7 +44,7 @@ git_clone() {
 }
 
 cd $here/sources
-git config advice.detachedHead false
+git config --global advice.detachedHead false
 case "$1" in
     restore) 
         while true; do
@@ -52,7 +52,7 @@ case "$1" in
             test -d $dir || git_clone $url $dir
             cd $dir
             git fetch origin $commit
-            git checkout FETCH_HEAD
+            git checkout -q FETCH_HEAD
             cd ..
         done < $statefile
         ;;
