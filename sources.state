@@ -19,7 +19,6 @@
 ./weather_routing_pi https://github.com/rgleason/weather_routing_pi.git 007c4ec699334b2290b2a1f12770bf828f80b4b2
 ./DR_pi https://github.com/Rasbats/DR_pi.git 8fa30e110a22ca4c39be213abafb45d756e70e50
 ./chartscale_pi https://github.com/rgleason/chartscale_pi.git e587ea9a177982dcfff0fd931967f6982ab8367e
-./ocpn-manuals git@github.com:leamas/ocpn-manuals.git 0233f4474e09f8075a5794ffbf0825366a13919a
 ./ocpn_draw_pi https://github.com/jongough/ocpn_draw_pi.git 272ee42e2bf866332cfee6509e3874c7268cf525
 ./calculator_pi https://github.com/rasbats/calculator_pi.git 1c05c06380986d2014d0a42264a8c62faacb18fb
 ./otcurrent_pi https://github.com/Rasbats/otcurrent_pi.git 2bbb2ef26db25657558db0bb0c6dfea90a1063f4
