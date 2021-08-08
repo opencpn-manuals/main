@@ -72,10 +72,8 @@ case "$1" in
     save)
         rm -f $statefile
         for dir in $(find . -maxdepth 1 -mindepth 1 -type d); do
-            cd $dir
-            url=$(git remote show origin | awk '/Fetch URL/ {print $3}')
-            echo $dir $url $(git rev-parse HEAD) >> $statefile
-            cd ..
+            url=$(git -C $dir config remote.origin.url)
+            echo $dir $url $(git -C $dir rev-parse HEAD) >> $statefile
         done
         ;;
 
