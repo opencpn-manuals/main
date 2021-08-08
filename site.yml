@@ -1,10 +1,16 @@
 site:
   title: OpenCPN Manuals
-  url: https://github.com/opencpn-manuals/main/
+  url: https://opencpn-manuals.github.io/main/
   start_page:  manuals::index.adoc
 
 content:
   sources:
+    - url: https://github.com/opencpn-manuals/main
+      branches: main
+
+    - url: https://github.com/opencpn-manuals/development
+      branches: main
+
     - url: https://github.com/opencpn-manuals/plugins
       branches: main
       edit_url: true
