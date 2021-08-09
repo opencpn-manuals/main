@@ -8,7 +8,7 @@ content:
     - url: https://github.com/opencpn-manuals/main
       branches: main
 
-    - url: https://github.com/opencpn-manuals/development
+    - url: sources/development
       branches: main
 
     - url: https://github.com/opencpn-manuals/plugins

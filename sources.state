@@ -1,5 +1,6 @@
 ./dashboard_tactics_pi https://github.com/rgleason/dashboard_tactics_pi.git c7656142b49c6bb38b3d1c681db9b2426f22193a
 ./nvc_pi https://github.com/bdbcat/nvc_pi.git e6950f2c322eca9b4397c3bfabd990789d3e2255
+./development https://github.com/opencpn-manuals/development d4617f63333d8fba3b809457e49a1f88afdb3faa
 ./s63_pi https://github.com/bdbcat/s63_pi.git 759ac22050870ed402c893ab5ffae5a970edc192
 ./vfkaps_pi https://github.com/Rasbats/vfkaps_pi.git dd2dc7cae91bd0acb0cc4d02097a3624834496a4
 ./ofc_pi https://github.com/bdbcat/ofc_pi.git 805fe9939cfd3632211bc0c4660a27c289d3b2c6
