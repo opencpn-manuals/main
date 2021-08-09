@@ -25,6 +25,7 @@
 ./otcurrent_pi https://github.com/Rasbats/otcurrent_pi.git 2bbb2ef26db25657558db0bb0c6dfea90a1063f4
 ./gecomapi_pi https://github.com/nohal/gecomapi_pi.git 80dccf2d8cd4b62eb20f43deea8fb60a1935b473
 ./polar_pi https://github.com/rgleason/polar_pi.git 7807612d20dd30b746e0d9784698feb6a3ed0235
+./plugins https://github.com/opencpn-manuals/plugins 4fe583e771fb8f92520f678871bbed59cfe2eba7
 ./shipdriver_pi https://github.com/Rasbats/shipdriver_pi.git bc0becf8ba5b0e80baeebbebd706c14ad781e2a5
 ./LogbookKonni_pi https://github.com/rgleason/LogbookKonni_pi.git 816bbab1ba61b780c3e88ae2fe0e13f77fc5869b
 ./plots_pi https://github.com/rgleason/plots_pi.git 2ca3d8b336b894f1550407ee9e3446d3eea9764a

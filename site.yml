@@ -11,12 +11,12 @@ content:
     - url: sources/development
       branches: main
 
-    - url: https://github.com/opencpn-manuals/plugins
+    - url: sources/plugins
       branches: main
       edit_url: true
       start_paths:
-      - plugins/manual
-      - plugins/manual-beta
+        - manual/master-plugins
+        - manual/beta-plugins
 
     - url: sources/shipdriver_pi
       branches: master
