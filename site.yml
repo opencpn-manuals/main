@@ -17,143 +17,143 @@ content:
       start_paths:
       - plugins/manual
       - plugins/manual-beta
-     
+
     - url: sources/shipdriver_pi
       branches: master
       start_path: manual/shipdriver
-      edit_url: true 
-      
-    - url: sources/otcurrent_pi    
+      edit_url: true
+
+    - url: sources/otcurrent_pi
       branches: master
       start_path: manual/otcurrent
       edit_url: true
-      
-    - url: sources/photolayer_pi    
+
+    - url: sources/photolayer_pi
       branches: master
       start_path: manual/photolayer
       edit_url: true
 
-    - url: sources/DR_pi    
+    - url: sources/DR_pi
       branches: master
       start_path: manual/dead_reckoning
       edit_url: true
-      
+
     - url: sources/watchdog_pi
       branches: master
       start_path: manual/watchdog
       edit_url: true
-      
-    - url: sources/ocpn_draw_pi 
+
+    - url: sources/ocpn_draw_pi
       branches: master
       start_path: manual/odraw
       edit_url: true
-    
-    - url: sources/radar_pi 
+
+    - url: sources/radar_pi
       branches: master
       start_path: manual/radar
       edit_url: true
-    
+
     - url: sources/dashboard_tactics_pi
       branches: mnt151-frontend2
       start_path: manual/dash-t
       edit_url: true
-    
-    - url: sources/vfkaps_pi    
+
+    - url: sources/vfkaps_pi
       branches: master
       start_path: manual/vfkaps
       edit_url: true
-    
-    - url: sources/sar_pi    
+
+    - url: sources/sar_pi
       branches: master
       start_path: manual/sar
       edit_url: true
-    
-    - url: sources/aisradar_pi   
+
+    - url: sources/aisradar_pi
       branches: master
       start_path: manual/ais_radar_display
       edit_url: true
 
-    - url: sources/vdr_pi   
+    - url: sources/vdr_pi
       branches: master
       start_path: manual/vdr
       edit_url: true
 
-    - url: sources/gecomapi_pi   
+    - url: sources/gecomapi_pi
       branches: master
       start_path: manual/googleearth
       edit_url: true
 
-    - url: sources/iacfleet_pi   
+    - url: sources/iacfleet_pi
       branches: master
       start_path: manual/iacfleet
       edit_url: true
 
-    - url: sources/launcher_pi   
+    - url: sources/launcher_pi
       branches: master
       start_path: manual/launcher
       edit_url: true
 
-    - url: sources/ocpndebugger_pi   
+    - url: sources/ocpndebugger_pi
       branches: master
       start_path: manual/debugger
       edit_url: true
 
-    - url: sources/objsearch_pi   
+    - url: sources/objsearch_pi
       branches: master
       start_path: manual/objsearch
       edit_url: true
 
-    - url: sources/chartscale_pi   
+    - url: sources/chartscale_pi
       branches: master
       start_path: manual/chartscale
       edit_url: true
 
-    - url: sources/projections_pi   
+    - url: sources/projections_pi
       branches: master
       start_path: manual/projections
       edit_url: true
 
-    - url: sources/celestial_navigation_pi   
+    - url: sources/celestial_navigation_pi
       branches: master
       start_path: manual/celestial_navigation
       edit_url: true
 
-    - url: sources/plots_pi   
+    - url: sources/plots_pi
       branches: master
       start_path: manual/sweep_plot
       edit_url: true
 
-    - url: sources/weatherfax_pi   
+    - url: sources/weatherfax_pi
       branches: master
       start_path: manual/weatherfax
       edit_url: true
 
-    - url: sources/climatology_pi   
+    - url: sources/climatology_pi
       branches: master
       start_path: manual/climatology
       edit_url: true
 
-    - url: sources/weather_routing_pi   
+    - url: sources/weather_routing_pi
       branches: master
       start_path: manual/weather_routing
       edit_url: true
 
-    - url: sources/statusbar_pi   
+    - url: sources/statusbar_pi
       branches: master
       start_path: manual/statusbar
       edit_url: true
 
-    - url: sources/pypilot_pi   
+    - url: sources/pypilot_pi
       branches: master
       start_path: manual/pypilot
       edit_url: true
 
-    - url: sources/rotationctrl_pi   
+    - url: sources/rotationctrl_pi
       branches: master
       start_path: manual/rotationctrl
       edit_url: true
 
-    - url: sources/calculator_pi   
+    - url: sources/calculator_pi
       branches: master
       start_path: manual/calculator
       edit_url: true
@@ -182,33 +182,33 @@ content:
       branches: master
       start_path: manual/oeSENC
       edit_url: true
-    
+
     - url: sources/bsb4_pi
       branches: master
       start_path: manual/bsb4_charts
       edit_url: true
 
-    - url: sources/LogbookKonni_pi   
+    - url: sources/LogbookKonni_pi
       branches: master
       start_path: manual/logbook
       edit_url: true
 
-    - url: sources/FindIt_pi   
+    - url: sources/FindIt_pi
       branches: master
       start_path: manual/find-it
       edit_url: true
 
-    - url: sources/route_pi   
+    - url: sources/route_pi
       branches: master
       start_path: manual/route_great_circle
       edit_url: true
 
-    - url: sources/tactics_pi   
+    - url: sources/tactics_pi
       branches: master
       start_path: manual/tactics
       edit_url: true
 
-    - url: sources/polar_pi   
+    - url: sources/polar_pi
       branches: master
       start_path: manual/Polar
       edit_url: true
@@ -231,7 +231,7 @@ content:
     - url: sources/rtlsdr_pi
       branches: master
       start_path: manual/rtlsdr
-      edit_url: true 
+      edit_url: true
 
 ui:
   bundle:
