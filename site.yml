@@ -18,6 +18,10 @@ content:
         - manual/master-plugins
         - manual/beta-plugins
 
+    - url: sources/aisradar_pi
+      branches: master
+      start_path: manual/ais_radar_display
+      edit_url: true
  
 ui:
   bundle:
