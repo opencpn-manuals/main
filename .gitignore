@@ -2,3 +2,4 @@ docs
 build-loc\*.yml
 build
 cache
+sources
