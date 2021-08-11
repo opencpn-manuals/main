@@ -31,7 +31,7 @@ cleanup_clone() {
     if test -f .git/info/sparse-checkout; then return; fi
     for f in *; do
         case $f in
-            manual|antora.yml|modules) true ;;
+            manual|antora.yml|modules|ci) true ;;
             *) rm -rf $f
         esac
     done
@@ -42,7 +42,7 @@ git_clone() {
     if [[ "$vers" == *2.[345][0-9].* ]]; then   # > 2.30
         git clone --depth 1 --filter=blob:none --sparse $1
         cd $2
-        git sparse-checkout set manual antora.yml modules
+        git sparse-checkout set manual antora.yml modules ci
     else
         git clone --depth 2 $1
         cd $2
