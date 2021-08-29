@@ -2,6 +2,19 @@
 
 The manual can be built locally or published on Github Pages
 
+### Updating sources
+
+The site.yml contains all plugin sources from the plugins manual. To create
+and update a correct site.yml:
+
+    $ ./make-site-yml
+
+_make_site_yml_ also updates sources.state. To clone and update all sources
+to the recorded state:
+
+    $ ./source-state.sh restore
+
+
 ### Publish to Github Pages
 
 Push the current branch to the branch *build*, something like

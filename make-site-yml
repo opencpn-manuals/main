@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Generate a new site.yml from template, using the list of plugins
+# sources as defined in ../plugins/siste.yml.
+#
+# Also update sources.state with matching data from
+# ../plugins/sources.state.
+#
+# We assume the the plugins manual is a sibling directory.
+
+
+# Extract the part betwwen list-begin and list-end into plugins.list.tmp
+sed -n '/@@plugin-list-begin/,/@@plugin-list-end/p' ../plugins/site.yml \
+    | grep -v '@@' \
+    > plugins.list.tmp
+
+
+# Insert plugins.list.tmp into site.yml.in and generate site.yml
+ed site.yml.in << EOF
+/@@plugin-list
+.r plugins.list.tmp
+w site.yml
+q
+EOF
+
+# Extract sources from url: line and update corresponding line in sources.state
+for source in $(sed -n '/ url:/s/.*sources/\./p' < plugins.list.tmp); do
+    source=${source%/}
+    sed -i  -e "/${source##./} /d" sources.state
+    grep "/${source##./}" ../plugins/sources.state >> sources.state
+done
+
+rm -f sources.tmp plugins.list.tmp
