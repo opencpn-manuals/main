@@ -26,6 +26,7 @@ npm i -g @antora/cli@2.3 @antora/site-generator-default@2.3
 antora -v
 
 # Update dependencies and build site
+./make-site-yml
 if [ -f source-state.sh ]; then ./source-state.sh restore; fi
 antora $PLAYBOOK
 touch $SITE_DIR/.nojekyll
