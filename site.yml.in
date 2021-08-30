@@ -11,6 +11,16 @@ content:
     - url: sources/development
       branches: main
 
+    - url: https://github.com/leamas/ocpn-pi-docs.git
+      # tags: 0.2.2
+      branches: main
+      edit_url: true
+
+    - url: https://github.com/Rasbats/managed_plugins
+      # tags: 0.1
+      branches: asciidoc
+      start_path: manual
+
     - url: sources/plugins
       branches: main
       edit_url: true
