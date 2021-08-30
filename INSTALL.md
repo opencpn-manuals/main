@@ -26,7 +26,7 @@ the clones of included projects using
 
     $ ./source-state.sh restore
 
-With antora installed the build using:
+With antora installed build using:
 
     $ antora site.yml
 
