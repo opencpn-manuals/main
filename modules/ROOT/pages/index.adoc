@@ -1,4 +1,4 @@
-== MANUALS
+= Manuals
 
 link:https://opencpn.org/wiki/dokuwiki/doku.php?id=opencpn:opencpn_user_manual[User Manual]
 
