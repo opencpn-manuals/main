@@ -5,8 +5,8 @@ site:
 
 content:
   sources:
-    - url: https://github.com/opencpn-manuals/main
-      branches: main
+    - url: .
+      branches: HEAD
 
     - url: sources/development
       branches: main
