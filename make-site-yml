@@ -45,8 +45,8 @@ EOF
 for source in $(sed -n '/ url:/s/.*sources/\./p' < plugins.list.tmp); do
     source=${source%/}             # Drop possible trailing '/'
     source=${source#./}            # Drop leading './'
-    sed -i  -e "/\\.\\/${source} /d" sources.state
-    sed -n "/\\.\\/${source}/p" $plugins_dir/sources.state >> sources.state
+    sed -i  -e "/^${source} /d" sources.state
+    sed -n "/^${source}/p" $plugins_dir/sources.state >> sources.state
 done
 
 rm -f plugins.list.tmp
