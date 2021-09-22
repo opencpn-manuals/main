@@ -19,10 +19,8 @@ plugins_dir=$PWD/plugins
 if [ -n "$OCPN_PLUGINS_PATH" ]; then
     plugins_dir="$OCPN_PLUGINS_PATH"
 elif [ -d plugins ]; then
-    cd plugins
-    git remote update origin
-    git rebase origin/main
-    cd ..
+    git -C plugins remote update origin
+    git -C plugins rebase origin/main
 else
     git clone --depth 1 https://github.com/opencpn-manuals/plugins.git
 fi
@@ -31,7 +29,6 @@ fi
 sed -n '/@@plugin-list-begin/,/@@plugin-list-end/p' $plugins_dir/site.yml \
     | grep -v '@@' \
     > plugins.list.tmp
-
 
 # Insert plugins.list.tmp into site.yml.in and generate site.yml
 ed site.yml.in << EOF
@@ -46,7 +43,7 @@ for source in $(sed -n '/ url:/s/.*sources/\./p' < plugins.list.tmp); do
     source=${source%/}             # Drop possible trailing '/'
     source=${source#./}            # Drop leading './'
     sed -i  -e "/^${source} /d" sources.state
-    sed -n "/^${source}/p" $plugins_dir/sources.state >> sources.state
+    sed -n "/^${source} /p" $plugins_dir/sources.state >> sources.state
 done
 
 rm -f plugins.list.tmp
