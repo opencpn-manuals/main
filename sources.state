@@ -7,6 +7,7 @@ calculator_pi https://github.com/rasbats/calculator_pi.git 5e7df4e3c050c22f2da92
 celestial_navigation_pi https://github.com/rgleason/celestial_navigation_pi.git 97629a1ed4aa895fd5cfe1f020c3429ca48f4ed4
 chartscale_pi https://github.com/rgleason/chartscale_pi.git f954e1adbc63de791d205c35fc3091ae94e6f2cb
 climatology_pi https://github.com/rgleason/climatology_pi.git 0a2f45d48ae960806e81913877aa306733a1b0cb
+dashboard_tactics_pi https://github.com/rgleason/dashboard_tactics_pi.git cd20bb853f558eadcb098d4e8c0bc6d18f419c1a
 development https://github.com/opencpn-manuals/development dc299db3d33469ccd67ee9091595412aea795906
 Deviation_pi https://github.com/opencpn-manuals/Deviation_pi.git 203b21af43f011d00f00a5987badf7c4ab5bc3ca
 DR_pi https://github.com/Rasbats/DR_pi.git f88efae675945a7f1eb5b3cc33ddaa3ff560d52f
@@ -27,7 +28,7 @@ otidalplan_pi https://github.com/Rasbats/otidalplan_pi.git c4ecd80d6a10f080795a6
 otidalroute_pi https://github.com/Rasbats/otidalroute_pi.git 404f7eeadf935b1acc1d840f940a6b893f1bdfbc
 photolayer_pi https://github.com/Rasbats/photolayer_pi.git de8239e605b51d01b9c51112b5ebb9833f9e907e
 plots_pi https://github.com/rgleason/plots_pi.git 7f01a21fdd8ca6a6247ae53ff3389f5840b887b9
-plugins https://github.com/opencpn-manuals/plugins 5295200568c3c215ed4cc8ea0affa27afa9713e0
+plugins https://github.com/opencpn-manuals/plugins 525f54bcdd5f0f8f2f6383209871d11523e29afe
 polar_pi https://github.com/rgleason/polar_pi.git 240cceb20789e6dad78fec74f7f167c42d685bf2
 projections_pi https://github.com/rgleason/projections_pi.git 7e6d1878f7115c291afa160fd92bb33d28f4840a
 pypilot_pi https://github.com/rgleason/pypilot_pi.git b7beb57f8defc75abea2630d354c51cc1973bd89
