@@ -25,8 +25,7 @@ content:
       branches: main
       edit_url: true
       start_paths:
-        - manual/master-plugins
-        - manual/beta-plugins
+        - manual/plugins
     # @@plugin-list
 
 ui:
