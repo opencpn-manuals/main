@@ -46,4 +46,7 @@ for source in $(sed -n '/ url:/s/.*sources/\./p' < plugins.list.tmp); do
     sed -n "/^${source} /p" $plugins_dir/sources.state >> sources.state
 done
 
+sort sources.state > sources.tmp \
+    && cp sources.tmp sources.state && rm sources.tmp
+
 rm -f plugins.list.tmp
