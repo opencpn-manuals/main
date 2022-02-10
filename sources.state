@@ -1,7 +1,7 @@
 admiralty_tide_tables_pi https://github.com/rgleason/admiralty_tide_tables_pi.git fa4b6e4de7073fa646ac68336dade1c7cff17140
-ais-vd_pi https://github.com/Hakansv/ais-vd_pi.git 68423ca3423ec6e462d931ab0363f623fc3bf65f
-AISradar_pi https://github.com/Verezano/AISradar_pi.git a37f5afa54d6b6b90fdcc8ac59a9fb6ef6d6efed
 aisradar_pi https://github.com/nohal/aisradar_pi.git 296812e4b5b3b38d9c827527ed86360067af4f35
+AISradar_pi https://github.com/Verezano/AISradar_pi.git a37f5afa54d6b6b90fdcc8ac59a9fb6ef6d6efed
+ais-vd_pi https://github.com/Hakansv/ais-vd_pi.git 68423ca3423ec6e462d931ab0363f623fc3bf65f
 Autopilot-Plugin https://github.com/rgleason/Autopilot-Plugin.git 0357a1d6af15f838eee3a4b77d77f26d136f50cf
 autopilot_route_pi https://github.com/rgleason/autopilot_route_pi.git 02cc9601081dddca7b3863be99f450b52bb9b8fe
 AutoTrackRaymarine_pi https://github.com/douwefokkema/AutoTrackRaymarine_pi.git 7d3b81f80df1acb55c3df624e205d2d9d111eab4
