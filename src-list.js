@@ -36,8 +36,11 @@ module.exports.register = function ({ config }) {
       const rows = contentAggregate.map((
         {lastCommitSummary: { name, commit, subject, date }}
       ) => `| ${name} | ${commit} | ${date_str(date)}| ${subject}`).join('\n')
+      const now = date_str(new Date())
       const contents = Buffer.from(`
 = Table of Manual Sources
+
+Manual generated at ${now}
 
 [cols=3;1;3;7]
 |====
