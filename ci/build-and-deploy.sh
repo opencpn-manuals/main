@@ -7,10 +7,6 @@
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #
-# Optional support for source-state.sh which basically replaces
-# git submodules. Required since isomorphic-git, used by Antora,
-# does not support submodules.
-
 set -xe
 
 # Some hard-coded assumptions:
@@ -22,13 +18,10 @@ readonly GP_BRANCH='gh-pages'      # Branch used as input by Github Pages
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 npm -v
-npm i -g @antora/cli@2.3 @antora/site-generator-default@2.3
-antora -v
+npm i
 
-# Update dependencies and build site
-./make-site-yml
-if [ -f source-state.sh ]; then ./source-state.sh restore; fi
-antora $PLAYBOOK
+# Build site and block github's default jekyll formatting
+npm run build
 touch $SITE_DIR/.nojekyll
 
 # Set up a git environment in $SITE_DIR

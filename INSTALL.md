@@ -14,21 +14,16 @@ after about 3-4  minutes.
 ### Local builds
 
 Local builds requires Nodejs and Antora installed. See
-https://docs.antora.org/antora/2.3/install/install-antora/
+https://docs.antora.org/antora/3.0/install/install-antora/
+After installing antora, the 'npm' program is also available.
 
-First create a usable site.yml and also update sources.state to match the
-list of plugins used in opencpn-manuals/plugins.
+The preparation step is to install required npm modules:
 
-    $ ./make-site-yml
+    $ npm install
 
-The generated site.yml and sources.state can be committed. Then populate
-the clones of included projects using
+After completing this step, documentation is built using
 
-    $ ./source-state.sh restore
+    $ npm run build
 
-With antora installed build using:
-
-    $ antora site.yml
-
-The resulting website is placed in the directory docs/. Check the
-results by pointing the browser to the *docs/index.html* file.
+The resulting site can  be viewed by directing a browser to
+_docs/index.html_.

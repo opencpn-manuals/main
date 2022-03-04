@@ -1,0 +1,224 @@
+---
+site:
+  title: OpenCPN
+  url: https://opencpn-manuals.github.io/main/
+  start_page: manuals::index.adoc
+
+content:
+  edit_url: true
+  branches:
+    - master
+    - main
+  sources:
+    - url: .
+      branches: HEAD
+      edit_url: ~
+
+    - url: https://github.com/opencpn-manuals/development
+
+    - url: https://github.com/leamas/ocpn-pi-docs.git
+
+    - url: https://github.com/Rasbats/managed_plugins
+      start_path: manual
+
+    - url: https://github.com/opencpn-manuals/plugins
+      start_paths:
+        - manual/plugins
+
+    - url: https://github.com/rgleason/admiralty_tide_tables_pi
+      start_path: manual
+
+    - url: https://github.com/Hakansv/ais-vd_pi
+      start_path: manual
+
+    - url: https://github.com/Verezano/AISradar_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/Autopilot-Plugin
+      start_path: manual
+
+    - url: https://github.com/rgleason/autopilot_route_pi
+      start_path: manual
+
+    - url: https://github.com/douwefokkema/AutoTrackRaymarine_pi
+      start_path: manual
+
+    - url: https://github.com/rasbats/calculator_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/celestial_navigation_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/chartscale_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/climatology_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/dashboard_tactics_pi
+      start_path: manual
+
+    - url: https://github.com/opencpn-manuals/Deviation_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/DR_pi
+      start_path: manual
+
+    - url: https://github.com/TwoCanPlugin/EngineDashboard.git
+      start_path: manual
+
+    - url: https://github.com/Rasbats/EarthExplorer_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/Findit_pi
+      start_path: manual
+
+    - url: https://github.com/LennartG-Sve/GPS-Odometer_pi
+      start_path: manual
+
+    - url: https://github.com/antipole2/JavaScript_pi
+      start_path: manual
+
+    - url: https://github.com/nohal/launcher_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/LogbookKonni_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/ncdf_pi
+      start_path: manual
+
+    - url: https://github.com/RooieDirk/NmeaConverter_pi
+      start_path: manual
+
+    - url: https://github.com/nohal/ocpndebugger_pi
+      start_path: manual
+
+    - url: https://github.com/nohal/objsearch_pi
+      start_path: manual
+
+    - url: https://github.com/jongough/ocpn_draw_pi
+      start_path: manual
+
+    - url: https://github.com/bdbcat/oesenc_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/otcurrent_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/otidalplan_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/otidalroute_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/photolayer_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/plots_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/polar_pi.git
+      start_path: manual
+
+    - url: https://github.com/rgleason/projections_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/pypilot_pi
+      start_path: manual
+
+    - url: https://github.com/TwoCanPlugin/RacingPlugIn
+      start_path: manual
+
+    - url: https://github.com/opencpn-radar-pi/radar_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/rotationctrl_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/route_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/rtlsdr_pi
+      start_path: manual
+
+    - url: https://github.com/bdbcat/s63_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/SailawayNMEA_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/sar_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/shipdriver_pi
+      start_path: manual
+
+    - url: https://github.com/mauroc/squiddio_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/statusbar_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/survey_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/tactics_pi
+      start_path: manual
+
+    - url: https://github.com/Rasbats/TideFinder_pi
+      start_path: manual
+
+    - url: https://github.com/TwoCanPlugIn/TwoCanPlugIn
+      start_path: manual
+
+    - url: https://github.com/Rasbats/UKTides_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/vdr_pi
+      start_path: manual
+
+    - url: https://github.com/rasbats/vfkaps_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/watchdog_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/weatherfax_pi
+      start_path: manual
+
+    - url: https://github.com/rgleason/weather_routing_pi
+      start_path: manual
+
+    - url: https://github.com/jongough/windvane_pi
+      start_path: manual
+
+antora:
+  extensions:
+    - '@antora/lunr-extension'
+    - './src-list.js'
+
+ui:
+  bundle:
+    url: ./ui-bundle.zip
+    snapshot: true
+  supplemental_files: ./supplemental_ui
+
+output:
+  dir: docs
+  clean: true
+
+runtime:
+  fetch: true
+  log:
+    format: pretty
+    level: info
+
+asciidoc:
+  attributes:
+    page-resource_1_title: OpenCPN.org
+    page-resource_1_url: https://www.opencpn.org/
+    page-resource_2_title: Github Site
+    page-resource_2_url: https://github.com/opencpn/OpenCPN
+    page-resource_3_title: Bugtracker
+    page-resource_3_url: https://opencpn.org/flyspray/

@@ -1,7 +1,5 @@
 # opencpn-plugins-manual
 
-A new openpcn manual based on Asciidoc and Antora
-
-This is a work in progress and should not be consulted for any info.
+New openpcn manuals based on Asciidoc and Antora
 
 Build etc: INSTALL.md
