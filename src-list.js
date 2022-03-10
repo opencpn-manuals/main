@@ -29,9 +29,10 @@ class SourceListExtension {
       if (gitdir) {
         const commits = await git.log({ fs, gitdir, depth: 1, ref: refhash })
         const lastCommit = commits[0]['commit']
+        const lastHash = commits[0]['oid']
         const lastCommitSummary = {
           name: `${version ? version + '@' : ''}${name}`,
-          commit: lastCommit.tree.substr(0, 7),
+          commit: lastHash.substr(0, 7),
           subject: lastCommit.message.split(/$/m)[0],
           date: new Date(lastCommit.author.timestamp * 1000),
         }
