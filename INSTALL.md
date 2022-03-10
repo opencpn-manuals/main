@@ -13,9 +13,10 @@ after about 3-4  minutes.
 
 ### Local builds
 
-Local builds requires Nodejs and Antora installed. See
-https://docs.antora.org/antora/3.0/install/install-antora/
-After installing antora, the 'npm' program is also available.
+Local builds requires Nodejs and npm installed. See
+https://docs.antora.org/antora/3.0/install/install-antora/,
+but note that the antora program does not need to be installed.
+Just nodejs and npm is enough.
 
 The preparation step is to install required npm modules:
 
