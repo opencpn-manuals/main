@@ -27,3 +27,8 @@ After completing this step, documentation is built using
 
 The resulting site can  be viewed by directing a browser to
 _docs/index.html_.
+
+### UI bundle
+
+The UI bundle used is forked from the default Antora UI bundle.
+Sources: https://gitlab.com/leamas/antora-ui-default
