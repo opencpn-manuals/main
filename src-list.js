@@ -1,20 +1,26 @@
 'use strict'
 
 const fs = require('fs')
-//const { name: packageName } = require('./package.json')
+const git = require('isomorphic-git')
 
-module.exports.register = function ({ config }) {
+class SourceListExtension {
+  static register ({ config }) {
+    new SourceListExtension(this, config)
+  }
 
-  //const logger = this.getLogger(packageName)
-  const { targetName = 'manuals', targetVersion = '' } = config
-  //logger.warn('Building sources table sources.adoc')  FIXME: does not log
-  this.once('contentAggregated', async ({ contentAggregate }) => {
-   const git = requireGit(this)
+  constructor (generatorContext, config) {
+    this.config = config
+    ;(this.context = generatorContext)
+      .on('contentAggregated', this.onContentAggregated.bind(this))
+  }
+
+  async onContentAggregated ({contentAggregate}) {
+    this.logger = this.context.require('@antora/logger')('source-list-extension')
+    this.logger.info('Building sources appendix')
     let targetFiles
+    const { targetName = 'manuals', targetVersion = '' } = this.config
     for (const componentVersionData of contentAggregate) {
       const { name, version, files, nav } = componentVersionData
-      // console.log("nav file: " + (nav? nav[0] : 'not found'))
-      // FIXME; fails for sources with start_path...
       const referenceFilePath = nav ? nav[0] :  'modules/ROOT/pages/index.adoc'
       if (name === targetName && version === targetVersion) targetFiles = files
       let referenceFile = files.find(({ path }) => path === referenceFilePath)
@@ -50,7 +56,7 @@ ${rows}
 |====
 `.trim()
 )
-     targetFiles.push({
+    targetFiles.push({
         path: 'modules/ROOT/pages/sources.adoc',
         contents,
         src: {
@@ -58,11 +64,22 @@ ${rows}
           basename: 'sources.adoc',
           stem: 'sources',
           extname: '.adoc',
-        }
+         }
       })
     }
-  })
+  }
 }
+
+
+// function requireGit ({ module: module_ }) {
+//   return require(
+//     require.resolve('isomorphic-git', {
+//       paths: [require.resolve('@antora/content-aggregator', { paths: module_.paths }) + '/..']
+//     })
+//   )
+// }
+
+module.exports = SourceListExtension
 
 function date_str(date) {
   const year = '20' + ('' + date.getYear()).slice(-2)
@@ -71,12 +88,4 @@ function date_str(date) {
   const hour = ('0' + date.getHours()).slice(-2)
   const minute  =  ('0' + date.getMinutes()).slice(-2)
   return `${year}-${month}-${day} ${hour}:${minute}`
-}
-
-function requireGit ({ module: module_ }) {
-  return require(
-    require.resolve('isomorphic-git', {
-      paths: [require.resolve('@antora/content-aggregator', { paths: module_.paths }) + '/..']
-    })
-  )
 }
