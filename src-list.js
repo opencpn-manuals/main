@@ -48,7 +48,7 @@ class SourceListExtension {
       const contents = Buffer.from(`
 = Table of Manual Sources
 
-Manual generated at ${now}
+Manual generated at ${now} UTC
 
 [cols=3;1;3;7]
 |====
@@ -83,13 +83,12 @@ function requireGit () {
   )
 }
 
-
 function date_str(date) {
-  const year = '20' + ('' + date.getYear()).slice(-2)
-  const month = ('0' + date.getMonth()).slice(-2)
-  const day = ('0' + date.getDay()).slice(-2)
-  const hour = ('0' + date.getHours()).slice(-2)
-  const minute  =  ('0' + date.getMinutes()).slice(-2)
+  const year = '20' + ('' + date.getUTCFullYear()).slice(-2)
+  const month = ('0' + date.getUTCMonth()).slice(-2)
+  const day = ('0' + date.getUTCDay()).slice(-2)
+  const hour = ('0' + date.getUTCHours()).slice(-2)
+  const minute  =  ('0' + date.getUTCMinutes()).slice(-2)
   return `${year}-${month}-${day} ${hour}:${minute}`
 }
 
