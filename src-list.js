@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs')
-const git = require('isomorphic-git')
+const git = requireGit()
 
 class SourceListExtension {
   static register ({ config }) {
@@ -12,10 +12,11 @@ class SourceListExtension {
     this.config = config
     ;(this.context = generatorContext)
       .on('contentAggregated', this.onContentAggregated.bind(this))
+    this.logger =
+      this.context.require('@antora/logger')('source-list-extension')
   }
 
   async onContentAggregated ({contentAggregate}) {
-    this.logger = this.context.require('@antora/logger')('source-list-extension')
     this.logger.info('Building sources appendix')
     let targetFiles
     const { targetName = 'manuals', targetVersion = '' } = this.config
@@ -57,7 +58,7 @@ ${rows}
 |====
 `.trim()
 )
-    targetFiles.push({
+      targetFiles.push({
         path: 'modules/ROOT/pages/sources.adoc',
         contents,
         src: {
@@ -71,16 +72,17 @@ ${rows}
   }
 }
 
+function requireGit () {
+  return require(
+    require.resolve('isomorphic-git', {
+      paths: [
+        require.resolve('@antora/content-aggregator', { paths: module.paths })
+        + '/..'
+      ]
+    })
+  )
+}
 
-// function requireGit ({ module: module_ }) {
-//   return require(
-//     require.resolve('isomorphic-git', {
-//       paths: [require.resolve('@antora/content-aggregator', { paths: module_.paths }) + '/..']
-//     })
-//   )
-// }
-
-module.exports = SourceListExtension
 
 function date_str(date) {
   const year = '20' + ('' + date.getYear()).slice(-2)
@@ -90,3 +92,5 @@ function date_str(date) {
   const minute  =  ('0' + date.getMinutes()).slice(-2)
   return `${year}-${month}-${day} ${hour}:${minute}`
 }
+
+module.exports = SourceListExtension
