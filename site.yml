@@ -61,6 +61,9 @@ content:
     - url: https://github.com/opencpn-manuals/Deviation_pi
       start_path: manual
 
+    - url: https://github.com/opencpn-manuals/o-charts_pi
+      start_path: manual
+
     - url: https://github.com/Rasbats/DR_pi
       start_path: manual
 
@@ -184,8 +187,8 @@ content:
     - url: https://github.com/rasbats/vfkaps_pi
       start_path: manual
 
-    # - url: https://github.com/rgleason/watchdog_pi
-    # start_path: manual
+    - url: https://github.com/rgleason/watchdog_pi
+      start_path: manual
 
     - url: https://github.com/rgleason/weatherfax_pi
       start_path: manual
