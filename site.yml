@@ -61,7 +61,7 @@ content:
     - url: https://github.com/opencpn-manuals/Deviation_pi
       start_path: manual
 
-    - url: https://github.com/opencpn-manuals/o-charts_pi
+    - url: https://github.com/bdbcat/o-charts_pi.git
       start_path: manual
 
     - url: https://github.com/Rasbats/DR_pi
