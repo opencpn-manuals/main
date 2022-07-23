@@ -1,6 +1,6 @@
 = Manuals
 
-link:https://opencpn.org/wiki/dokuwiki/doku.php?id=opencpn:opencpn_user_manual[Wiki User Manual]
+link:https://opencpn.org/wiki/dokuwiki/doku.php?id=opencpn:manual_basic[Dokuwiki User Manual]
 
 xref:opencpn-plugins::index.adoc[Plugins Manual]
 
