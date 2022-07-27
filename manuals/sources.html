@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Table of Manual Sources :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/manuals/sources.html">
+    <meta name="generator" content="Antora 3.0.1">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="manuals" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">OpenCPN Manuals</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">Home Page</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Appendix</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="sources.html">Source List</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenCPN Manuals</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rtlsdr/0.1/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nmea_converter/0.1/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../squiddio/0.1/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../survey/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../windvane/0.1/index.html">Windvane</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenCPN Manuals</a></li>
+    <li>Appendix</li>
+    <li><a href="sources.html">Source List</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Table of Manual Sources</h1>
+<div class="paragraph">
+<p>Manual generated at 2022-06-03 19:24 UTC</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 21.4285%;">
+<col style="width: 7.1428%;">
+<col style="width: 21.4285%;">
+<col style="width: 50.0002%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Commit</th>
+<th class="tableblock halign-left valign-top">Date</th>
+<th class="tableblock halign-left valign-top">Subject</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manuals</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cdc2cc3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-03 19:21</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #40 from opencpn-manuals/main</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ocpn-dev-manual</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c01c4ac</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-03 05:52</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rename messaging to od-messaging</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plugin-installer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4bf1423</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-05 09:43</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manual: antora.yml: Use default version a k a '~'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AlternativeWorkflow</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a892b98</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-04 20:58</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update Drone.adoc</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">opencpn-plugins</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8a14d90</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-02 18:14</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nav-all: Add o-charts to "All plugins A-Z"</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">admiralty</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f40f780</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-05 11:59</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antora version null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@ais-vd</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">484d0a5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-03 06:50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cmake: Update TemplateVersion to f13ec8e</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">aisradar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ca309e4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-03-03 05:35</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #26 from rgleason/master</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@autopilot-rm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a4a2020</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-02 02:08</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #4 from BerndCirotzki/master</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autopilot_route</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7541063</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-06 16:39</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.4.7.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">autotrackraymarine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4334baf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-02 18:31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Manual: Fix wrong picture linkage.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">calculator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">745004c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 11:44</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">celestial_navigation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">9bbdc36</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-04 22:22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update adoc adding Cook Navigation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chartscale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0b412b2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-05 12:05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antora version null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">climatology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fc842c2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-04 21:50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge branch 'master' into master</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dashboard_tactics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60201fe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-05 12:29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antora version null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deviation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5d19a07</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-05 09:29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manual: antora.yml: Use default version a k a '~'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">o-charts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">438f936</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-03 14:24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #30 from o-charts/master</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dead_reckoning</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d1b4db5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-03 08:51</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cmake: Update TemplateVersion to 25647fd</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@engine-dash</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">498e9cc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-01 22:31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rejig Exhaust Temperature Range</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">earthexplorer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">82e5ac2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 12:34</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">findit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">eaeef8d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-05 17:29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.2.18 +TP 1.0.213 fix OS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">gps-odometer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ca3010c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-06 07:42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v0.6.6.5 Uppdated to TP 1.0.212</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">javascript</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ae3e24d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-01 10:38</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tweak for v1.1b</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@launcher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">57a45ae</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-05 00:25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #10 from rgleason/master</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logbook</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">084b468</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-05 12:16</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antora version null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ncdf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7bea336</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 12:40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Change title. Remove version number from manual.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@nmea_converter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">48fa9a5</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-00 13:31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #29 from opencpn-manuals/manual-pr</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">nv_charts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e0e838b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-02 14:24</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adding opencpn-libs submodule</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@debugger</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75681de</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-05 00:25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #9 from rgleason/master</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@objsearch</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2a0758c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-01 02:38</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #13 from rgleason/master</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">odraw</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ffc4bcf</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-00 21:22</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #509 from jongough/updates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@oesenc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8eb5bd6</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-04 14:11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #133 from rgleason/patch-2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">otcurrent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1d54902</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-02 13:52</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cmake: Update TemplateVersion to 31ebf91</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">otidalplan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3837221</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 12:33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">otidalroute</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">98484d7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 12:31</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">photolayer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4f554e1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 11:29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plots</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">39276fe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-05 17:33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.2.15 +TP 1.0.213 fix os</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">polar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b9c853d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-05 17:38</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.1.29 +TP 1.0.213 fix OS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@projections</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7e6d187</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-03 03:42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">site antora title</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pypilot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">083879d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-01 15:50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.34.4.0 bdbcat fix flatpak correct android</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@race-start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">084b2cc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-00 17:53</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #3 from opencpn-manuals/manual-pr</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@radar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8a8e7a9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-04 10:38</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fix #209: Repair button behavior broken in #206</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rotationctrl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bedac9b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-05 12:18</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antora version null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">route</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1037f33</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-05 12:23</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antora chng name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@rtlsdr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">42e3c52</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-08-04 19:32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge branch 'master' of <a href="https://github.com/rgleason/rtlsdr_pi" class="bare">https://github.com/rgleason/rtlsdr_pi</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@s63_vector_charts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0b4d6af</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-01 20:29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version 1.17.15</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sailawaynmea</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1b8f81d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 12:32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">b9ec42c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 11:42</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shipdriver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">28d73c4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-01 14:20</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ci: debian-arm64: Remove unused cruft.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@squiddio</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1deb2f1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2021-11-02 18:07</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #147 from rgleason/master</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">statusbar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7c42373</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-06 17:39</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.7.24.0 + bdbcat fix</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">survey</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d8a85b9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 12:29</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tactics</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30a2beb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-05 17:51</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.0.32 +TP 1.0.213 fix OS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tidefinder</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">76dcf0b</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 12:28</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@twocan</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2ba7894</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-04 21:17</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">V2.1 beta 29, final check before master merge</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uktides</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12ad441</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-03-03 13:25</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v1.4.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vdr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d6e24d4</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-04-05 12:27</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">antora version null</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vfkaps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ff1b355</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-00 11:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update antora.yml</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">watchdog</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8f6c7cb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-06-03 11:13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fix manual odraw ocpn_draw link</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">weatherfax</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3073ad1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-01 21:08</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.9.40.0 ozolli fix servers regions</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">weather_routing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">69486fe</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-05-06 00:30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.13.48.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.1@windvane</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7cde51d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2022-02-03 06:32</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge pull request #33 from jongough/updates</p></td>
+</tr>
+</tbody>
+</table>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>
