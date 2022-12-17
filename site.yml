@@ -58,6 +58,9 @@ content:
     - url: https://github.com/rgleason/dashboard_tactics_pi
       start_path: manual
 
+    - url: https://github.com/nohal/dashboardsk_pi
+      start_path: manual
+
     - url: https://github.com/opencpn-manuals/Deviation_pi
       start_path: manual
 
@@ -94,9 +97,12 @@ content:
     - url: https://github.com/RooieDirk/NmeaConverter_pi
       start_path: manual
 
+    - url: https://github.com/nohal/nsk_pi
+      start_path: manual
+
     - url: https://github.com/Rasbats/nvc_pi
       start_path: manual
-      
+
     - url: https://github.com/nohal/ocpndebugger_pi
       start_path: manual
 
