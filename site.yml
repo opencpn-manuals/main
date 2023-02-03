@@ -16,6 +16,10 @@ content:
 
     - url: https://github.com/opencpn-manuals/development
 
+    - url: https://github.com/leamas/opencpn
+      branches: manual
+      start_path: manual
+
     - url: https://github.com/leamas/ocpn-pi-docs.git
 
     - url: https://github.com/Rasbats/managed_plugins
