@@ -16,7 +16,8 @@ content:
 
     - url: https://github.com/opencpn-manuals/development
 
-    - url: https://github.com/opencpn/OpenCPN
+    # - url: https://github.com/opencpn/OpenCPN
+    - url: https://github.com/leamas/opencpn
       start_path: manual
 
     - url: https://github.com/leamas/ocpn-pi-docs.git
