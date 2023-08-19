@@ -82,6 +82,9 @@ content:
     - url: https://github.com/rgleason/Findit_pi
       start_path: manual
 
+    - url: https://github.com/Rasbats/frcurrents_pi
+      start_path: manual
+
     - url: https://github.com/LennartG-Sve/GPS-Odometer_pi
       start_path: manual
 
