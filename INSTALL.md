@@ -11,6 +11,17 @@ Push the current branch to the branch *build*, something like
 The results becomes available at https://github.com/opencpn-manuals/main
 after about 3-4  minutes.
 
+### Rebuild manual without push.
+
+Done in the github web interface.
+  - Go to https://github.com/opencpn-manuals/main/actions
+  - Click "OpenCPN Development Manual" item in left pane.
+  - The new page will have a blue _This workflow has a workflow\_dispatch
+    event trigger._ on top
+  - Open pull-down menu _Run Workflow_, select master branch and click the
+    _Run Workflow_ green button
+
+
 ### Local builds
 
 Local builds requires Nodejs and npm installed. See

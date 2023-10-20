@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - build
+  workflow_dispatch:
+
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
