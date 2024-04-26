@@ -20,6 +20,18 @@ content:
     # - url: https://github.com/leamas/OpenCPN
       start_path: manual
 
+    - url: https://github.com/opencpn/OpenCPN
+      start_path: plugins/chartdldr_pi/manual/
+
+    - url: https://github.com/opencpn/OpenCPN
+      start_path: plugins/dashboard_pi/manual/
+
+    - url: https://github.com/opencpn/OpenCPN
+      start_path: plugins/grib_pi/manual/
+
+    - url: https://github.com/opencpn/OpenCPN
+      start_path: plugins/wmm_pi/manual/
+
     - url: https://github.com/leamas/ocpn-pi-docs.git
 
     - url: https://github.com/Rasbats/managed_plugins
