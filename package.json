@@ -26,7 +26,8 @@
   "dependencies": {
     "@antora/logger": "^3.1.7",
     "@antora/lunr-extension": "^1.0.0-alpha.8",
-    "@antora/site-generator": "^3.1.7",
+    "@antora/site-generator": "^3.1.9",
+    "antora": "^3.1.9",
     "isomorphic-git": "^1.25.3"
   }
 }
