@@ -16,13 +16,21 @@ readonly GP_BRANCH='gh-pages'      # Branch used as input by Github Pages
 
 # Install npm and antora
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs doxygen
 npm -v
 npm i
 
 # Build site and block github's default jekyll formatting
+export ANTORA_CACHE_DIR=$HOME/.cache/antora
 npm run build
 touch $SITE_DIR/.nojekyll
+
+# Build API docs
+git clone $ANTORA_CACHE_DIR/content/opencpn-* opencpn
+cd opencpn/manual
+doxygen
+mv api-docs  ../../$SITE_DIR
+cd ../..
 
 # Set up a git environment in $SITE_DIR
 author_email=$(git log -1 --pretty=format:"%ae")

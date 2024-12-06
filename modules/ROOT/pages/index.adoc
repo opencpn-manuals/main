@@ -6,4 +6,4 @@ xref:opencpn-plugins::index.adoc[Plugins Manual]
 
 xref:ocpn-dev-manual::intro-AboutThisManual.adoc[Developer Manual]
 
-link:http://opencpn.github.io/OpenCPN/api-docs[Doxygen API Docs]
+link:https://opencpn-manuals.github.io/main/api-docs/[Doxygen API Docs]

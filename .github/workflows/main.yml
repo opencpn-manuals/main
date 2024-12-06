@@ -2,6 +2,8 @@
 name: OpenCPN Development Manual
 
 on:
+  schedule:
+    - cron: 0 1 * * *
   push:
     branches:
       - build
