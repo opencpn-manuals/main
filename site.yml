@@ -92,6 +92,9 @@ content:
     - url: https://github.com/Rasbats/EarthExplorer_pi
       start_path: manual
 
+    - url: https://github.com/Rasbats/e_timer_pi
+      start_path: manual
+
     - url: https://github.com/rgleason/Findit_pi
       start_path: manual
 
