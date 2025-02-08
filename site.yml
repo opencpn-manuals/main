@@ -71,6 +71,9 @@ content:
     - url: https://github.com/rgleason/climatology_pi
       start_path: manual
 
+    - url: https://github.com/KAHU-radar/crowdsource_pi
+      start_path: manual
+
     - url: https://github.com/rgleason/dashboard_tactics_pi
       start_path: manual
 
