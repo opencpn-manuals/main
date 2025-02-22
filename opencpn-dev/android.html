@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Building OpenCPN for Android :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/opencpn-dev/android.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="opencpn-dev" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">OpenCPN Programming Manual</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Core Developer Manual</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Compiling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cmake.html">CMake</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="android.html">Android</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="linux.html">Linux</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="linux.html#_flatpak">Flatpak</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="windows.html">Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mac-osx.html">MacOS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="docker.html">Docker container</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="create-deb-package.html">Create Debian packages</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="unit-tests.html">Unit tests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rest-interface.html">REST server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="odraw-messaging.html">ODraw Messaging API</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="plugin-messaging.html">New Message Plugin API</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="gui-model.html">Model - Gui code organization</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="comm-overview.html">Communication Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="coding-guidelines.html">Coding Guidelines</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user-interface-styling.html">User Interface Styling</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="stacktrace.html">Creating a stack trace</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenCPN Programming Manual</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radarhub_pi/index.html">KAHU Radar Hub</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/0.1/index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../squiddio/0.1/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../survey/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenCPN Programming Manual</a></li>
+    <li>Core Developer Manual</li>
+    <li>Compiling</li>
+    <li><a href="android.html">Android</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/opencpn/OpenCPN/edit/master/manual/modules/ROOT/pages/android.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Building OpenCPN for Android</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>These instructions describe how to build OpenCPN for Android on Ubuntu 24.04.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These build instructions are incomplete and under development. Users are encouraged to improve them by using the "Edit this page" button to submit patches and corrections.*
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_build_environment_setup"><a class="anchor" href="#_build_environment_setup"></a>Build Environment Setup</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_required_tools"><a class="anchor" href="#_1_required_tools"></a>1. Required Tools</h3>
+<div class="paragraph">
+<p>Install basic build tools:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo apt update
+sudo apt install -y \
+  cmake \
+  git \
+  gettext \
+  python3-pip \
+  python3-venv \
+  libxcb-cursor0 \
+  libxcb-cursor-dev \
+  libarchive-dev \
+  libjpeg-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  libsndfile1-dev \
+  libssl-dev \
+  libgles1 \
+  default-jdk</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Get Java installation path:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>sudo update-alternatives --config java
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_install_and_configure_android_studio"><a class="anchor" href="#_2_install_and_configure_android_studio"></a>2. Install and Configure Android Studio</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download Android Studio from <a href="https://developer.android.com/studio">Android Developer site</a></p>
+</li>
+<li>
+<p>Extract and install according to Google&#8217;s instructions for Ubuntu</p>
+</li>
+<li>
+<p>Launch Android Studio</p>
+</li>
+<li>
+<p>In the welcome screen, click on "More Actions" &gt; "SDK Manager"</p>
+</li>
+<li>
+<p>In SDK Manager, under "SDK Tools" tab:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Check "NDK (Side by side)"</p>
+</li>
+<li>
+<p>Check "Android SDK Command-line Tools"</p>
+</li>
+<li>
+<p>Check "CMake"</p>
+</li>
+<li>
+<p>Click "Apply" to download and install</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Get path to Android NDK:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>~/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --list |grep ndk</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Set environment variables:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export ANDROID_NDK_VERSION=$(ls $ANDROID_SDK_ROOT/ndk | sort -V | tail -1)
+export ANDROID_NDK_ROOT=$ANDROID_SDK_ROOT/ndk/${ANDROID_NDK_VERSION}
+export PATH=$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+
+# API 30: Android 11 (2020)
+# API 31: Android 12 (2021)
+# API 33: Android 13 (2022)
+# API 34: Android 14 (2023)
+
+export OCPN_ANDROID_API=33  # Minimum Android API level to target</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create required NDK symlink:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>android_x86_64="$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64"
+ln -sf $android_x86_64/bin/llvm-ar \
+     $android_x86_64/bin/aarch64-linux-android-ar</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_the_core_library"><a class="anchor" href="#_building_the_core_library"></a>Building the Core Library</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_clone_the_repository"><a class="anchor" href="#_1_clone_the_repository"></a>1. Clone the repository</h3>
+<div class="listingblock">
+<div class="content">
+<pre>git clone https://github.com/OpenCPN/OpenCPN.git
+cd OpenCPN</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_create_build_directory_and_configure"><a class="anchor" href="#_2_create_build_directory_and_configure"></a>2. Create build directory and configure</h3>
+<div class="paragraph">
+<p>For armhf build - 32bit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>mkdir build-android-armhf
+cd build-android-armhf
+cmake \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DOCPN_TARGET_TUPLE="Android-armhf;${OCPN_ANDROID_API};armhf" \
+  -Dtool_base="$ANDROID_SDK_ROOT/ndk/${ANDROID_NDK_VERSION}/toolchains/llvm/prebuilt/linux-x86_64" \
+  ..</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For arm64 build - 64bit:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>mkdir build-android-arm64
+cd build-android-arm64
+cmake \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DOCPN_TARGET_TUPLE="Android-arm64;${OCPN_ANDROID_API};arm64" \
+  -Dtool_base="$ANDROID_SDK_ROOT/ndk/${ANDROID_NDK_VERSION}/toolchains/llvm/prebuilt/linux-x86_64" \
+  ..</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_build_the_core_library"><a class="anchor" href="#_3_build_the_core_library"></a>3. Build the core library</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">make VERBOSE=1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building_the_apk"><a class="anchor" href="#_building_the_apk"></a>Building the APK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>After building the core library successfully:</p>
+</div>
+<div class="sect2">
+<h3 id="_1_setup_qt_environment"><a class="anchor" href="#_1_setup_qt_environment"></a>1. Setup Qt environment</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export QT_ANDROID_ROOT=/path/to/OpenCPN/cache/OCPNAndroidCoreBuildSupport/qt5</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Create APK build directory</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>mkdir apk_build
+cd apk_build</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_generate_makefile_with_qmake"><a class="anchor" href="#_2_generate_makefile_with_qmake"></a>2. Generate Makefile with qmake</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$QT_ANDROID_ROOT/android_armv7/bin/qmake \
+  -makefile ../buildandroid/opencpn.pro \
+  -o Makefile.android -r -spec android-g++ CONFIG+=debug</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_build_library_and_prepare_for_apk"><a class="anchor" href="#_3_build_library_and_prepare_for_apk"></a>3. Build library and prepare for APK</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">make -f Makefile.android
+make -f Makefile.android install INSTALL_ROOT=./apk_build</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_create_the_apk"><a class="anchor" href="#_4_create_the_apk"></a>4. Create the APK</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">$QT_ANDROID_ROOT/android_armv7/bin/androiddeployqt \
+  --input ./android-libopencpn.so-deployment-settings.json \
+  --output ./apk_build \
+  --android-platform android-19 \
+  --deployment bundled</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The final APK will be located at <code>./apk_build/bin/QtApp-debug.apk</code></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>
