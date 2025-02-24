@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['raise_0',['raise',['../classStConnection.html#a7c7f1b28e36cab9593c4fd89807718ae',1,'StConnection']]],
+  ['readonly_1',['readonly',['../structPluginMetadata.html#aa4d65065dc382039ed89d4939053632f',1,'PluginMetadata']]],
+  ['recent_5fhigh_5flevel_2',['recent_high_level',['../classIDX__entry.html#ab1b5e748244421eb6d0e3e7d8cba8712',1,'IDX_entry']]],
+  ['recent_5fhigh_5ftime_3',['recent_high_time',['../classIDX__entry.html#a483aa2ce6b7f9edf71f15f7659fd15c0',1,'IDX_entry']]],
+  ['recent_5fhighlow_5fcalc_5ftime_4',['recent_highlow_calc_time',['../classIDX__entry.html#adc4ac0eac35f3bb1af46ac558e72746e',1,'IDX_entry']]],
+  ['recent_5flow_5flevel_5',['recent_low_level',['../classIDX__entry.html#a6fe5e2daabf03796b4200acb4a9fd0af',1,'IDX_entry']]],
+  ['recent_5flow_5ftime_6',['recent_low_time',['../classIDX__entry.html#ae1b6b3e6771f8b02a9d879b87813a48b',1,'IDX_entry']]],
+  ['ref_5fscale_7',['ref_scale',['../classViewPort.html#a33c6d2582709e8c0a800676c4f419531',1,'ViewPort']]],
+  ['refdate_8',['refDate',['../classGribRecord.html#aa089232f36e03665de3e02b438caa9c5',1,'GribRecord']]],
+  ['refyear_9',['refyear',['../classGribRecord.html#ac701bffc784d4d161146e8e6ceab8f95',1,'GribRecord']]],
+  ['ret15_10',['Ret15',['../classIDX__entry.html#ac135a1c562116d6fd4c95213729ac60d',1,'IDX_entry']]],
+  ['ret_5fmutex_11',['ret_mutex',['../classRestServer.html#a5a27980780c84ae8405ea2905ebbf2b1',1,'RestServer']]],
+  ['return_5fstatus_5fcv_12',['return_status_cv',['../classRestServer.html#a3d0aa9d46e201b63828a322a423a4f79',1,'RestServer']]],
+  ['reverse_5froute_13',['reverse_route',['../classAbstractRestServer.html#a6f7c48efa951614ff8b4b4aa4e86eed7',1,'AbstractRestServer']]],
+  ['rotation_14',['rotation',['../classViewPort.html#a44542bf48879c5f550ea386444f0ccc6',1,'ViewPort']]],
+  ['run_5faccept_5fobject_5fdlg_15',['run_accept_object_dlg',['../classRestServerDlgCtx.html#a50a915a22142788bf3720940640c7466',1,'RestServerDlgCtx']]],
+  ['run_5fpincode_5fdlg_16',['run_pincode_dlg',['../structPeerData.html#a902dbe8fb89851322aaf8ff5ab8de6ff',1,'PeerData::run_pincode_dlg'],['../classRestServerDlgCtx.html#a726e5b046fb03f29c1a4f1973f3c7d70',1,'RestServerDlgCtx::run_pincode_dlg']]],
+  ['run_5fstatus_5fdlg_17',['run_status_dlg',['../structPeerData.html#ab3f9353775c3c685cf8a0f39af8bc95e',1,'PeerData']]],
+  ['rx_5fcount_18',['rx_count',['../structDriverStats.html#a8eb001d921835fa92bb6e4920bf4482d',1,'DriverStats']]]
+];

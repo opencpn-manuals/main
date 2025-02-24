@@ -1,0 +1,27 @@
+var classChartCanvas =
+[
+    [ "DoZoomCanvas", "classChartCanvas.html#aab01736b8bf4787a8efd57a70c96b396", null ],
+    [ "GetCanvasPixPoint", "classChartCanvas.html#ad11a417cf7cbf8f780bca74a38a7e506", null ],
+    [ "GetCanvasPointPix", "classChartCanvas.html#a2971e10db3e5375117eb8c18e8231e52", null ],
+    [ "GetCanvasPointPixVP", "classChartCanvas.html#a01dd65d4183d59f595af154cb164f34c", null ],
+    [ "GetCanvasScaleFactor", "classChartCanvas.html#a62768b754cb670b2cd36f561a23bde14", null ],
+    [ "GetCanvasTrueScale", "classChartCanvas.html#aad7223e85483c7526c4f4a245cf6e98b", null ],
+    [ "GetDisplayScale", "classChartCanvas.html#a82a410fe8f88e2992bafb9507c3e2a3b", null ],
+    [ "GetDisplaySizeMM", "classChartCanvas.html#a75be191c9e5e50bd2884b5c3aeac73b5", null ],
+    [ "GetDoubleCanvasPointPix", "classChartCanvas.html#af4fb27abb939fd4376ac1129b6cb2a3b", null ],
+    [ "GetDoubleCanvasPointPixVP", "classChartCanvas.html#a54798498f8d734d8309de5c65c5cd60d", null ],
+    [ "GetPixPerMM", "classChartCanvas.html#a71389255a0ff5a367089ae9c96708b11", null ],
+    [ "GetVPChartScale", "classChartCanvas.html#a0b92d6c6db2bb0f6bd8f397ef40468b8", null ],
+    [ "GetVPScale", "classChartCanvas.html#aa5ecb96349a754a4116d1269786aaa98", null ],
+    [ "MouseEventProcessCanvas", "classChartCanvas.html#af5d217fa663a7649cf1191b5d6b25f21", null ],
+    [ "MouseEventSetup", "classChartCanvas.html#a9b0071dcab82f319798fce90cf94ae7b", null ],
+    [ "PanCanvas", "classChartCanvas.html#aa2584cccebde1f749b25367668f30ae5", null ],
+    [ "SetDisplaySizeMM", "classChartCanvas.html#a87da843eacdf9f9a7e659504072ecae8", null ],
+    [ "SetViewPoint", "classChartCanvas.html#af5546aaeedaf2d175c95332cbbe206e2", null ],
+    [ "SetViewPoint", "classChartCanvas.html#a30801ad862ba6e25397b5dcd9f928e46", null ],
+    [ "SetVPScale", "classChartCanvas.html#ab45ca8b61f9a4330c8ffa6a86b523639", null ],
+    [ "ZoomCanvas", "classChartCanvas.html#ae73ebd9466e2caecbefbf267d0bf74c9", null ],
+    [ "ZoomCanvasSimple", "classChartCanvas.html#ab0c12c7e88e03d25e57a8065f0e065f1", null ],
+    [ "m_cursor_lat", "classChartCanvas.html#a5f0e9bf94c4a388d3f15b0e57226f0b8", null ],
+    [ "m_cursor_lon", "classChartCanvas.html#ace8843ae16a3b70deeb9a21c057bc3ac", null ]
+];
