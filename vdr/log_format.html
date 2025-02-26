@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VDR Log Format Specification :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/vdr/log_format.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="vdr" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-explore is-active" data-panel="explore">
+  <div class="context">
+    <span class="title">Voyage Data Recorder</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radarhub_pi/index.html">KAHU Radar Hub</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/0.1/index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../squiddio/0.1/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../survey/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/rgleason/vdr_pi/edit/master/manual/modules/ROOT/pages/log_format.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">VDR Log Format Specification</h1>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This specification defines a CSV-based format for logging NMEA0183, NMEA2000, and SignalK data. The format follows the RFC 4180 CSV specification.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_file_format"><a class="anchor" href="#_file_format"></a>File Format</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_basic_format"><a class="anchor" href="#_basic_format"></a>Basic Format</h3>
+<div class="paragraph">
+<p>Data is encoded using CSV format as specified in <a href="https://www.ietf.org/rfc/rfc4180.txt">RFC 4180</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>UTF-8 encoding - Required for compatibility with SignalK JSON data which mandates UTF-8 encoding.
+See <a href="https://signalk.org/specification/1.7.0/doc/data_model.html">Signal K Data Model</a>.</p>
+</li>
+<li>
+<p>Line endings: CRLF (\r\n)</p>
+</li>
+<li>
+<p>Fields are separated by comma (,)</p>
+</li>
+<li>
+<p>Fields containing special characters (comma, quotes, newlines) must be enclosed in double quotes.</p>
+</li>
+<li>
+<p>Double quotes within fields must be escaped by doubling: <code>""</code></p>
+</li>
+<li>
+<p>File extension should be <code>.csv</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note: UTF-8 is backwards compatible with ASCII.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_comments"><a class="anchor" href="#_comments"></a>Comments</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Lines beginning with # are treated as comments and ignored</p>
+</li>
+<li>
+<p>Comments can appear anywhere in the file</p>
+</li>
+<li>
+<p>Comments are useful for metadata and documentation</p>
+</li>
+<li>
+<p>Comments must appear on their own line</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_header"><a class="anchor" href="#_header"></a>Header</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>First non-comment line must contain the CSV header as specified in <a href="https://www.ietf.org/rfc/rfc4180.txt">RFC 4180</a></p>
+</li>
+<li>
+<p>Header defines the field names for the columns</p>
+</li>
+<li>
+<p>Field names are case-sensitive</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_forward_compatibility"><a class="anchor" href="#_forward_compatibility"></a>Forward Compatibility</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Parsers must not assume fixed positions for fields</p>
+</li>
+<li>
+<p>Field positions should be determined by reading the CSV header</p>
+</li>
+<li>
+<p>Parsers must ignore unknown fields</p>
+</li>
+<li>
+<p>Additional fields may be added in future versions of this specification</p>
+</li>
+<li>
+<p>All required fields must be present, but their order may vary</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Example file with comments and header</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csv hljs" data-lang="csv"># VDR Log File
+# Created: 2024-02-16T10:00:00Z
+# Device: MarineLogger v1.0
+# Configuration:
+#   - NMEA0183 on COM3
+#   - NMEA2000 on CAN0
+#   - SignalK server on TCP 10.0.0.1:3000
+
+received_at,protocol,msg_type,source,raw_data
+2024-02-16T10:00:00.123Z,NMEA0183,GPGGA,"COM3/NMEA0183/GP",$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_required_header_fields"><a class="anchor" href="#_required_header_fields"></a>Required Header Fields</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_timestamp_format"><a class="anchor" href="#_timestamp_format"></a>timestamp_format</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Required field specifying how timestamps are encoded</p>
+</li>
+<li>
+<p>Valid values:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ISO8601 (Example: 2024-02-16T10:00:00.123Z)</p>
+</li>
+<li>
+<p>EPOCH_SECONDS (Example: 1708074000)</p>
+</li>
+<li>
+<p>EPOCH_MILLIS (Example: 1708074000123)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Must be specified in header comment for the file</p>
+</li>
+<li>
+<p>All timestamps in the file must use the same format</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_required_csv_fields"><a class="anchor" href="#_required_csv_fields"></a>Required CSV Fields</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_received_at"><a class="anchor" href="#_received_at"></a>received_at</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Indicates when the message was received/logged by the system. Note this might be different from the time when the source instrument generated the data.</p>
+</li>
+<li>
+<p>Timestamps are in ISO 8601 format – specifically the RFC 3339 extension format, which is slightly more strict than the ISO specification.</p>
+</li>
+<li>
+<p>Timestamps have millisecond precision in UTC.</p>
+</li>
+<li>
+<p>Format: YYYY-MM-DDThh:mm:ss.sssZ</p>
+</li>
+<li>
+<p>This format matches SignalK timestamp requirements (RFC 3339)</p>
+</li>
+<li>
+<p>Example: <code>2024-02-16T10:00:00.123Z</code></p>
+</li>
+<li>
+<p>Timestamp assignment:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For messages that include their own timestamp (like SignalK updates or NMEA2000 PGNs with time fields):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The log timestamp should be when the message was received/logged</p>
+</li>
+<li>
+<p>The original message timestamp is preserved in the raw_data field</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>For messages without timestamps:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The log timestamp should be set as close as possible to when the message was received.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Timestamps must be monotonically increasing.</p>
+</li>
+<li>
+<p>Time jumps may occur when:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>System time is updated (e.g., GPS fix acquired)</p>
+</li>
+<li>
+<p>Time source changes</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_protocol"><a class="anchor" href="#_protocol"></a>protocol</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Enumerated string</p>
+</li>
+<li>
+<p>Valid values: <code>NMEA0183</code>, <code>NMEA2000</code>, <code>SignalK</code></p>
+</li>
+<li>
+<p>Case sensitive</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_msg_type"><a class="anchor" href="#_msg_type"></a>msg_type</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Identifier for the specific type of message, format depends on protocol:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NMEA0183: Combined talker ID and sentence type (e.g., "GPGGA")</p>
+</li>
+<li>
+<p>NMEA2000: PGN in decimal format (e.g., "61184")</p>
+</li>
+<li>
+<p>SignalK: The primary path from the update (e.g., "navigation.speedThroughWater")</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Must be extracted from the raw_data</p>
+</li>
+<li>
+<p>Case-sensitive</p>
+</li>
+<li>
+<p>For malformed messages where the protocol cannot be extracted, field should be empty</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_source"><a class="anchor" href="#_source"></a>source</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>String identifier for the physical or logical data source.</p>
+</li>
+<li>
+<p>Examples:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ttyUSB0</code></p>
+</li>
+<li>
+<p><code>CAN0</code></p>
+</li>
+<li>
+<p><code>"TCP 192.168.1.1:8375"</code></p>
+</li>
+<li>
+<p><code>COM3</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_raw_data"><a class="anchor" href="#_raw_data"></a>raw_data</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Format depends on protocol:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NMEA0183: Complete sentence including checksum</p>
+</li>
+<li>
+<p>NMEA2000: Hex bytes including header, CAN ID</p>
+</li>
+<li>
+<p>SignalK: Complete JSON delta message with proper CSV escaping</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_optional_fields"><a class="anchor" href="#_optional_fields"></a>Optional Fields</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sent_at"><a class="anchor" href="#_sent_at"></a>sent_at</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Optional timestamp from the source that generated the data, such as the instrument or gateway.</p>
+</li>
+<li>
+<p>Same format as timestamp</p>
+</li>
+<li>
+<p>Source depends on protocol:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NMEA2000: Timestamp from PGN if available</p>
+</li>
+<li>
+<p>NMEA0183: Time field from sentence if available</p>
+</li>
+<li>
+<p>SignalK: timestamp field from gateway</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>May be empty if source has no timestamp.</p>
+</li>
+<li>
+<p>The sequence of source_timestamp may not be in chronological order because they may be emitted by different instruments.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_raw_message_logging"><a class="anchor" href="#_raw_message_logging"></a>Raw Message Logging</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>All messages must be logged exactly as received, without modification</p>
+</li>
+<li>
+<p>This includes:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Messages with invalid checksums</p>
+</li>
+<li>
+<p>Messages with incorrect formats</p>
+</li>
+<li>
+<p>Messages with invalid characters</p>
+</li>
+<li>
+<p>Incomplete or truncated messages</p>
+</li>
+<li>
+<p>Messages with incorrect field counts</p>
+</li>
+<li>
+<p>Messages with out-of-range values</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>No filtering or correction should be applied to the raw_data field</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_purpose"><a class="anchor" href="#_purpose"></a>Purpose</h3>
+<div class="paragraph">
+<p>High-fidelity logging enables:
+* Troubleshooting of communication issues
+* Analysis of device behavior
+* Exact replay of problematic sequences
+* Verification of data quality
+* Debugging of protocol implementations</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples_of_timestamp_formats"><a class="anchor" href="#_examples_of_timestamp_formats"></a>Examples of Timestamp Formats</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csv hljs" data-lang="csv"># timestamp_format: ISO8601
+received_at,protocol,msg_type,source,raw_data
+2024-02-16T10:00:00.123Z,NMEA0183,GPGGA,"COM3 Port 1",$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*47
+2024-02-16T10:00:00.234Z,NMEA2000,61184,"CAN Bus 1",18EF0003FF0300DD6789ABCD
+2024-02-16T10:00:00.345Z,SignalK,navigation.speedThroughWater,"TCP 10.0.0.1:3000","{""updates"":[{""values"":[{""path"":""navigation.speedThroughWater"",""value"":4.85}]}]}"
+
+# timestamp_format: EPOCH_MILLIS
+received_at,sent_at,protocol,source,msg_type,raw_data
+1708074000123,1708074000000,NMEA0183,"COM3 Port 1",GPGGA,...
+
+# timestamp_format: EPOCH_SECONDS
+received_at,sent_at,protocol,source,msg_type,raw_data
+1708074000,1708073999,NMEA0183,"COM3 Port 1",GPGGA,...</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples_of_preserved_issues"><a class="anchor" href="#_examples_of_preserved_issues"></a>Examples of Preserved Issues</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csv hljs" data-lang="csv"># timestamp_format: ISO8601
+received_at,protocol,msg_type,source,raw_data
+2024-02-16T10:00:00.123Z,NMEA0183,GPGGA,"COM3/NMEA0183/GP",$GPGGA,123519,4807.038,N,01131.000,E,1,08,0.9,545.4,M,46.9,M,,*XX
+2024-02-16T10:00:00.124Z,NMEA0183,GPGG,"COM3/NMEA0183/GP",$GPGG@,123519,4807.
+2024-02-16T10:00:00.125Z,NMEA2000,61184,"CAN0/NMEA2000",18EF0003XX0300INVALID
+2024-02-16T10:00:00.126Z,SignalK,navigation.speedThroughWater,"TCP/SignalK","{""updates"":[{""values:TRUNCATED"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>

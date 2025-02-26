@@ -1,0 +1,26 @@
+var classCatalogHandler =
+[
+    [ "CatalogHandler", "classCatalogHandler.html#a23cdb98b5f17cbdfe1255adce45c7666", null ],
+    [ "AddMetadataToActiveContext", "classCatalogHandler.html#aa3fb03569c644129bf122745dc36ee86", null ],
+    [ "ClearCatalogData", "classCatalogHandler.html#ac53fe5fa83ae9bf68639f6970e3cca30", null ],
+    [ "DefaultCatalogData", "classCatalogHandler.html#a45738177dcd12434f0cbcf76fd1ae3a1", null ],
+    [ "DoParseCatalog", "classCatalogHandler.html#a85f1ac3f9c69ac39fe3a2fee715eb5aa", null ],
+    [ "DownloadCatalog", "classCatalogHandler.html#ac477165517fcbe24ae7d8289a2798d48", null ],
+    [ "DownloadCatalog", "classCatalogHandler.html#a4635ffd30d62cc49909a4e0de7516251", null ],
+    [ "DownloadCatalog", "classCatalogHandler.html#a801e0d6e2a3f59a9404336ad371bf281", null ],
+    [ "DownloadCatalog", "classCatalogHandler.html#a21716f8d480eb4521efeb6453a002d91", null ],
+    [ "GetActiveCatalogContext", "classCatalogHandler.html#a65822c555b88ef16ed60af5aa675ac39", null ],
+    [ "GetActiveChannel", "classCatalogHandler.html#abaa40cb9eb7f36d9bc15bab128b0765d", null ],
+    [ "GetCatalogStatus", "classCatalogHandler.html#aeff454cef7d0b1dbd4bd7a23c0d2db8b", null ],
+    [ "GetChannels", "classCatalogHandler.html#a181e86f5e91672b6c9e566c84934f591", null ],
+    [ "GetCustomUrl", "classCatalogHandler.html#ace60a765945307c2f30c919976ea6edb", null ],
+    [ "GetDefaultUrl", "classCatalogHandler.html#a55319edae7e4f1428943de465f81026b", null ],
+    [ "LastErrorMsg", "classCatalogHandler.html#a830fec9c7f5e81e43a6811fcc2e0e173", null ],
+    [ "LatestCatalogData", "classCatalogHandler.html#a5a29a788c91cf6716538542825949c24", null ],
+    [ "LoadChannels", "classCatalogHandler.html#a4e94da52fad986f877d30dcc59ab4cbe", null ],
+    [ "LoadChannels", "classCatalogHandler.html#a20ff0a5eacc965a61f0dd758680689dd", null ],
+    [ "ParseCatalog", "classCatalogHandler.html#aa845f78ab96ae80b2a635849225337e6", null ],
+    [ "SetActiveChannel", "classCatalogHandler.html#aff3671432bc50491a75fec2db1bc86c6", null ],
+    [ "SetCustomUrl", "classCatalogHandler.html#abb677551d69e623ce3367c403540b3a9", null ],
+    [ "UserCatalogData", "classCatalogHandler.html#a8b9946d5f0c0d2e6a1198b9dd6ba866c", null ]
+];
