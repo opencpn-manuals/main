@@ -23,8 +23,9 @@ content:
     - url: https://github.com/opencpn/OpenCPN
       start_path: plugins/chartdldr_pi/manual/
 
-    - url: https://github.com/opencpn/OpenCPN
-      start_path: plugins/dashboard_pi/manual/
+    #- url: https://github.com/opencpn/OpenCPN
+    #  start_path: plugins/dashboard_pi/manual/
+    #  edit_url: https://github.com/OpenCPN/OpenCPN/edit/master/plugins/dashboard_pi/manual/modules/ROOT/pages/index.adoc
 
     - url: https://github.com/opencpn/OpenCPN
       start_path: plugins/grib_pi/manual/
@@ -37,9 +38,9 @@ content:
     - url: https://github.com/Rasbats/managed_plugins
       start_path: manual
 
-    - url: https://github.com/opencpn-manuals/plugins
-      start_paths:
-        - manual/plugins
+    #- url: https://github.com/opencpn-manuals/plugins
+    #  start_paths:
+    #    - manual/plugins
 
     - url: https://github.com/rgleason/admiralty_tide_tables_pi
       start_path: manual
