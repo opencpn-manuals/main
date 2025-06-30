@@ -18,29 +18,19 @@ content:
 
     - url: https://github.com/opencpn/OpenCPN
     # - url: https://github.com/leamas/OpenCPN
-      start_path: manual
-
-    - url: https://github.com/opencpn/OpenCPN
-      start_path: plugins/chartdldr_pi/manual/
-
-    #- url: https://github.com/opencpn/OpenCPN
-    #  start_path: plugins/dashboard_pi/manual/
-    #  edit_url: https://github.com/OpenCPN/OpenCPN/edit/master/plugins/dashboard_pi/manual/modules/ROOT/pages/index.adoc
-
-    - url: https://github.com/opencpn/OpenCPN
-      start_path: plugins/grib_pi/manual/
-
-    - url: https://github.com/opencpn/OpenCPN
-      start_path: plugins/wmm_pi/manual/
-
-    - url: https://github.com/leamas/ocpn-pi-docs.git
+      start_paths:
+      - manual
+      - plugins/chartdldr_pi/manual/
+      - plugins/grib_pi/manual/
+      - plugins/wmm_pi/manual/
+      - plugins/dashboard_pi/manual/
 
     - url: https://github.com/Rasbats/managed_plugins
       start_path: manual
 
-    #- url: https://github.com/opencpn-manuals/plugins
-    #  start_paths:
-    #    - manual/plugins
+    - url: https://github.com/opencpn-manuals/plugins
+      start_paths:
+        - manual/plugins
 
     - url: https://github.com/rgleason/admiralty_tide_tables_pi
       start_path: manual
