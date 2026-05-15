@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build": "npx antora site.yml"
+    "build": "npx antora --version; npx antora site.yml"
   },
   "repository": {
     "type": "git",
