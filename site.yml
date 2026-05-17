@@ -223,6 +223,9 @@ content:
     - url: https://github.com/jongough/windvane_pi
       start_path: manual
 
+    - url: https://github.com/TwoCanPlugIn/Demo.git
+      start_path: manual
+
 antora:
   extensions:
     - '@antora/lunr-extension'

@@ -1,3 +1,4 @@
+NOT USED -- to be removed
 * Included with OpenCPN
 ** xref:dashboard::index.adoc[Dashboard]
 ** xref:wmm::index.adoc[World Magnetic]
