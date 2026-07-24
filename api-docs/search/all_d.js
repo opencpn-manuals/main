@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['kcog_0',['kCog',['../structGenericPosDatEx.html#a0033139fbd12d40f3b38335cd33bad27',1,'GenericPosDatEx']]],
+  ['keditbtnid_1',['kEditBtnId',['../classTextEntryPanel.html#a5c28137265aa2ecb41101cd7bec86df0',1,'TextEntryPanel']]],
+  ['keepgoing_2',['KeepGoing',['../classThreadCtrl.html#ad658c77dc5738c6b3ec17d683ab31f8b',1,'ThreadCtrl']]],
+  ['key_3',['key',['../classPluginMsg.html#a72c5e1d0fd7f1e20ec652fb41fa48262',1,'PluginMsg::key()'],['../classNmea0183Msg.html#a248b5871a2ebe48e544492e2eab47ac3',1,'Nmea0183Msg::key()'],['../classNmea2000Msg.html#a17077cb26c8bf23be1eab6b586ed7f51',1,'Nmea2000Msg::key()'],['../classNavMsg.html#a47cf18d8002285627c46f974828a066d',1,'NavMsg::key()'],['../classAisData.html#a463f32b51bd3d2e5940ba3454ca5fab0',1,'AisData::key()'],['../classAppMsg.html#a8847b4a0be4e7351e923bfedb93b6849',1,'AppMsg::key()'],['../classAppNavMsg.html#a408f8844c607949ebe458167d7c9bf4d',1,'AppNavMsg::key()'],['../classObservable.html#a50cc756395d19d0868faa18ad9017fa5',1,'Observable::key'],['../classSignalkMsg.html#aa9529214c7dff1a04f5d1d4f0d260ef7',1,'SignalkMsg::key()'],['../classNullNavMsg.html#ad2adb6f35b171436983b49cebf028872',1,'NullNavMsg::key()'],['../classPlugInData.html#a8818f72ffd48e950e54443a3876a5766',1,'PlugInData::Key()'],['../structKEY.html',1,'KEY']]],
+  ['keyboardeventhook_4',['KeyboardEventHook',['../classopencpn__plugin__113.html#abd0fd0e984a733d368cff2b7ba0c1279',1,'opencpn_plugin_113']]],
+  ['keyprovider_5',['KeyProvider',['../classKeyProvider.html',1,'']]],
+  ['kfunnelsvg_6',['kFunnelSvg',['../gui_2include_2gui_2svg__icons_8h.html#aa75e35dcfdb6a4e0600d71becae51e76',1,'svg_icons.cpp']]],
+  ['kgpstimeoutseconds_7',['kGpsTimeoutSeconds',['../ocpn__platform_8h.html#a21e9d8b9fc24438eed483f9f81c94c0d',1,'ocpn_platform.h']]],
+  ['khdm_8',['kHdm',['../structGenericPosDatEx.html#a1b0f35378d7725cc3e6686d46d29243a',1,'GenericPosDatEx']]],
+  ['khdt_9',['kHdt',['../structGenericPosDatEx.html#a0666527a21a3b1c12ebdf86ae34d4774',1,'GenericPosDatEx']]],
+  ['klat_10',['kLat',['../structGenericPosDatEx.html#a6b7ca73e6f9f03d7cb344b0a265ca500',1,'GenericPosDatEx']]],
+  ['klon_11',['kLon',['../structGenericPosDatEx.html#afeb859280dceea2e74da3f458d5dc105',1,'GenericPosDatEx']]],
+  ['kml_12',['Kml',['../classKml.html',1,'']]],
+  ['kml_2ecpp_13',['kml.cpp',['../kml_8cpp.html',1,'']]],
+  ['kml_2eh_14',['kml.h',['../kml_8h.html',1,'']]],
+  ['kmlformatdialog_15',['KmlFormatDialog',['../classKmlFormatDialog.html',1,'']]],
+  ['knowndata_16',['knownData',['../classGribRecord.html#a33760568f035122c3b598dac27ac2610',1,'GribRecord']]],
+  ['ksog_17',['kSog',['../structGenericPosDatEx.html#aa4a76fb223956db8b135186039d070ac',1,'GenericPosDatEx']]],
+  ['ktextentryid_18',['kTextEntryId',['../classTextEntryPanel.html#ab3b53a4bc7489636b89156580ac621ae',1,'TextEntryPanel']]],
+  ['ktextid_19',['kTextId',['../classTextEntryPanel.html#aec4fb7f291a1a2047f8086c6a0781ac9',1,'TextEntryPanel']]],
+  ['kvar_20',['kVar',['../structGenericPosDatEx.html#ac0c2e6eedd7990583a89a1c91ada3d0c',1,'GenericPosDatEx']]]
+];

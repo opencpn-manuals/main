@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Demo Plugin :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/demo_plugin/index.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="demo_plugin" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-explore is-active" data-panel="explore">
+  <div class="context">
+    <span class="title">Demo Plugin</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/0.1/index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/TwoCanPlugIn/Demo/edit/master/manual/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Demo Plugin</h1>
+<div class="sect1">
+<h2 id="_links"><a class="anchor" href="#_links"></a>Links</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Source: <a href="https://github.com/twocanplugin/demo" class="bare">https://github.com/twocanplugin/demo</a> [Github Repository]</p>
+</div>
+<div class="paragraph">
+<p>Releases: <a href="https://github.com/TwoCanPlugIn/Demo/tags" class="bare">https://github.com/TwoCanPlugIn/Demo/tags</a> [Github Releases]</p>
+</div>
+<div class="paragraph">
+<p>Forum:
+<a href="https://www.cruisersforum.com/forums/f134/aspiring-plugin-developers-300137.html">Cruisers Forum Thread</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_1_aim"><a class="anchor" href="#_1_aim"></a>1. Aim</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This demo plugin demonstrates the use of many of the OpenCPN plugin API&#8217;s and should accelerate the development
+of new plugins. It uses a superset of the API&#8217;s used in the OpenCPN built-in demo plugin but more importantly is
+built using the same process that are used for third party plugins (ie. those installed using the plugin manager).</p>
+</div>
+<div class="paragraph">
+<p>It is based the "ShipDriver" template which is one of the two templates that are used to automate the Github,
+CircleCI and Cloudsmith processes. However the plugin can also be built and installed locally which greatly
+eases the task of programming, testing and debugging.</p>
+</div>
+<div class="paragraph">
+<p>It is not meant to demonstrate the best C/C++ coding practices, explain the intricacies of wxWidgets; the cross
+platform library used by OpenCPN, educate developers on how to use github, CircleCI and Cloudsmith nor
+describe the installation of the prerequisites (compiler, cmake, wxWidgets etc.)</p>
+</div>
+<div class="paragraph">
+<p>Each of the following chapters are git commits/tags. Each chapter introduces a new scenario using a different set
+of API&#8217;s and should be independent of one another. That means you "should" be able to git cherry pick different
+commits/tags to add specific features to the plugin.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_install"><a class="anchor" href="#_2_install"></a>2. Install</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-01.png" alt="demo plugin 01">
+</div>
+</div>
+<div class="paragraph">
+<p>Download the plugin tarball from the repository or if built locally, it will be present in the build directory.
+Install using the plugin manager. Tools→Plugins→Import plugin.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-02.png" alt="demo plugin 02">
+</div>
+</div>
+<div class="paragraph">
+<p>The plugin manager displays a dialog indicating the plugin has been successfully installed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-03.png" alt="demo plugin 03">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_enabling"><a class="anchor" href="#_3_enabling"></a>3. Enabling</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Enable the plugin using Tools→Plugins, find the Demo Plugin entry and tick the checkbox.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-04.png" alt="demo plugin 04">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_using_the_opencpn_plugin_apis"><a class="anchor" href="#_4_using_the_opencpn_plugin_apis"></a>4. Using the OpenCPN Plugin API&#8217;s</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_chapter_1_basic_plugin_mandatory_apis_logging_plugin_folders"><a class="anchor" href="#_chapter_1_basic_plugin_mandatory_apis_logging_plugin_folders"></a>Chapter 1. Basic plugin, Mandatory API&#8217;s, Logging, Plugin Folders</h3>
+<div class="paragraph">
+<p>This is a basic plugin, that demonstrates the mandatory API&#8217;s that a plugin MUST support.</p>
+</div>
+<div class="paragraph">
+<p>Note that the class that implements the plugin, derives from an OpenCPN plugin base class. Over successive versions of OpenCPN
+new functions and members have been added to the base classes. The plugin need only inherit from a base class that provides the
+API&#8217;s required for the plugin&#8217;s desired capabilites.</p>
+</div>
+<div class="paragraph">
+<p>For example, a plugin that is derived from the OpenCPN Plugin API version 1.17 base class uses the following constructor.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">DemoPlugin::DemoPlugin(void* ppimgr) : opencpn_plugin_117(ppimgr)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The mandatory API&#8217;s that all plugins must implement</p>
+</div>
+<div class="paragraph">
+<p>These two API&#8217;s indicate what version of the OpenCPN API&#8217;s are supported</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">GetAPIVersionMajor()
+GetAPIVersionMinor()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Eg. if the plugin is derived from OpenCPN Plugin API 1.17, the major version number is 1 and the minor version
+number is 17</p>
+</div>
+<div class="paragraph">
+<p>These three API&#8217;s indicate the version number of the plugin</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">GetPlugInVersionMajor()
+GetPlugInVersionMinor()
+GetPlugInVersionPatch()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Eg. If the plugin version is 1.2.3, the major version is 1, the minor version is 2 and  the patch version is 3.</p>
+</div>
+<div class="paragraph">
+<p>This returns the name of the plugin and is displayed in the Plugin Manager</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">GetCommonName()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following two API&#8217;s return a long and short description, both of which are displayed in the Plugin Manager</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">GetShortDescription()
+GetLongDescription()</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This API returns the icon for the plugin which is displayed in the Plugin Manager. It should be a 32 x 32 pixel bitmap.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">GetPlugInBitmap()</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-04.png" alt="demo plugin 04">
+</div>
+</div>
+<div class="paragraph">
+<p>In addition the plugin dumps some of the OpenCPN standard folder paths and user&#8217;s measurement units into the
+OpenCPN log file using wxLogMessage. This OpenCPN log is the preferred mechanism for plugins to log messages. Eg.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxLogMessage("Demo Plugin, Speed Units: %s", getUsrSpeedUnit_Plugin());</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To log important error messages, you can also us wxLogError.</p>
+</div>
+<div class="paragraph">
+<p>In addition the plugin dumps some of the OpenCPN standard folder paths and user&#8217;s measurement units into the OpenCPN log file
+using wxLogMessage. This OpenCPN log is the preferred mechanism for plugins to log messages. To log important error messages,
+you can also use wxLogError.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_2_configuration_default_settings"><a class="anchor" href="#_chapter_2_configuration_default_settings"></a>Chapter 2. Configuration (Default Settings)</h3>
+<div class="paragraph">
+<p>OpenCPN and plugins persist configuration settings using the wxWidgets file based configuration class. This allows settings
+to be persisted in a standard ini file format.</p>
+</div>
+<div class="paragraph">
+<p>Settings can saved using code similar to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxFileConfig* configSettings = GetOCPNConfigObject();
+	if (configSettings) {
+		configSettings-&gt;SetPath("/PlugIns/DemoPlugin");
+		configSettings-&gt;Write("A_Boolean_Value", g_someBooleanValue);
+		configSettings-&gt;Write("An_Integer_Value", g_someIntegerValue);
+		configSettings-&gt;Write("A_String_Value", g_someStringValue);
+	}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Upon plugin installation and enabling, an OpenCPN Callback API SetDefaults can be implemented to allow the plugin to perform its initial
+configuration. In this example, a wxWizard dialog is displayed to allow the users to configure the plugin&#8217;s settings.
+However developers are free to implement any UI they wish, or in fact not display any UI, rather just adopt some default values.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SetDefaults(void) {
+	auto installationWizard = std::make_unique&lt;DemoWizard&gt;(GetOCPNCanvasWindow());
+	if (installationWizard-&gt;RunWizard(installationWizard-&gt;m_pages.at(0))) {
+		SaveSettings();
+	}
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-05.png" alt="demo plugin 05">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_3_settingspreferences"><a class="anchor" href="#_chapter_3_settingspreferences"></a>Chapter 3. Settings/Preferences</h3>
+<div class="paragraph">
+<p>There are two mechanisms that may be used to display an interface to allow users to configure the plugin.
+The first mechanism adds a notebook page to any of the notebook tabs (Display, Charts, Ship, User) in the OpenCPN Toolbox.
+This requires the INSTALL_TOOLBOX_PAGE value to be returned in the Init function and the OnSetupOptions function to be overridden</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::OnSetupOptions(void) {
+	auto toolBoxWindow = AddOptionsPage(OptionsParentPI::PI_OPTIONS_PARENT_UI, _("Demo Settings"));
+	auto toolboxSizer = new wxBoxSizer(wxVERTICAL);
+	toolBoxWindow-&gt;SetSizer(toolboxSizer);
+	auto demoToolbox =  new DemoToolbox(toolBoxWindow);
+	toolboxSizer-&gt;Add(demoToolbox, 1, wxALL | wxEXPAND);
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-06.png" alt="demo plugin 06">
+</div>
+</div>
+<div class="paragraph">
+<p>The second mechanism is for the plugin to provide its own dialog which is displayed from the plugin&#8217;s preference option. This requires
+the WANTS_PREFERENCES value to be returned in the Init function and the ShowPreferencesDialog function to be overridden.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-07.png" alt="demo plugin 07">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::ShowPreferencesDialog(wxWindow* parent) {
+	auto demoSettings = std::make_unique&lt;DemoSettings&gt;(parent, wxID_ANY, _("Demo Preferences"));
+	if (wxID_OK == demoSettings-&gt;ShowModal()) {
+		SaveSettings();
+	}
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-08.png" alt="demo plugin 08">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_4_context_menus"><a class="anchor" href="#_chapter_4_context_menus"></a>Chapter 4. Context Menus</h3>
+<div class="paragraph">
+<p>One method that a plugin may solicit input from a user is via context menu items. The plugin
+may add its own context menu items to the root context menu which will be displayed when the
+user right clicks on the OpenCPN Canvas.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-09.png" alt="demo plugin 09">
+</div>
+</div>
+<div class="paragraph">
+<p>Context Menu items are added using code similar to:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto demoContextMenu = new wxMenuItem(NULL, wxID_HIGHEST + 1, "Demo", "Demo Plugin Menu", wxITEM_NORMAL, NULL);
+demoContextMenuId = AddCanvasContextMenuItem(demoContextMenu, this);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the context menu item is selected, the plugin handles the callback, checking that
+the context menu item id matches and performs whatever functions the plugin requires.
+In this example just a message box is displayed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::OnContextMenuItemCallback(int id) {
+	if (id == demoContextMenuId) {
+		wxMessageBox(wxString::Format("Demo Context Menu Selected, Menu Id: %d", id), "Demo Plugin");
+	}
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-11.png" alt="demo plugin 11">
+</div>
+</div>
+<div class="paragraph">
+<p>Context Menu Items may also be added to the Sub Menus for AIS, Routes, Waypoints and Tracks.
+This is only supported when using OpenCPN API level 1.20 or higher. An example of adding a
+context menu item to the AIS sub menu is shown below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto dscMenu = new wxMenuItem(NULL, wxID_HIGHEST + 2, "AIS Demo", "Demo Plugin AIS Sub Menu", wxITEM_NORMAL, NULL);
+demoAISContextMenuId = AddCanvasContextMenuItemExt(dscMenu, this, "AIS");</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-12.png" alt="demo plugin 12">
+</div>
+</div>
+<div class="paragraph">
+<p>Again plugins may perform any function that is required, in this case just displaying a
+message box with some details about the selected AIS target. Also note that some OpenCPN helper
+API&#8217;s are used to format the latitude and longitude which are stored internally by OpenCPN
+as doubles, into human readable strings.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::OnContextMenuItemCallbackExt(int id, std::string obj_ident, std::string obj_type, double lat, double lon) {
+	if (id == demoAISContextMenuId) {
+		wxMessageBox(wxString::Format("Object Id: %d\nObject Identifier (MMSI): %s\nObject Type: %s\nLatitude: %s\nLongitude: %s",
+			id, obj_ident.c_str(), obj_type.c_str(), toSDMM_PlugIn(1, lat, true),
+			toSDMM_PlugIn(2, lon, true)), "AIS Target Information",
+			wxOK | wxICON_INFORMATION);
+	}
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-13.png" alt="demo plugin 13">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_5_toolbar"><a class="anchor" href="#_chapter_5_toolbar"></a>Chapter 5. Toolbar</h3>
+<div class="paragraph">
+<p>Plugins may install a toolbar button to allow different tasks to be performed. Firstly create your
+toolbar button icons as Scaled Vector Graphics (.SVG) files.  Create three icons to represent the
+normal (untoggled) state, toggled state and rollover state (although for some reason OpenCPN
+does not process a rollover event).</p>
+</div>
+<div class="paragraph">
+<p>The following code is used to create the toolbar button:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">demoToolbarId = InsertPlugInToolSVG("Demo", normalIcon,
+		rolloverIcon, toggledIcon, wxITEM_CHECK, "Demo", "Demo Plugin Toolbar Description", NULL, -1, 0, this);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note to also add the value INSTALLS_TOOLBAR_BUTTON to the return value of the Init function
+The toolbar button will then be displayed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-14.png" alt="demo plugin 14">
+</div>
+</div>
+<div class="paragraph">
+<p>To handle the toolbar button press, code similar to the following is invoked by the callback.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::OnToolbarToolCallback(int id) {
+	if (id == demoToolbarId) {
+		isToolbarActive = !isToolbarActive;
+		SetToolbarItemState(id, isToolbarActive);
+		wxMessageBox(wxString::Format("Demo Toolbar invoked, Id: %d", id), "Demo Plugin");
+		isToolbarActive = !isToolbarActive;
+		SetToolbarItemState(id, isToolbarActive);
+	}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example the plugin only displays a message box. Note that the state of the button
+is toggled while the message box is displayed using the SetToolbarItemState function.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-15.png" alt="demo plugin 15">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_6_navigation_data"><a class="anchor" href="#_chapter_6_navigation_data"></a>Chapter 6. Navigation Data</h3>
+<div class="paragraph">
+<p>OpenCPN provides plugins with navigation data; Speed Over Ground (SOG), Course Over Ground (COG),
+Heading (True and Magnetic), Latitude and Longitude once per second.</p>
+</div>
+<div class="paragraph">
+<p>There are two mechanisms for receiving this data.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The "old" mechanism uses callback API&#8217;s SetPositionFix (excludes heading) or SetPositionFixEx which
+the plugin registers during the Init function by returning the value WANTS_NMEA_EVENTS. Plugins then override
+SetPositionFix or SetPositionFixEx as appropriate.</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SetPositionFixEx(PlugIn_Position_Fix_Ex&amp; pfix) {
+	// Persist our current position and heading.
+	currentLatitude = pfix.Lat;
+	currentLongitude = pfix.Lon;
+	trueHeading = pfix.Hdt;
+}</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>The "new" method uses the observer listener model which was introduced with OpenCPN 5.10. While the older model
+using callback API&#8217;s can be used for Navigation Data, NMEA 0183 and internal Messaging, this new model is the only
+method by which plugins can receive NMEA 2000 data in addition to Navigation Data, NMEA 0183, SignalK and Messaging.
+In general this model is preferred over using callback API&#8217;s.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Plugins register their subscribers during initialization and implement an appropriate handler.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Register handler for OpenCPN Navigation Data observer/listener events
+	wxDEFINE_EVENT(EVT_NAV_DATA, ObservedEvt);
+	listener_nav = std::move(GetListener(NavDataId(), EVT_NAV_DATA, this));
+	Bind(EVT_NAV_DATA, [&amp;](ObservedEvt ev) {
+		HandleNavData(ev);
+		});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remember to ensure the plugin class inherits from the wxWidgets wxEvtHandler class.</p>
+</div>
+<div class="paragraph">
+<p>When the handler is invoked, plugins retrieve the event payload and parse as appropriate.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Handler for Navigation Data events
+void DemoPlugin::HandleNavData(ObservedEvt ev) {
+	// Persist our current position and heading
+	PluginNavdata navdata = GetEventNavdata(ev);
+	currentLatitude = navdata.lat;
+	currentLongitude = navdata.lon;
+	trueHeading = navdata.hdt;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_7_nmea_0183"><a class="anchor" href="#_chapter_7_nmea_0183"></a>Chapter 7. NMEA 0183</h3>
+<div class="sect3">
+<h4 id="_receiving_nmea_0183"><a class="anchor" href="#_receiving_nmea_0183"></a>Receiving NMEA 0183</h4>
+<div class="paragraph">
+<p>There are two mechanisms for a plugin to receive NMEA 0183 data from OpenCPN.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>The "old" method using the callback API SetNMEASentence.
+This is the original method initially implemented by OpenCPN. Plugins register the callback
+function by including WANTS_NMEA_SENTENCES with the return value of the Init function. Plugins then
+implement the SetNMEASentence function and will then receive ALL NMEA0183 sentences received by OpenCPN.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Plugins then process all received sentences and act on those sentences that are of interest.</p>
+</div>
+<div class="paragraph">
+<p>In the demo plugin, the following code implements the callback API used to receive NMEA 0183 sentences.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SetNMEASentence(wxString&amp; sentence) {
+ ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>One the plugin has received the NMEA sentence, it may process the sentence using any method. The
+OpenCPN support libraries include a set of NMEA 0183 libraries.</p>
+</div>
+<div class="paragraph">
+<p>These can be added to the plugin by including them with the CMAKE scripts;
+if using the Shipdriver template in Plugin.cmake or if using the Testplugin template, in CMakelists.txt</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">add_subdirectory(opencpn-libs/nmea0183)
+target_link_libraries(${PACKAGE_NAME} ocpn::nmea0183)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following code snippet demonstrates usage of the bundled NMEA 0183 library, in this case
+parsing the NMEA 0183 MWV (Wind transducer) sentence, for example $WIMWV,190.0,R,11.4,K,A*1A</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SetNMEASentence(wxString&amp; sentence) {
+	NMEA0183 parserNMEA0183;
+	parserNMEA0183 &lt;&lt; sentence;
+	// This checks that the sentence is valid (has a talker id, mnemonic &amp; valid checksum)
+	if (parserNMEA0183.PreParse()) {
+		if (parserNMEA0183.LastSentenceIDReceived == "MWV") {
+			if (parserNMEA0183.Parse()) {
+				if (parserNMEA0183.Mwv.Reference == "R") {
+					// Relative Wind Angle
+					double apparentWindAngle = parserNMEA0183.Mwv.WindAngle;
+					if (parserNMEA0183.Mwv.WindSpeedUnits == "N") {
+						// Wind Speed in Knots
+						double apparentWindSpeed = parserNMEA0183.Mwv.WindSpeed;
+					}
+				}
+			}
+		}
+	}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This same library can be used with either the "old" callback API SetNMEASentence or the "new"
+API using the observer listener model described below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>The "new" method uses the observer listener model introduced with OpenCPN 5.10.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This model may be more efficient for receiving NMEA 0183 data as plugins register to
+receive only the sentences that are of interest.</p>
+</div>
+<div class="paragraph">
+<p>Just for the sake of demonstration purposes, OpenCPN also provides  a "Late" or "Delayed"
+initialization callback for plugins. Generally most of OpenCPN&#8217;s core services have been started
+by the time a plugin is loaded, however there may be occasions when not all services have been started
+when the plugin has been loaded. In this example, we will use the LateInit callback
+function to register the event handler. This "Late" Init requires the WANTS_LATE_INIT value to be
+included in the return value for the Init fnction. Plugins then implement the LateInit callback API.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::LateInit() {
+	wxDEFINE_EVENT(EVT_183_VHW, ObservedEvt);
+	NMEA0183Id id_vhw = NMEA0183Id("VHW");
+	listener_vhw = std::move(GetListener(id_vhw, EVT_183_VHW, this));
+	Bind(EVT_183_VHW, [&amp;](ObservedEvt ev) {
+		HandleVHW(ev);
+	});
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Plugins then implement the handler for the specific event.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::HandleVHW(ObservedEvt ev) {
+	NMEA0183Id id_183_vhw("VHW");
+	wxString sentence = GetN0183Payload(id_183_vhw, ev);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You may then parse the received sentence using the NMEA 0183 libraries as described previously.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_transmitting_nmea_0183"><a class="anchor" href="#_transmitting_nmea_0183"></a>Transmitting NMEA 0183</h4>
+<div class="paragraph">
+<p>There are two mechanisms for a plugin to send NMEA 0183 data to OpenCPN.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="1">
+<li>
+<p>The "old" method using the Plugin API PushNMEABuffer.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This is the original method initially implemented by OpenCPN. NMEA 0183 sentences generated by a plugin and
+transmitted to core OpenCPN are both consumed by core OpenCPN and also transitted to any outbound NMEA 0183 connection.</p>
+</div>
+<div class="paragraph">
+<p>All plugins need to do is generate a valid NMEA 0183 sentence including the sentence delimiter ('$' or '!' character),
+talker id, mnenomic, checksum delimiter ('*' character) and checksum.</p>
+</div>
+<div class="paragraph">
+<p>The bundled OpenCPN NMEA 0183 libaries can be used to generate valid sentences, for example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxString DemoPlugin::FormatTrueWindSentence(void) {
+	NMEA0183 NMEA0183parser;
+	SENTENCE NMEASentence;
+
+	NMEA0183parser.TalkerID = "II";
+	NMEA0183parser.Mwv.Empty();
+	NMEA0183parser.Mwv.WindAngle = trueWindAngle;
+	NMEA0183parser.Mwv.Reference = "T";
+	NMEA0183parser.Mwv.WindSpeed = trueWindSpeed;
+	NMEA0183parser.Mwv.WindSpeedUnits = "N";
+	NMEA0183parser.Mwv.IsDataValid = NTrue;
+
+	NMEA0183parser.Mwv.Write(NMEASentence);
+
+	return NMEASentence.Sentence;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The NMEA 0183 sentence can then transmitted using the PushNMEABuffer API, eg.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxString data = FormatTrueWindSentence();
+PushNMEABuffer(data);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can verify the generation of NMEA 0183 using the Data Monitor.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-16.png" alt="demo plugin 16">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>The "new" method uses the Observer/Listener model. Plugins need to obtain a "handle" to an OpenCPN connection. All
+connections, irrespective of interface (serial/usb, udp, tcp), protocol (NMEA 0183, NMEA 2000, SignalK) and direction (in, out, in/out)
+expose a driver handle.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Each connection&#8217;s properties are stored in an unordered map of string key/value pairs, for example:
+protocol, nmea0183
+ioDirection, OUT</p>
+</div>
+<div class="paragraph">
+<p>The connections are stored in a vector of the unordered maps. The API GetActiveDrivers returns the vector containing
+all of the drivers. Each driver is then used as the argument to the GetAttributes API to retrieve the unordered map.</p>
+</div>
+<div class="paragraph">
+<p>For example to find an outbound nmea0183 interface:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::string FindNMEA0183Interface() {
+	for (const auto&amp; driver : GetActiveDrivers()) {
+		const auto&amp; attributes = GetAttributes(driver);
+
+		auto protocolIterator = attributes.find("protocol");
+		auto directionIterator = attributes.find("ioDirection");
+
+		if (protocolIterator != attributes.end() &amp;&amp; directionIterator != attributes.end()) {
+			// Find a connection matching the required connection and io direction
+			if ((protocolIterator-&gt;second == "nmea0183") &amp;&amp; ((directionIterator-&gt;second == "OUT") ||
+				(directionIterator-&gt;second == "IN/OUT"))) {
+				return driver;
+			}
+		}
+	}
+	return {};
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The plugin then uses the returned handle when writing to the interface using the WriteCommDriver API.
+(Note, that although the handle is a string value, the handle is meant to be opaque)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::string sentence = "$GPGLL,3825.70,S,14433.31,E ,150531.70.00,A,A*76";
+std::vector&lt;uint8_t&gt; payload(sentence.begin(), sentence.end());
+auto sharedPointer = std::make_shared&lt;std::vector&lt;uint8_t&gt; &gt;(std::move(payload));
+CommDriverResult result = WriteCommDriver(networkHandle, sharedPointer);
+if (result != RESULT_COMM_NO_ERROR) {
+	wxLogMessage("Demo Plugin, Error sending NMEA 0183 Sentence: %d", result);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_8_nmea_2000"><a class="anchor" href="#_chapter_8_nmea_2000"></a>Chapter 8. NMEA 2000</h3>
+<div class="sect3">
+<h4 id="_receiving_nmea_2000"><a class="anchor" href="#_receiving_nmea_2000"></a>Receiving NMEA 2000</h4>
+<div class="paragraph">
+<p>NMEA 2000 support for OpenCPN was only recently introduced and required a new connection mechansm which resuted
+in the Observer/Listener model that is now also used for NMEA 0183, SignalK and Messaging.</p>
+</div>
+<div class="paragraph">
+<p>Similar to described above, Plugins register for the NMEA 2000 Parameeter Group Numbers (PGN&#8217;s) that are of interest.
+For example the following snippet registers the plugin to receive PGN 130306 which encodes Wind Speed and Direction</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Register subscriber for PGN 130306 Wind
+wxDEFINE_EVENT(EVT_N2K_130306, ObservedEvt);
+NMEA2000Id id_130306 = NMEA2000Id(130306);
+listener_130306 = std::move(GetListener(id_130306, EVT_N2K_130306, this));
+Bind(EVT_N2K_130306, [&amp;](ObservedEvt ev) {
+	HandleN2K_130306(ev);
+	});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again, plugins implement the handler to receive and parse the NMEA 2000 data. Unlike NMEA 0183 where the sentences
+are ASCII text, NMEA 2000 uses a binary format and some bit twiddling is required to parse the data.
+OpenCPN bundles NMEA 2000 libraries, that parse most of the standard PGN&#8217;s. These libraries are
+derived from Timo Lappalainen&#8217;s libraries (<a href="https://github.com/ttlappalainen" class="bare">https://github.com/ttlappalainen</a>). For proprietary PGN&#8217;s (for example used by
+commercial vendors for configuration, autopilots, media players etc.) you will need to implement your own parsers.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Parse NMEA 2000 PGN 128269 message (Boat Speed)
+void DemoPlugin::HandleN2K_128259(ObservedEvt ev) {
+	NMEA2000Id id_128259(128259);
+	std::vector&lt;uint8_t&gt; payload = GetN2000Payload(id_128259, ev);
+	unsigned char sequenceId;
+	double boatSpeedWaterReferenced;
+	double boatSpeedGroundReferenced;
+	tN2kSpeedWaterReferenceType waterReferenceType;
+
+	if (ParseN2kPGN128259(payload, sequenceId, boatSpeedWaterReferenced, boatSpeedGroundReferenced, waterReferenceType)) {
+		// Convert from NMEA 2000 SI units which are m/s to OpenCPN's core units
+		boatSpeed = fromUsrSpeed_Plugin(boatSpeedWaterReferenced, 3);
+	}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the payload as returned from GetN2000Payload is not simply the NMEA 2000 message, but is encapsulated as an Actisense
+NGT-1 frame. If you are parsing the payload using your own library, you will need to "unpack" this format yourself.
+A text representation of the binary payload, once the Data Link Escape (DLE),
+Start of Transmission (STX) and End of Transmission (ETX) delimiters have been removed is:</p>
+</div>
+<div class="paragraph">
+<p>93 13 02 01 F8 01 FF 01 76 C2 52 00 08 08 70 EB 14 E8 8E 52 D2 BB 10</p>
+</div>
+<div class="paragraph">
+<p>This decodes as:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">command</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x93</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Value = 0x93 indicates NGT-1 format</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x13</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Length of frame excluding command, length and CRC</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">priority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x02</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NMEA 2000 priorty</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PGN</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x01 0xF8 0x01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Decodes to PGN 129025</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">destination</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0xFF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Destination Address (NMEA 2000 Broadcast Address)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Source Address</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 bytes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x76 0xC2 0x52 0x00</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time in milliseconds</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x08</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Actual NMEA 2000 payload length</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data length</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x08 0x70 0xEB 0x14 0xE8 0x8E 0x52 0xD2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NMEA 2000 data</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checksum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 byte</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0xBB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ensures sum of characters % 256 equals 0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_transmitting_nmea_2000"><a class="anchor" href="#_transmitting_nmea_2000"></a>Transmitting NMEA 2000</h4>
+<div class="paragraph">
+<p>Similar to the "new" method for transmitting NMEA 0183, the first thing that is required to transmit NMEA 2000 is to obtain
+a handle to an appropriate connection.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::string FindNMEA2000Interface() {
+	for (const auto&amp; driver : GetActiveDrivers()) {
+		const auto&amp; attributes = GetAttributes(driver);
+
+		auto protocolIterator = attributes.find("protocol");
+		auto directionIterator = attributes.find("ioDirection");
+
+		if (protocolIterator != attributes.end() &amp;&amp; directionIterator != attributes.end()) {
+			// Find a connection matching the required connection and io direction
+			if ((protocolIterator-&gt;second == "nmea2000") &amp;&amp; ((directionIterator-&gt;second == "OUT") ||
+				(directionIterator-&gt;second == "IN/OUT"))) {
+				return driver;
+			}
+		}
+	}
+	return {};
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition, because the Actisense NGT-1 adapter requires a "list" of transmitted PGN&#8217;s, OpenCPN needs to send an appropriate
+command to the adapter. As OpenCPN does not provide a mechanism to inform plugins what NMEA 2000 adapters are connected, it is
+best to always call this function. For adapters other than an Actisense NGT-1, it is essentially a NOP. For example, if the
+plugin transmits PGN&#8217;s 130323 (Meteorological Station data) &amp;  130324 (Moored Buoy data), the plugin
+needs to configure the Actisense NGT-1 to transmit those PGN&#8217;s</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::vector&lt;int&gt; transmittedPGN = { 130323, 130324 };
+RegisterTXPGNs(networkHandle, transmittedPGN);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To transmit the NMEA 2000 data, the plugin needs to construct the NMEA 2000 payload and set the
+destination address (which in many cases is the global destination address; 255), priority and
+Parameter Group Number (PGN).</p>
+</div>
+<div class="paragraph">
+<p>Also note that for PGN&#8217;s that are Fast Messages (eg. the message requires more than one frame), OpenCPN
+performs the fragmentation of a Fast Message into individual frames.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::vector&lt;uint8_t&gt; DemoPlugin::FormatTrueWindMessage(void) {
+	tN2kMsg msg130306;
+	SetN2kWindSpeed(msg130306, 1, trueWindSpeed, trueWindAngle, tN2kWindReference::N2kWind_True_boat);
+	std::vector&lt;uint8_t&gt; data(msg130306.Data, msg130306.Data + msg130306.DataLen);
+	return data;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once the NMEA 2000 message has been constructed, the API WriteCommDriverN2K is used to transmit
+the message using the selected driver handle.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SendNMEA2000(const std::string&amp; networkHandle, const unsigned char&amp; destination,
+	const unsigned char&amp; priority, const unsigned int pgn, std::vector&lt;uint8_t&gt;&amp; payload) {
+	auto sharedPointer = std::make_shared&lt;std::vector&lt;uint8_t&gt;&gt;(payload);
+	CommDriverResult result = WriteCommDriverN2K(networkHandle, pgn, destination, priority, sharedPointer);
+	if (result != RESULT_COMM_NO_ERROR) {
+		wxLogMessage("Demo Plugin, Error sending NMEA 2000 PGN %d: %d", pgn, result);
+	}
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-17.png" alt="demo plugin 17">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_9_ocpn_messaging"><a class="anchor" href="#_chapter_9_ocpn_messaging"></a>Chapter 9. OCPN Messaging</h3>
+<div class="paragraph">
+<p>OpenCPN messaging is a mechanism that allows both OpenCPN to communicate with Plugins and for
+plugins to communicate with one another. Messages are identified with a message id and the data
+is usually formatted using Java Script Object Notation (JSON).</p>
+</div>
+<div class="paragraph">
+<p>Some of the well known OpenCPN Messages include:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GLOBAL_SETTINGS_UPDATED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OpenCPN Config</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_CORE_SIGNALK</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_OPENGL_CONFIG</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WMM_VARIATION_BOAT</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WMM_VARIATION_BOAT_REQUEST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WMM_WINDOW_SHOWN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WMM_WINDOW_HIDDEN</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AIS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_WPT_ACTIVATED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_WPT_DEACTIVATED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_WPT_ARRIVED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_RTE_ACTIVATED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_RTE_DEACTIVATED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_RTE_ENDED</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OCPN_RTE_REQUEST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GRIB_VALUES</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Similar to NMEA 0183, there are two ways to receive and to generate an OpenCPN message; the old
+mechanism using a Callback API SetPluginMessage to receive messages and the API SendPluginMessage
+transmit a message. The second mechanism uses the Observer/Listener model where plugin register to
+receive specific message id&#8217;s and use the API WriteCommDriver to send a message.</p>
+</div>
+<div class="paragraph">
+<p>As messages in general are formatted using JSON, plugins can use the included wxJSON library to
+parse or encode messages.</p>
+</div>
+<div class="sect3">
+<h4 id="_using_the_old_mechanism_to_receive_messages"><a class="anchor" href="#_using_the_old_mechanism_to_receive_messages"></a>Using the "old" mechanism to receive messages.</h4>
+<div class="paragraph">
+<p>To receive messages, plugins need to implement the SetPluginMessage callback API. The two
+parameters to the API are the message id and the message body. The plugin must include the
+value WANTS_PLUGIN_MESSAGING in the return value of the Init function.</p>
+</div>
+<div class="paragraph">
+<p>In this example we&#8217;ll just log the message generated whenever a waypoint is activated.
+The next chapter about SignalK will provide an example of parsing the JSON data.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SetPluginMessage(wxString&amp; message_id, wxString&amp; message_body) {
+	if (message_id == "OCPN_WPT_ACTIVATED") {
+		wxLogMessage("Demo Plugin, Waypoint activated: %s", message_body);
+	}
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_the_old_mechanism_to_transmit_messages"><a class="anchor" href="#_using_the_old_mechanism_to_transmit_messages"></a>Using the "old" mechanism to transmit messages.</h4>
+<div class="paragraph">
+<p>As plugin messages are generally encoded as JSON, this demo will use the bundled wxJSON library
+to encode the message, which will simple be the calculated true wind angle and true wind speed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxJSONValue root;
+wxJSONWriter writer;
+wxString data;
+root["truewind"]["windangle"] = trueWindAngle;
+root["truewind"]["windspeed"] = trueWindSpeed;
+writer.Write(root, data);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To transmit the message, which can potentially be received and consumed by any other plugin,
+the SendPluginMessage API is invoked.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">SendPluginMessage("Demo_Plugin", data);</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-18.png" alt="demo plugin 18">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_the_new_observerlistener_model_to_receive_plugin_messages"><a class="anchor" href="#_using_the_new_observerlistener_model_to_receive_plugin_messages"></a>Using the "new" Observer/Listener model to receive Plugin messages.</h4>
+<div class="paragraph">
+<p>Using the observer listener model introduced with OpenCPN 5.10, plugins register to
+receive only the Plugin messages that are of interest. In this example, route activation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxDEFINE_EVENT(EVT_OCPN_MSG, ObservedEvt);
+	PluginMsgId msg_id = PluginMsgId("OCPN_RTE_ACTIVATED");
+	listener_route = std::move(GetListener(msg_id, EVT_OCPN_MSG, this));
+	Bind(EVT_OCPN_MSG, [&amp;](ObservedEvt ev) {
+		HandleMsg_RouteActivated(ev);
+		});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Plugins then handle the received message using the by now familiar boilerplate code used by
+Observer/Listener message handlers, namely;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::HandleMsg_RouteActivated(ObservedEvt ev) {
+	PluginMsgId msg_id = PluginMsgId("OCPN_RTE_ACTIVATED");
+	std::string message_body = GetPluginMsgPayload(msg_id, ev);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using the bundled wxJSON libraries, plugins may parse the received JSON data. In this example
+parsing the JSON data that accompanies a Route Activation plugin message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxJSONValue root;
+wxJSONReader jsonReader;
+int errors = jsonReader.Parse(message_body, &amp;root);
+if (errors &gt; 0) {
+	wxLogMessage("Demo Plugin, JSON Error in %s", message_body);
+	wxArrayString jsonErrors = jsonReader.GetErrors();
+	for (auto &amp;it : jsonErrors) {
+		wxLogMessage(it);
+	}
+	return;
+}
+else {
+	wxString route_name;
+	wxString guid;
+	if (root.HasMember("Route_activated")) {
+		route_name = root["Route_activated"].AsString();
+	}
+	if (root.HasMember("GUID")) {
+		guid = root["GUID"].AsString();
+	}
+	// Do something useful with the route name and globally unique id (GUID)
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_using_the_new_observerlistener_model_to_transmit_plugin_messages"><a class="anchor" href="#_using_the_new_observerlistener_model_to_transmit_plugin_messages"></a>Using the "new" Observer/Listener model to transmit Plugin messages.</h4>
+<div class="paragraph">
+<p>Similar to transmitting NMEA 0183 sentences and NMEA 2000 messages using the observer/listener
+model, plugins can also send plugin messages using the "new" mechanism.</p>
+</div>
+<div class="paragraph">
+<p>Plugins retrieve a handle to the "internal" driver using the same method described previously
+for obtaining handles for NMEA 0183 or NMEA 2000 interfaces.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::string FindInternalInterface() {
+	for (const auto&amp; driver : GetActiveDrivers()) {
+		const auto&amp; attributes = GetAttributes(driver);
+
+		auto protocolIterator = attributes.find("protocol");
+		auto directionIterator = attributes.find("ioDirection");
+
+		if (protocolIterator != attributes.end() &amp;&amp; directionIterator != attributes.end()) {
+			// Find a connection matching the required connection and io direction
+			if ((protocolIterator-&gt;second == "internal") &amp;&amp; ((directionIterator-&gt;second == "OUT") ||
+				(directionIterator-&gt;second == "IN/OUT"))) {
+				return driver;
+			}
+		}
+	}
+	return {};
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Having obtained a driver handle, plugins then send the message in a similar way as previously
+described for sending a NMEA 0183 sentence. The major difference is that the string value must
+be formatted as follows:
+message id &lt;SPACE&gt; message data.</p>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::string jsonData = "{\"truewind\":{\"windangle\":176.50,\"windspeed\" : 10.34}}";
+std::string pluginMessage = "DEMO_MESSAGE_ID " + jsonData; // Note space after message id</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The API WriteCommDriver is then used to send the plugin message.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::vector&lt;uint8_t&gt; payload(pluginMessage.begin(), pluginMessage.end());
+auto sharedPointer = std::make_shared&lt;std::vector&lt;uint8_t&gt; &gt;(std::move(payload));
+CommDriverResult result = WriteCommDriver(driverHandle, sharedPointer);
+if (result != RESULT_COMM_NO_ERROR) {
+	wxLogMessage("Demo Plugin, Error sending Plugin Message: %d", result);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_10_signalk"><a class="anchor" href="#_chapter_10_signalk"></a>Chapter 10. SignalK</h3>
+<div class="paragraph">
+<p>There are two mechanism that can be used to receive SignalK data; the "old" method using
+OpenCPN Plugin Messaging and the "new" method usingthe observer/listener model.
+Note that connections to SignalK are read only, you cannot send SignalK updates from OpenCPN.</p>
+</div>
+<div class="sect3">
+<h4 id="_using_opencpn_plugin_messaging_to_receive_signalk_data"><a class="anchor" href="#_using_opencpn_plugin_messaging_to_receive_signalk_data"></a>Using OpenCPN Plugin Messaging to receive SignalK data</h4>
+<div class="paragraph">
+<p>OpenCPN makes SignalK data available to plugins using Plugin Messaging. It uses the message id
+"OCPN_CORE_SIGNALK" and the message body contains the SignalK data as JSON formatted text.</p>
+</div>
+<div class="paragraph">
+<p>Having received a Plugin Message containing a SignalK update, plugins can use the bundled
+wxJSON libraries to parse the data. As SignalK can store information from multiple vessels,
+you can use the "self" URN to match with a "context" to only parse SignalK updates that
+pertain to the vessel associated with the SignalK Server instance.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SetPluginMessage(wxString&amp; message_id, wxString&amp; message_body) {
+	if (message_id == "OCPN_CORE_SIGNALK") {
+		wxJSONValue root;
+		wxJSONReader jsonReader;
+		jsonReader.Parse(message_body, &amp;root);
+
+		// Persist our "self urn
+		if (root.HasMember("self") &amp;&amp; root["self"].IsString() ) {
+			selfURN = root["self"].AsString();
+		}
+
+		// Only parse updates for our own vessel
+		if (root.HasMember("context") &amp;&amp; root["context"].IsString()) {
+			wxString context = root["context"].AsString();
+			if (context == selfURN) {
+				if (root.HasMember("updates") &amp;&amp; root["updates"].IsArray()) {
+					wxJSONValue updates = root["updates"];
+					for (int i = 0; i &lt; updates.Size(); i++) {
+						HandleSKUpdate(updates[i]);
+					}
+				}
+			}
+		}
+	}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following snippet demonstrates how to obtain the water depth from a SignalK update.
+Refer to the SignalK Keys Reference to understand the SignalK data paths.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">DemoPlugin::HandleSKUpdate(wxJSONValue&amp; update) {
+	if (update.HasMember("values") &amp;&amp; update["values"].IsArray()) {
+		for (int j = 0; j &lt; update["values"].Size(); j++) {
+			wxJSONValue&amp; item = update["values"][j];
+			if (item.HasMember("path") &amp;&amp; item.HasMember("value")) {
+				// In this demo plugin, we're only interested in depth
+				if (item["path"].AsString() == "environment.depth.belowSurface") {
+					double waterDepth = item["value"].AsDouble();
+					// Do something useful with the water depth value, eg shallow water alarm?
+					wxLogMessage("Demo Plugin, Water Depth: %0.2f", waterDepth);
+				}
+			}
+		}
+	}
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_receiving_signalk_data_using_observerlistener_model"><a class="anchor" href="#_receiving_signalk_data_using_observerlistener_model"></a>Receiving SignalK data using Observer/Listener model</h4>
+<div class="paragraph">
+<p>To use the observer/listener model to receive SignalK data, plugins register a subscription
+for SignalK.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxDEFINE_EVENT(EVT_SIGNALK, ObservedEvt);
+SignalkId id_signalk = SignalkId("self");
+listener_signalk = std::move(GetListener(id_signalk, EVT_SIGNALK, this));
+Bind(EVT_SIGNALK, [&amp;](ObservedEvt ev) {
+	HandleSignalK(ev);
+	});</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And implement the handler. The payload returned to the handler by the OpenCPN SignalK
+event is JSON text, with a JSON value "ErrorCount" indicating if there are any JSON
+parsing errors, a value "ContextSelf" containing the "self" URN and another JSON value
+"data" containing the raw SignalK data. Plugins can then parse the SignalK values using
+the same mechanism as described previously.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::HandleSignalK(ObservedEvt ev) {
+	auto payload = GetSignalkPayload(ev);
+	const auto signalKMessage = *std::static_pointer_cast&lt;const wxJSONValue&gt;(payload);
+	auto errorCount = signalKMessage.ItemAt("ErrorCount");
+	if (errorCount.AsInt() &gt; 0) {
+		wxLogMessage("Demo Plugin, SignalK Error Count: %d", errorCount.AsInt());
+		return;
+	}
+
+	wxJSONValue self = signalKMessage.ItemAt("ContextSelf");
+	wxJSONValue root = signalKMessage.ItemAt("Data");
+	// Check if the context matches our "self" URN
+	if (root.HasMember("context") &amp;&amp; root["context"].IsString()) {
+		wxString context = root["context"].AsString();
+			if (context == self.AsString()) {
+			// Parse the data
+			if (root.HasMember("updates") &amp;&amp; root["updates"].IsArray()) {
+				wxJSONValue updates = root["updates"];
+				for (int i = 0; i &lt; updates.Size(); i++) {
+					HandleSKUpdate(updates[i]);
+				}
+			}
+		}
+	}
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_11_routes_waypoints"><a class="anchor" href="#_chapter_11_routes_waypoints"></a>Chapter 11. Routes &amp; Waypoints</h3>
+<div class="paragraph">
+<p>OpenCPN provides a rich set of API&#8217;s for retrieving, creating, deleting and modifying
+routes, waypoints and tracks. Routes, waypoints and tracks are all identified using a
+Globally Unique Identifier (GUID) and this serves as the mechanism for all operations.</p>
+</div>
+<div class="sect3">
+<h4 id="_retrieving_waypoints"><a class="anchor" href="#_retrieving_waypoints"></a>Retrieving Waypoints</h4>
+<div class="paragraph">
+<p>For example to retrieve all of the waypoints the following API returns an array of GUID&#8217;s
+that can then be used to retrieve the details for each waypoint.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxArrayString waypointGuids = GetWaypointGUIDArray();
+wxString result = "Name, Latitude, Longitude";
+PlugIn_Waypoint waypointDetails;
+for (const auto&amp; waypointGuid : waypointGuids) {
+	GetSingleWaypoint(waypointGuid, &amp;waypointDetails);
+	result.append(wxString::Format("\n%s  %0.2f  %0.2f", waypointDetails.m_MarkName,
+		waypointDetails.m_lat, waypointDetails.m_lon));
+}
+wxMessageBox(result, "Waypoints");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There are additional API&#8217;s that return a waypoint GUID, for example the plugin message
+OCPN_WAYPOINT_ACTIVATED which is generated when a waypoint is activated, contains the GUID
+of the selected waypoint. Alternatively the GetActiveWaypointGUID() also returns a valid
+GUID if a waypoint is active or an empty string if OpenCPN is not navigating to a waypoint.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-19.png" alt="demo plugin 19">
+</div>
+</div>
+<div class="paragraph">
+<p>Over time, to meet the needs for additional navigation or display requirments, additional fields
+were added to a waypoint. Support for these is implemented with additional structures and
+corresponding API&#8217;s.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool GetSingleWaypoint(wxString GUID, PlugIn_Waypoint *pwaypoint);
+bool GetSingleWaypointEx(wxString GUID, PlugIn_Waypoint_Ex *pwaypoint);
+bool GetSingleWaypointExV2(wxString GUID, PlugIn_Waypoint_ExV2 *pwaypoint);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_retrieving_routes"><a class="anchor" href="#_retrieving_routes"></a>Retrieving Routes</h4>
+<div class="paragraph">
+<p>Similar to waypoints, the following API returns an array of route GUID&#8217;s that can then be
+used to retrieve the details of each route.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxArrayString routeGuids = GetRouteGUIDArray();
+wxString result = "Name, From, To, No. of Waypoints";
+for (const auto&amp; routeGuid : routeGuids) {
+	auto routeDetails = GetRoute_Plugin(routeGuid);
+	result.append(wxString::Format("\n%s  %s  %s  %s  %d", routeDetails-&gt;m_NameString,
+		routeDetails-&gt;m_StartString, routeDetails-&gt;m_EndString,
+		routeDetails-&gt;pWaypointList-&gt;size()));
+}
+wxMessageBox(result, "Routes");</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also, a route&#8217;s GUID can be returned through the plugin messaging OCPN_RTE_ACTIVATED or the API
+GetActiveRouteGUID.</p>
+</div>
+<div class="paragraph">
+<p>To retrieve the waypoints that constitute a route, plugins iterate the list of waypoints
+included in the route&#8217;s properties.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">auto routeDetails = GetRoute_Plugin(guid);
+auto waypointList = routeDetails-&gt;pWaypointList;
+wxString result;
+for (Plugin_WaypointList::iterator it = waypointList-&gt;begin(); it != waypointList-&gt;end(); ++it) {
+	auto waypoint = *it;
+	result.append(wxString::Format("\n%s %0.2f %0.2f", waypoint-&gt;m_MarkName,
+		waypoint-&gt;m_lat, waypoint-&gt;m_lon));
+}
+wxMessageBox(result, "Route " + routeDetails-&gt;m_NameString + " from " + routeDetails-&gt;m_StartString);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again, similar to waypoints, additional API&#8217;s and structures have been added to routes as
+requirements have evolved over time.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::unique_ptr&lt;PlugIn_Route&gt; GetRoute_Plugin(const wxString &amp;GUID);
+std::unique_ptr&lt;PlugIn_Route_Ex&gt; GetRouteEx_Plugin(const wxString &amp;GUID);
+std::unique_ptr&lt;PlugIn_Route_ExV2&gt; GetRouteExV2_Plugin(const wxString &amp;GUID);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_creating_a_waypoint"><a class="anchor" href="#_creating_a_waypoint"></a>Creating a waypoint</h4>
+<div class="paragraph">
+<p>Plugins may create waypoints by adding values for the required fields and calling the
+appropriate API depending on the requirements.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">AddSingleWaypoint(PlugIn_Waypoint *pwaypoint, bool b_permanent = true);
+AddSingleWaypointEx(PlugIn_Waypoint_Ex *pwaypoint, bool b_permanent = true);
+bool AddSingleWaypointExV2(PlugIn_Waypoint_ExV2 *pwaypoint, bool b_permanent = true);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Waypoint waypoint;
+waypoint.m_IsVisible = true;
+waypoint.m_MarkName = "Demo";
+waypoint.m_IconName = "Marks-Race-Start";
+waypoint.m_GUID = GetNewGUID();
+waypoint.m_lat = currentLatitude;
+waypoint.m_lon = currentLongitude;
+AddSingleWaypoint(&amp;waypoint, true);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note, the list of icons can be retrieved using the following API:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxArrayString iconNames = GetIconNameArray();
+for (auto it : iconNames) {
+// Do something with the icon names, perhaps populate a UI wxChoice widget
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The icons, which are Scalable Vector Graphics (SVG) images, can be found in the
+uidata\markicons folder in the the opencpn program folder.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-20.png" alt="demo plugin 20">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_updating_a_waypoint"><a class="anchor" href="#_updating_a_waypoint"></a>Updating a Waypoint</h4>
+<div class="paragraph">
+<p>To update an existing waypoint, retrieve the waypoint, update the appropriate fields and
+call the corresponding API.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool UpdateSingleWaypoint(PlugIn_Waypoint *pwaypoint);
+bool UpdateSingleWaypointEx(PlugIn_Waypoint_Ex *pwaypoint);
+bool UpdateSingleWaypointExV2(PlugIn_Waypoint_ExV2 *pwaypoint);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example to add two range rings, at a distance of 1 Nm with a colour of purple, we can
+use the following example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Waypoint_ExV2 waypoint;
+GetSingleWaypointExV2(waypointGUID, &amp;waypoint);
+waypoint.nrange_rings = 2;
+waypoint.RangeRingSpace = 1.0;
+waypoint.RangeRingColor = wxColour(128, 0, 128);
+if (UpdateSingleWaypointExV2(&amp;waypoint)) {
+	return;
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-21.png" alt="demo plugin 21">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_adding_routes"><a class="anchor" href="#_adding_routes"></a>Adding Routes.</h4>
+<div class="paragraph">
+<p>Adding a route involves three steps, initializing the route itself, adding waypoints in the
+correct order and finally adding the route. Depending on the visibility and navigational
+requirements, different structures with additional fields and corresponsing API&#8217;s are used.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">std::unique_ptr route = std::make_unique&lt;PlugIn_Route&gt;();
+route-&gt;m_NameString = "Demo Route";
+route-&gt;m_StartString = "Here";
+route-&gt;m_EndString = "There";
+route-&gt;m_GUID = GetNewGUID();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The second step is adding the waypoints.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Waypoint* waypoint =  new PlugIn_Waypoint();
+waypoint-&gt;m_MarkName = "First Waypoint";
+waypoint-&gt;m_IconName = "Symbol-Triangle";
+waypoint-&gt;m_GUID = GetNewGUID();
+waypoint-&gt;m_lat = -38.4;
+waypoint-&gt;m_lon = 144.6;
+route-&gt;pWaypointList-&gt;Append(waypoint);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally the route is added.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">AddPlugInRoute(route.get(), true);</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-22.png" alt="demo plugin 22">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_updating_a_route"><a class="anchor" href="#_updating_a_route"></a>Updating a Route</h4>
+<div class="paragraph">
+<p>Similar to updating a waypoint, to update a route, retrieve the selected route, update its
+properties as required, including the waypoint list and save the changes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">route = GetRoute_Plugin(someGuid);
+Plugin_WaypointList* pList = route-&gt;pWaypointList;
+// In this example we'll reverse the route
+std::vector&lt;PlugIn_Waypoint&gt; waypoints;
+for (auto it = pList-&gt;begin(); it != pList-&gt;end(); ++it) {
+	waypoints.push_back(**it);
+}
+// Reverse the Start and End names
+wxString endString = route-&gt;m_EndString;
+route-&gt;m_EndString = route-&gt;m_StartString;
+route-&gt;m_StartString = endString;
+// Clear the waypoint list and reverse the order of waypoints
+route-&gt;pWaypointList-&gt;Clear();
+for (auto it = waypoints.rbegin(); it != waypoints.rend(); ++it) {
+	route-&gt;pWaypointList-&gt;Append(new PlugIn_Waypoint(*it));
+}
+UpdatePlugInRoute(route.get());</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Again, depending on visibility or navigational requirements, use the appropriate classes and
+corresponding API&#8217;s</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool UpdatePlugInRoute(PlugIn_Route *proute)
+bool UpdatePlugInRouteEx(PlugIn_Route_Ex *proute)
+bool UpdatePlugInRouteExV2(PlugIn_Route_ExV2 *proute)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_important_note_regarding_waypoints_and_routes"><a class="anchor" href="#_important_note_regarding_waypoints_and_routes"></a>Important Note regarding waypoints and routes</h4>
+<div class="paragraph">
+<p>Be aware that there are two types of waypoints. (Please don&#8217;t ask what the OpenCPN developers were thinking!)</p>
+</div>
+<div class="paragraph">
+<p>Standalone (or Free Standing) waypoints. These are created when waypoints are dropped onto the
+chart, created from the Route and Mark Manager, imported from a GPX file as waypoints &lt;wpt&gt; &lt;/wpt&gt;
+or programmatically as described above, using AddSingleWaypoint etc. These waypoints appear in
+the Route and Mark Manager under the Marks tab. These waypoints can also be used in routes.</p>
+</div>
+<div class="paragraph">
+<p>The other type of waypoints are only part of a route and are created when routes are drawn onto
+the chart, imported from a GPX file as route points &lt;rtept&gt; &lt;/rtept&gt; or programmatically as
+described above using AddPlugInRoute.</p>
+</div>
+<div class="paragraph">
+<p>When creating a route and wishing to use standalone waypoints there are two options. If the
+waypoint already exists, obtain a pointer to the existing waypoint and add it to the route
+list.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Waypoint* waypoint;
+GetSingleWaypoint(someGuid, waypoint);
+route-&gt;pWaypointList-&gt;Append(waypoint);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the waypoint does not exist, simply create it on the fly and add it to the route list.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Waypoint* waypoint =  new PlugIn_Waypoint();
+waypoint-&gt;m_MarkName = "First Waypoint";
+waypoint-&gt;m_IconName = "Symbol-Triangle";
+waypoint-&gt;m_GUID = GetNewGUID();
+waypoint-&gt;m_lat = -38.4;
+waypoint-&gt;m_lon = 144.6;
+AddSingleRoute(waypoint);
+route-&gt;pWaypointList-&gt;Append(waypoint);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There is no mechanism in the UI to convert waypoints from one form to another.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_12_drawing_on_canvas_non_opengl"><a class="anchor" href="#_chapter_12_drawing_on_canvas_non_opengl"></a>Chapter 12. Drawing on Canvas (non OpenGL)</h3>
+<div class="paragraph">
+<p>OpenCPN allows plugins to draw on the canvas to supplement information that is ordinariliy
+drawn on the chart. As OpenCPN has evolved over time, supporting single and dual canvas layouts
+and graphics acceleration using OpenGL so too have the plugin API&#8217;s. For simplicity sake this
+demo will concentrate on the multi canvas rendering API&#8217;s for both OpenGL and non OpenGL.</p>
+</div>
+<div class="paragraph">
+<p>Note that WANTS_OVERLAY_CALLBACK must be returned in the Init function for OpenCPN to register
+the plugin&#8217;s callback routine.</p>
+</div>
+<div class="paragraph">
+<p>To draw on the canvas when OpenCPN has been launched without OpenGL support, the plugin may
+use the following Callback API:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">RenderOverlayMultiCanvas(wxDC&amp; dc, PlugIn_ViewPort* vp,	int canvasIndex, int priority);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The rendering  API&#8217;s that were available for earlier versions of OpenCPN will draw on both
+canvases if OpenCPN is configured in multi-canvas mode, whereas the newer API&#8217;s allow plugins
+to select which canvas upon which to render.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Only display on the first canvas
+if (canvasIndex != 0) {
+	... draw stuff
+	...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Plugins can select which layer on which to render, meaning that they can draw below all OpenCPN
+drawn object (OVERLAY_LEGACY), above ships (OVERLAY_OVER_SHIPS) or for important information,
+over all UI elements (OVERLAY_OVER_UI)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">if (priority == OVERLAY_LEGACY) {
+	... draw information of low importance
+	...
+}
+if (priority == OVERLAY_OVER_UI) {
+	... draw highly important information
+	...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The OpenCPN view port (VP) provides the plugin with the chart extents,
+scale factors etc. to allow the plugin to accurately position any drawing on screen.</p>
+</div>
+<div class="paragraph">
+<p>The helper function GetCanvasPixLL allows the plugin to convert geographic co-ordimates
+(latitude &amp; longitude) to screen pixels. The reverse, converting pixels to geographic co-ordinates
+is performed with the GetCanvasLLPix function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Convert the current position to pixel co-ordinates
+wxPoint boat, ring;
+GetCanvasPixLL(vp, &amp;boat, currentLatitude, currentLongitude);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Using the wxWidgets Device Context (DC) provides a plugin with ability to use any of the
+wxWidgets drawing API&#8217;s.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">dc.SetPen(*wxRED_PEN);
+dc.SetBrush(*wxRED_BRUSH);
+dc.DrawCircle(boat.x, boat.y, radius);</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-23.png" alt="demo plugin 23">
+</div>
+</div>
+<div class="paragraph">
+<p>Instead of using the wxWidgets Device Context (wxDC) to render on the canvas, plugins may opt
+to use a Graphics Context (wxGC) as it provides a richer set of graphics functions. For example
+anti-aliased drawing, transparency (alpha blending), rotation and more complex transformations.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxMemoryDC* memDC = wxDynamicCast(&amp;dc, wxMemoryDC);
+std::unique_ptr&lt;wxGraphicsContext&gt; gc(wxGraphicsContext::Create(*memDC));
+auto path = gc-&gt;CreatePath();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, plugins can create transparent brushes so that other chart objects can be "seen
+through" objects drawn by the plugin. Below, the fourth parameter of SetBrush is the alpha
+channel and defines the level of transparency.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">---
+gc-&gt;SetBrush(wxColour(100, 100, 100, 50));
+path.AddCircle(boat.x, boat.y, radius);
+gc-&gt;FillPath(path);
+---</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There are also opportunities to simplify the code by using the translation, rotation and
+transform functions available with the wxWidgets Graphics Context. For example in this
+demo plugin, instead of calculating the positions of the wind arrow using trigonometric
+functions, it can be simplified to the following which has the benefit of reducing the risk
+of programming errors and reducing the burden of code maintainance.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Define our arrow's dimensions, tip, bottom right, bottom left
+wxPoint2DDouble arrow[] = {
+	{0.0, 0.0},
+	{static_cast&lt;double&gt;(radius), 10.0},
+	{static_cast&lt;double&gt;(radius), -10.0}
+	};
+
+gc-&gt;PushState();
+gc-&gt;Translate(boat.x, boat.y);
+gc-&gt;Rotate(angle);
+gc-&gt;SetPen(wxPen(wxColour(255, 153, 51), 1));
+gc-&gt;DrawLines(std::size(arrow), arrow);
+gc-&gt;PopState();</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-24.png" alt="demo plugin 24">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_13_drawing_on_canvas_opengl"><a class="anchor" href="#_chapter_13_drawing_on_canvas_opengl"></a>Chapter 13. Drawing on Canvas (OpenGL)</h3>
+<div class="paragraph">
+<p>Most modern computers incorporate Graphics Processors (GPU) to improve the
+performance of graphics intensive applications. GPU&#8217;s offload graphics operations
+onto specialised hardware reducing the load on the CPU. Modern
+operating systems provide their own API&#8217;s to support graphics hardware
+acceleration such as DirectX on Windows, Metal on OSX and Vulkan on Linux.</p>
+</div>
+<div class="paragraph">
+<p>There are also cross platform graphics API&#8217;s such as OpenGL which is supported on
+most major platforms. In the case of OpenCPN, OpenGL support is provided by wxWidgets.</p>
+</div>
+<div class="paragraph">
+<p>Note, while Vulkan is an Open Source, Cross Platform Graphics library and the above is
+a bit of a generalization, at the moment OpenCPN relies on OpenGL to improve its
+graphics performance.</p>
+</div>
+<div class="paragraph">
+<p>To support OpenGL, plugins must specify the compiler flag -DocpnUSE_GL. This may be
+added in Plugin.cmake if using the ShipDriver template or in PluginConfigure.cmake if
+using the TestPlugin template.</p>
+</div>
+<div class="paragraph">
+<p>In addition the bundled library plugindc should be included as it provides classes
+and functions that simplify drawing on the canvas using either OpenGL (wxGLCanvas)
+or non-OpenGL (wxDC).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">add_subdirectory(opencpn-libs/plugin_dc)
+target_link_libraries(${PACKAGE_NAME} ocpn::plugin-dc)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Essentially it provides a level of abstraction so the plugin developers can use
+API&#8217;s with the same signature as the wxWidgets Device Context API&#8217;s for both
+wxGLCanvas or wxDC. For example it simplifies rendering with OpenGL by allowing
+the plugin developer to use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">DrawRectangle(x, y, width, height);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>insead of the low level complex wxGLCanvas API&#8217;s</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">glBegin(GL_QUADS);
+glVertex2i(x, y);
+glVertex2i(x + width, y);
+glVertex2i(x + width, y + height);
+glVertex2i(x, y + height);
+glEnd();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The plugin must specify the flag WANTS_OPENGL_OVERLAY_CALLBACK in the Init function
+to register the plugin&#8217;s callback function.</p>
+</div>
+<div class="paragraph">
+<p>Similar to drawing on the Canvas when not using OpenGL, plugins need to determine
+the canvas layer upon which they weish to draw and if in multi-canvas mode, which
+canvas to draw upon.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">RenderGLOverlayMultiCanvas(wxGLContext* pcontext, PlugIn_ViewPort* vp,
+	int canvasIndex, int priority) {
+
+	// Determine which layer to draw upon
+	if (priority != OVERLAY_OVER_EMBOSS) {
+		return false;
+	}
+	// Do we have a valid device context
+	if (!pcontext-&gt;IsOK()) {
+		return false;
+	}
+	// Only draw on the first canvas
+	if (canvasIndex != 0) {
+		return false;
+	}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Plugins can then draw on the canvas using the plugindc class and its methods as needed.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Create an instance of plugindc
+std::unique_ptr&lt;piDC&gt; pluginDC = std::make_unique&lt;piDC&gt;(pcontext);
+
+// Draw a label at x=100, y =100
+wxFont textFont = wxFont(wxFontInfo(16).Family(wxFONTFAMILY_SWISS));
+pluginDC-&gt;SetFont(textFont);
+
+wxCoord textWidth, textHeight;
+wxString label = "My label here";
+
+pluginDC-&gt;GetTextExtent(label, &amp;textWidth, &amp;textHeight);
+pluginDC-&gt;DrawText(label, 100 - (textWidth / 2), 100);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_14_interacting_with_the_canvas"><a class="anchor" href="#_chapter_14_interacting_with_the_canvas"></a>Chapter 14. Interacting with the canvas</h3>
+<div class="paragraph">
+<p>Oops, nearly forgot this important part. Having drawn on the canvas, users may want
+actually to interact with it!</p>
+</div>
+<div class="paragraph">
+<p>Firstly, getting information on where the cursor is located on-screen is obtained
+by the callback API SetCursorLatLon which is registered by returning the value
+WANTS_CURSOR_LATLON in the Init function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SetCursorLatLon(double lat, double lon) {
+	// Do something with the latitude and longitude
+	// Eg. determine if the cursor is positioned on something we've drawn on screen.
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The previously mentioned API&#8217;s; GetCanvasLLPix and GetCanvasPixLL are used to
+convert screen co-ordinates (pixels) to geographic co-ordinates and vice versa.</p>
+</div>
+<div class="paragraph">
+<p>To handle mouse interactions, plugins use another callback API, MouseEventHook which
+is registered by returning WANTS_MOUSE_EVENTS to the Init function.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool DemoPlugin::MouseEventHook(wxMouseEvent&amp; event) {
+
+	// Only interested in left double click
+	if (event.LeftDClick()) {
+
+		// Convert the screen co-ordinates for the click event to geographic co-ordinates
+		double latitude, longitude;
+		GetCanvasLLPix(&amp;viewPort, event.GetPosition(), &amp;latitude, &amp;longitude);
+
+		// Do something with the click event
+	}
+	return false;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note the importance of the return value. Returning false allows the mouse event to
+be propagated for further processing while returning true will end further propagation.</p>
+</div>
+<div class="paragraph">
+<p>Similarly for keyboard handling, plugins can use the callback API, KeyboardEventHook which
+is registered by returning WANTS_KEYBOARD_EVENTS to the Init function.</p>
+</div>
+<div class="paragraph">
+<p>This is the mechanism that plugins may use to implement Shortcut keys to their
+specific functions. Again the return value determines whether the key event is propagated.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool DemoPlugin::KeyboardEventHook(wxKeyEvent&amp; event) {
+	if (event.GetKeyCode() == WXK_CONTROL_D) {
+		wxMessageBox(wxString::Format("Pressed Control-D"), "Demo Plugin");
+	}
+	return false;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_15_wxwidgets_advanced_user_interface"><a class="anchor" href="#_chapter_15_wxwidgets_advanced_user_interface"></a>Chapter 15. wxWidgets Advanced User Interface</h3>
+<div class="paragraph">
+<p>wxWidgets Advance User Interface (wxAUI) allows plugins to implement a rich user
+interface allowing multiple elements to be displayed, floated, docked and have their
+state to be maintained by.OpenCPN. wxAUI offers a richer set of display options than
+compared to using modal or non-modal dialogs or plugin launched windows, frames or forms.</p>
+</div>
+<div class="paragraph">
+<p>Plugins need to retrieve the wxAUI Manager from OpenCPN to register, update and display
+their UI elements with the AUIManager a reference which is obtained through the API
+GetFrameAuiManager. Plugins also need to register for callbck API&#8217;s by returning the
+value USES_AUI_MANAGER in the Init function.</p>
+</div>
+<div class="paragraph">
+<p>Plugins then initialize the wxPaneInfo class and update the AUI Manager. In this demo
+the AUI managed window is a simple dashboard.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-25.png" alt="demo plugin 25">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">demoDash = std::make_unique&lt;DemoDashboard&gt;(GetOCPNCanvasWindow());
+
+// Add the demo dashboard to the AUI Manager
+wxAuiPaneInfo paneInfo;
+paneInfo.Name(PLUGIN_API_NAME);
+paneInfo.Caption(PLUGIN_API_NAME).CaptionVisible(true);
+paneInfo.MinimizeButton(true);
+paneInfo.CloseButton(true);
+paneInfo.GripperTop(true);
+paneInfo.Float();
+paneInfo.MinSize(demoDash-&gt;GetMinSize());
+paneInfo.Show(isToolbarActive);
+auiManager-&gt;AddPane(demoDash.get(), paneInfo);
+auiManager-&gt;Update();
+auiManager-&gt;Bind(wxEVT_AUI_PANE_CLOSE, &amp;DemoPlugin::OnPaneClose, this);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In this example, the display of the dashboard is toggled using the OpenCPN toolbar
+which was previously described in Chapter 5.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">if (id == demoToolbarId) {
+	// Toggle the display of the wxAUI Demo
+	isToolbarActive = !isToolbarActive;
+	auiManager-&gt;GetPane(PLUGIN_API_NAME).Show(isToolbarActive);
+	auiManager-&gt;Update();
+	SetToolbarItemState(id, isToolbarActive);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that as the demo dashboard display is shown or hidden, the toolbar button state
+is also changed.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-26.png" alt="demo plugin 26">
+</div>
+</div>
+<div class="paragraph">
+<p>During the initialization of the AUI Manager the plugin registered for the
+AUI_PANE_CLOSE event. Upon receiving these events, the plugin may also determine
+whether the AUI managed window is shown or hidden and synchronise any other state as
+required, in this case the toolbar button state.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::OnPaneClose(wxAuiManagerEvent&amp; event) {
+	if (event.GetPane()-&gt;name == PLUGIN_API_NAME) {
+		isToolbarActive = false;
+		SetToolbarItemState(demoToolbarId, isToolbarActive);
+	}
+	else {
+		event.Skip();
+	}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Another benefit of wxAUI is that OpenCPN saves the state of any AUI managed windows.
+When OpenCPN starts it will restore the state, simplifying the "plumbing" for plugin
+developers. The callback API UpdateAUIStatus can be implemented by plugins to detect
+when the wxAUI status has changed, providing plugins the opportunity to synchronise
+any associated state, such as in this demo the toolbar button state.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::UpdateAuiStatus(void) {
+
+	if (auiManager-&gt;GetPane(PLUGIN_API_NAME).IsOk()) {
+		isToolbarActive = auiManager-&gt;GetPane(PLUGIN_API_NAME).IsShown();
+		SetToolbarItemState(demoToolbarId, isToolbarActive);
+	}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Also worth noting some of other API&#8217;s not necessarily required for AUI managed windows
+but important nonetheless.</p>
+</div>
+<div class="paragraph">
+<p>When the user changes the colour scheme for OpenCPN (day, dusk, night), plugins receive
+a notification from the callback API SetColorScheme. This allows plugins to respond
+to user changes of the colour schema, perhaps by changing the colours of their UI
+elements, or for plugns that interact with switching systems, turn on/off lights, send
+commands over a network to change instrument displays or MFD&#8217;s.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void DemoPlugin::SetColorScheme(PI_ColorScheme cs) {
+	if ((cs == PI_GLOBAL_COLOR_SCHEME_DUSK) || (cs == PI_GLOBAL_COLOR_SCHEME_NIGHT)) {
+		demoDash-&gt;SetNightMode(true);
+	}
+	else {
+		demoDash-&gt;SetNightMode(false);
+	}
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To apply OpenCPN colour schemes to plugin UI elements, the OpenCPN API DimeWindow will
+apply the configured colour scheme to the plugin. For example in the Demo Dashboard
+when the colour scheme is changed, it applies the background colour to all of its
+child controls. (It does however apply its own colours to the foreground)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">DimeWindow(this);
+
+wxColour background = GetBackgroundColour();
+
+wxWindowList&amp; children = this-&gt;GetChildren();
+
+for (wxWindowList::iterator it = children.begin(); it != children.end(); ++it) {
+	wxWindow* child = *it;
+	child-&gt;SetBackgroundColour(background);
+	child-&gt;SetForegroundColour(mode ? *wxWHITE : *wxBLACK);
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/demo_plugin-27.png" alt="demo plugin 27">
+</div>
+</div>
+<div class="paragraph">
+<p>For further information about wxAUI, you should refer to the wxWidgets official
+documentation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chapter_16_chart"><a class="anchor" href="#_chapter_16_chart"></a>Chapter 16. Chart</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_faq"><a class="anchor" href="#_5_faq"></a>5. FAQ</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>

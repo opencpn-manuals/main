@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['callsign_0',['CallSign',['../classPlugIn__AIS__Target.html#a0f2affeeb3cbd2b0179eba6ae3564b78',1,'PlugIn_AIS_Target']]],
+  ['canvas_1',['canvas',['../classcanvasConfig.html#ab5aa8ee1d44645b190262a6a132d4a53',1,'canvasConfig']]],
+  ['canvassize_2',['canvasSize',['../classcanvasConfig.html#a33f572f74f58a5e49e3f89efb95d8cff',1,'canvasConfig']]],
+  ['chain_5fbroken_5fmssage_5fshown_3',['chain_broken_mssage_shown',['../s57chart_8h.html#a21e1014e9479b3a5de379a985f817b9f',1,'s57chart.h']]],
+  ['chart_5fref_5flat_4',['chart_ref_lat',['../classPI__S57Obj.html#ae94b63b1893bd49c52d2ceb0223257ee',1,'PI_S57Obj']]],
+  ['chart_5fref_5flon_5',['chart_ref_lon',['../classPI__S57Obj.html#a66032da08f01c9f507f6867e64fead2b',1,'PI_S57Obj']]],
+  ['chart_5fscale_6',['chart_scale',['../classViewPort.html#af1b706148b77d9a7cfc10b226652376c',1,'ViewPort::chart_scale'],['../classPlugIn__ViewPort.html#aff73e809ef706ad72733b548d55fbc26',1,'PlugIn_ViewPort::chart_scale']]],
+  ['chartdata_7',['chartdata',['../chartdb_8cpp.html#a9c6ba3c11b732d1e22e14d7876370d3a',1,'ChartData:&#160;chartdb.cpp'],['../chartdb_8h.html#a89809e5679fba017ad00e50d11ad4ac9',1,'ChartData:&#160;chartdb.h'],['../chartdb__thread_8cpp.html#a89809e5679fba017ad00e50d11ad4ac9',1,'ChartData:&#160;chartdb.cpp']]],
+  ['chartdirectoryexcludedvector_8',['chartdirectoryexcludedvector',['../chartdb_8h.html#a678da17c0ea9e19f7868308fdd42d29b',1,'ChartDirectoryExcludedVector:&#160;chartdb.cpp'],['../chartdb_8cpp.html#a678da17c0ea9e19f7868308fdd42d29b',1,'ChartDirectoryExcludedVector:&#160;chartdb.cpp']]],
+  ['check1_5fvalue_9',['check1_value',['../structAcceptObjectDlgResult.html#a4366989c48babcd0c8906530f84bbe78',1,'AcceptObjectDlgResult']]],
+  ['child_10',['child',['../classPI__S57Obj.html#a3aa2e86ba273c0d3ce4ef3758c9ba9eb',1,'PI_S57Obj']]],
+  ['class_11',['Class',['../classPlugIn__AIS__Target.html#a6765825c4231b1b6c9b35bbb99310327',1,'PlugIn_AIS_Target']]],
+  ['clat_12',['clat',['../classViewPort.html#ae6954a02c2be5398ed8bc8fdd8879fa7',1,'ViewPort::clat'],['../classPlugIn__ViewPort.html#a8663e1f645641d75d13f6f95b55552a8',1,'PlugIn_ViewPort::clat']]],
+  ['clon_13',['clon',['../classViewPort.html#acaa1f3de15dcdd730da94130be8986f5',1,'ViewPort::clon'],['../classPlugIn__ViewPort.html#a3158a6652e911d5476c391a8d7690e1c',1,'PlugIn_ViewPort::clon']]],
+  ['cog_14',['cog',['../classPlugIn__Position__Fix.html#a0d99161b6c210cec0c851df5e9ac22d5',1,'PlugIn_Position_Fix::Cog'],['../classPlugIn__Position__Fix__Ex.html#a50083609f36844dce6ad25460fdd3ec3',1,'PlugIn_Position_Fix_Ex::Cog'],['../structPluginNavdata.html#a483f6af2376127261fbca626ced4ef1c',1,'PluginNavdata::cog'],['../classPlugIn__AIS__Target.html#ac2de6fb8bcd3d7166b193f42ca4e25fc',1,'PlugIn_AIS_Target::COG']]],
+  ['color_5fscheme_5fchange_15',['color_scheme_change',['../classGuiEvents.html#a189afa9a98cf1134a72bd83c88c851ac',1,'GuiEvents']]],
+  ['console_16',['console',['../concanv_8cpp.html#a0679c6a9ceeb9a63eb286ddf3765a2ea',1,'console:&#160;concanv.cpp'],['../concanv_8h.html#a0679c6a9ceeb9a63eb286ddf3765a2ea',1,'console:&#160;concanv.cpp']]],
+  ['count_17',['count',['../structGeoRef.html#a2375eb5d3671da77514d11208d2928d6',1,'GeoRef']]],
+  ['cpa_18',['CPA',['../classPlugIn__AIS__Target.html#a5f38e1fd9481ad481afa5cce19ef403f',1,'PlugIn_AIS_Target']]],
+  ['curdate_19',['curDate',['../classGribRecord.html#a4b6523a40293e164c9494c18a0a4d919',1,'GribRecord']]],
+  ['current_5fdepth_20',['current_depth',['../classIDX__entry.html#abbebf64a1d8db6399ca0157c040a1a81',1,'IDX_entry']]],
+  ['currentrect_5fin_5fdc_21',['CurrentRect_in_DC',['../classRoutePoint.html#a27eba9f2809276232c97def9cce88508',1,'RoutePoint']]],
+  ['cursor_22',['cursor',['../classFastMessageMap_1_1Entry.html#a24323f5a7943563b4dfe56602e96a3dd',1,'FastMessageMap::Entry']]]
+];

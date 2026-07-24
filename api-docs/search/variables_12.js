@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['s52_5fcontext_0',['S52_Context',['../classPI__S57Obj.html#abc832063ddcd674876b2fea2e02e44a1',1,'PI_S57Obj']]],
+  ['scale_1',['scale',['../structOCPN__MonitorInfo.html#af363c9a1aa9486e5426d4d5fc873c009',1,'OCPN_MonitorInfo']]],
+  ['scamax_2',['scamax',['../classPlugIn__Waypoint__ExV2.html#a99c7792556a8c75d350f4e3d5cbff334',1,'PlugIn_Waypoint_ExV2']]],
+  ['scamin_3',['scamin',['../classPlugIn__Waypoint__Ex.html#a8083b56cad982d5ecd5a2efdae75adcb',1,'PlugIn_Waypoint_Ex::scamin'],['../classPlugIn__Waypoint__ExV2.html#a9353607a54ddbf3d7255aad5b7a97d6b',1,'PlugIn_Waypoint_ExV2::scamin'],['../classPI__S57Obj.html#a1e0b7ba703fab08bb5fa944d40b59584',1,'PI_S57Obj::Scamin']]],
+  ['shipname_4',['ShipName',['../classPlugIn__AIS__Target.html#a9ee0b619c60940484082c41b1773e273',1,'PlugIn_AIS_Target']]],
+  ['shiptype_5',['ShipType',['../classPlugIn__AIS__Target.html#a29445c7fcb3ffbbcd06afd8de10a9af8',1,'PlugIn_AIS_Target']]],
+  ['show_5ftimezone_6',['show_timezone',['../structDateTimeFormatOptions.html#a05eb7f6bc84964e066f10e03fb5e83ba',1,'DateTimeFormatOptions']]],
+  ['sid_7',['sid',['../classFastMessageMap_1_1Entry.html#a345ffce93bafb3d8be90518a53e442d0',1,'FastMessageMap::Entry']]],
+  ['skew_8',['skew',['../classViewPort.html#a951cc5c6ddf38e6ede878e11a33ee7b6',1,'ViewPort::skew'],['../classPlugIn__ViewPort.html#aa6deb3370cf7edb306e6e2bf606f0bb6',1,'PlugIn_ViewPort::skew']]],
+  ['slat_9',['SLAT',['../struct__ExtentPI.html#a73cea0198d0dbc88139ef1bd8ca97d2f',1,'_ExtentPI']]],
+  ['sog_10',['sog',['../classPlugIn__Position__Fix.html#a48dd45163dc36cd9773a8fa316e4da4d',1,'PlugIn_Position_Fix::Sog'],['../classPlugIn__Position__Fix__Ex.html#ae996437a8045a606b59054d6b47c20c2',1,'PlugIn_Position_Fix_Ex::Sog'],['../classPlugIn__AIS__Target.html#a7b6b1706b73668ed589c777c61c10488',1,'PlugIn_AIS_Target::SOG'],['../structPluginNavdata.html#a943ac93997eebef08397492963466db9',1,'PluginNavdata::sog']]],
+  ['source_11',['source',['../structRestIoEvtData.html#adae455a3c8cfa1dc6b37a396530cb6c1',1,'RestIoEvtData::source'],['../classNavMsg.html#a583467f6b4174f4dc0cd8e867523ffb1',1,'NavMsg::source']]],
+  ['source_5fdata_5ftype_12',['source_data_type',['../classIDX__entry.html#aa631087c42ddb70e8dec8da0fe0cbe42',1,'IDX_entry']]],
+  ['source_5fident_13',['source_ident',['../classIDX__entry.html#a82999ce8ad1338369c2b22b0ffa61726',1,'IDX_entry']]],
+  ['ssfn_5ferrstr_14',['ssfn_errstr',['../ssfn_8h.html#a74d59b814aa37f9da6c7d3b4cd7bec1b',1,'ssfn.h']]],
+  ['station_5ftz_5foffset_15',['station_tz_offset',['../classIDX__entry.html#a6ff8b07ce27cc6fc1de9b632dde8ae14',1,'IDX_entry']]],
+  ['status_16',['status',['../structGeoRef.html#aa073082aebb3452482e0d3d8c9710c26',1,'GeoRef::status'],['../structAcceptObjectDlgResult.html#ac05535ed1adcac5f57f033031d05c5b6',1,'AcceptObjectDlgResult::status']]]
+];
