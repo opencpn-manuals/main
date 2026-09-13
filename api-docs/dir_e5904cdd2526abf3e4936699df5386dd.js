@@ -1,0 +1,28 @@
+var dir_e5904cdd2526abf3e4936699df5386dd =
+[
+    [ "EGM9615.h", "EGM9615_8h_source.html", null ],
+    [ "GeomagnetismHeader.h", "GeomagnetismHeader_8h.html", "GeomagnetismHeader_8h" ],
+    [ "GeomagnetismLibrary.c", "GeomagnetismLibrary_8c_source.html", null ],
+    [ "icons.cpp", "wmm__pi_2src_2icons_8cpp_source.html", null ],
+    [ "icons.h", "wmm__pi_2src_2icons_8h_source.html", null ],
+    [ "json_defs.h", "wmm__pi_2src_2json__defs_8h_source.html", null ],
+    [ "jsonreader.cpp", "wmm__pi_2src_2jsonreader_8cpp_source.html", null ],
+    [ "jsonreader.h", "wmm__pi_2src_2jsonreader_8h_source.html", null ],
+    [ "jsonval.cpp", "wmm__pi_2src_2jsonval_8cpp_source.html", null ],
+    [ "jsonval.h", "wmm__pi_2src_2jsonval_8h_source.html", null ],
+    [ "jsonwriter.cpp", "wmm__pi_2src_2jsonwriter_8cpp_source.html", null ],
+    [ "jsonwriter.h", "wmm__pi_2src_2jsonwriter_8h_source.html", null ],
+    [ "linmath.h", "wmm__pi_2src_2linmath_8h_source.html", null ],
+    [ "magnetic_plot_map.cpp", "magnetic__plot__map_8cpp.html", null ],
+    [ "magnetic_plot_map.h", "magnetic__plot__map_8h.html", "magnetic__plot__map_8h" ],
+    [ "pi_ocpndc.cpp", "wmm__pi_2src_2pi__ocpndc_8cpp.html", null ],
+    [ "pi_ocpndc.h", "wmm__pi_2src_2pi__ocpndc_8h.html", "wmm__pi_2src_2pi__ocpndc_8h" ],
+    [ "pi_shaders.cpp", "wmm__pi_2src_2pi__shaders_8cpp.html", null ],
+    [ "pi_shaders.h", "wmm__pi_2src_2pi__shaders_8h.html", null ],
+    [ "pi_tex_font.cpp", "wmm__pi_2src_2pi__tex__font_8cpp.html", null ],
+    [ "pi_tex_font.h", "wmm__pi_2src_2pi__tex__font_8h.html", "wmm__pi_2src_2pi__tex__font_8h" ],
+    [ "wmm_pi.cpp", "wmm__pi_8cpp.html", null ],
+    [ "wmm_pi.h", "wmm__pi_8h.html", "wmm__pi_8h" ],
+    [ "wmm_ui_dialog.cpp", "wmm__ui__dialog_8cpp_source.html", null ],
+    [ "wmm_ui_dialog.h", "wmm__ui__dialog_8h_source.html", null ]
+];

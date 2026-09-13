@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Utility Functions :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/ocpn-dev-manual/0.1/pm-plugin-api-utility-functions.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ocpn-dev-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">OpenCPN Developer Manual</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developer Manual</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-AboutThisManual.html">About this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Background.html">Background</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Terminology.html">Terminology</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../opencpn-dev/index.html">Opencpn development</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Plugin Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-devel-overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-plugin-dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-plugin-api-overview.html">Plugin API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-versions.html">Plugin API and ABI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="using-the-api.html">Using the API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="system-events.html">Using API system events</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-core-classes.html">Core Plugin Classes and Lifecycle</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-capabilities.html">Plugin Capabilities System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-ui-integration.html">UI Integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-rendering.html">Chart Display and Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-custom-charts.html">Custom Chart Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-navigation-data.html">Navigation Data Access</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-plugin-communication.html">Plugin Communication</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-utility-functions.html">Utility Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-deployment.html">Deployment overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-workflow.html">Workflow overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-compat.html">Compatibility and tweaks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dm-i18n.html">Translations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Plugin-Pi-Adaptation.html">Plugin Installer Code Adaptation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-tp-template.html">Testplugin Template</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-workflow.html">Workflow Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-services.html">Prerequisite Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-overview-prereq-other.html">Cloudsmith Setup</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="pm-tp-system-structure.html">System Structure</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-dev-setup.html">Developer Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-config-template.html">Configure Template</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text">Build Locally</span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-adapt-plugin.html">Adapt Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-deploy.html">Deploy Details</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pi_installer_dev_procedure.html">PI Manager Dev Procedure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-update-library.html">Update the Library</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-language-nuance.html">Language Nuances</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../opencpn-dev/odraw-messaging.html">Odapi Messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-odapi.html">Odapi for oDraw</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-ocpn_draw_odapi.html">Ocpn_Draw Odapi</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../AlternativeWorkflow/index.html">Shipdriver Template</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plugin-installer/Home.html">Plugin Manager Installer Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://opencpn-manuals.github.io/main/opencpn-plugins/index.html">Plugins  Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-legacy-plugins.html">Legacy Plugin Packaging</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-manual-maint.html">Maintenance of this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-i18n.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Resources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-prebuilt-build-files.html">Prebuilt Build Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-online-tools.html">Online Nmea Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ECDIS_testdata.html">ECDIS testdata</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prerequisites.html">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="compile_mac_osx.html">Compiling on macOS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rpi2.html">Compile on Raspberry PI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="building-on-armhf-linux-armbian-orange-pi.html">armhf linux - Armbian - Orange Pi</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenCPN Developer Manual</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenCPN Developer Manual</a></li>
+    <li>Developer Manual</li>
+    <li>Plugin Development</li>
+    <li><a href="pm-plugin-api-overview.html">Plugin API</a></li>
+    <li><a href="pm-plugin-api-utility-functions.html">Utility Functions</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/opencpn-manuals/development/edit/main/modules/ROOT/pages/pm-plugin-api-utility-functions.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Utility Functions</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter covers the various utility functions provided by the OpenCPN Plugin API. These functions help with common tasks such as configuration management, UI integration, and geographic calculations.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration_management"><a class="anchor" href="#_configuration_management"></a>Configuration Management</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenCPN provides functions for plugins to access and modify configuration settings.</p>
+</div>
+<div class="sect2">
+<h3 id="_accessing_the_configuration_object"><a class="anchor" href="#_accessing_the_configuration_object"></a>Accessing the Configuration Object</h3>
+<div class="paragraph">
+<p>To access OpenCPN&#8217;s configuration object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxFileConfig *pConf = GetOCPNConfigObject();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reading_and_writing_configuration_settings"><a class="anchor" href="#_reading_and_writing_configuration_settings"></a>Reading and Writing Configuration Settings</h3>
+<div class="paragraph">
+<p>Using the configuration object to read and write settings:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::LoadConfig() {
+    wxFileConfig *pConf = GetOCPNConfigObject();
+
+    if (pConf) {
+        pConf-&gt;SetPath("/PlugIns/MyPlugin");
+
+        // Read settings with defaults
+        m_option1 = pConf-&gt;Read("Option1", 42);
+        m_option2 = pConf-&gt;Read("Option2"), _T("default");
+        m_enabled = pConf-&gt;Read("Enabled", true);
+
+        // Read array of values
+        int count = pConf-&gt;Read("WaypointCount", 0);
+        m_waypoints.clear();
+
+        for (int i = 0; i &lt; count; i++) {
+            wxString key = wxString::Format("Waypoint%d", i);
+            wxString value = pConf-&gt;Read(key, wxEmptyString);
+
+            if (!value.IsEmpty()) {
+                // Parse waypoint string and add to list
+                // ...
+            }
+        }
+    }
+}
+
+void MyPlugin::SaveConfig() {
+    wxFileConfig *pConf = GetOCPNConfigObject();
+
+    if (pConf) {
+        pConf-&gt;SetPath("/PlugIns/MyPlugin");
+
+        // Write settings
+        pConf-&gt;Write("Option1", m_option1);
+        pConf-&gt;Write("Option2", m_option2);
+        pConf-&gt;Write("Enabled", m_enabled);
+
+        // Write array of values
+        pConf-&gt;Write("WaypointCount", (int)m_waypoints.size());
+
+        for (size_t i = 0; i &lt; m_waypoints.size(); i++) {
+            wxString key = wxString::Format("Waypoint%d", (int)i);
+            wxString value = SerializeWaypoint(m_waypoints[i]);
+
+            pConf-&gt;Write(key, value);
+        }
+
+        pConf-&gt;Flush();
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configuration_best_practices"><a class="anchor" href="#_configuration_best_practices"></a>Configuration Best Practices</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Use namespaced paths</strong>: Always set your path to <code>/PlugIns/YourPluginName</code> to avoid conflicts</p>
+</li>
+<li>
+<p><strong>Provide defaults</strong>: Always specify default values when reading settings</p>
+</li>
+<li>
+<p><strong>Call Flush()</strong>: To ensure settings are saved to disk</p>
+</li>
+<li>
+<p><strong>Version your settings</strong>: Include a version number in your configuration to handle format changes</p>
+</li>
+<li>
+<p><strong>Clean up old settings</strong>: Remove obsolete settings when formats change</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ui_utility_functions"><a class="anchor" href="#_ui_utility_functions"></a>UI Utility Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenCPN provides several functions to help with user interface integration.</p>
+</div>
+<div class="sect2">
+<h3 id="_window_management"><a class="anchor" href="#_window_management"></a>Window Management</h3>
+<div class="paragraph">
+<p>Request a refresh of a window:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">RequestRefresh(GetOCPNCanvasWindow());</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Get OpenCPN&#8217;s main canvas window:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxWindow *canvas = GetOCPNCanvasWindow();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_color_management"><a class="anchor" href="#_color_management"></a>Color Management</h3>
+<div class="paragraph">
+<p>Get a color from OpenCPN&#8217;s color scheme:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxColour color;
+if (GetGlobalColor("BLUE1", &amp;color)) {
+    // Use the color
+    m_textCtrl-&gt;SetForegroundColour(color);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Apply OpenCPN&#8217;s color scheme to a window:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">DimeWindow(m_dialog);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_font_management"><a class="anchor" href="#_font_management"></a>Font Management</h3>
+<div class="paragraph">
+<p>Get a font from OpenCPN&#8217;s font system:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxFont *font = OCPNGetFont("Dialog", 0);
+if (font) {
+    // Use the font
+    m_textCtrl-&gt;SetFont(*font);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_system_paths"><a class="anchor" href="#_system_paths"></a>System Paths</h3>
+<div class="paragraph">
+<p>Get the path to OpenCPN&#8217;s shared data directory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxString *dataLocation = GetpSharedDataLocation();
+wxString myDataPath = *dataLocation + "plugins/myPlugin/";</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chart_display_functions"><a class="anchor" href="#_chart_display_functions"></a>Chart Display Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These functions help with integrating with the chart display.</p>
+</div>
+<div class="sect2">
+<h3 id="_coordinate_transformations"><a class="anchor" href="#_coordinate_transformations"></a>Coordinate Transformations</h3>
+<div class="paragraph">
+<p>Convert between latitude/longitude and screen coordinates:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Geographic to screen
+wxPoint point;
+GetCanvasPixLL(&amp;vp, &amp;point, 47.6062, -122.3321);
+
+// Screen to geographic
+double lat, lon;
+GetCanvasLLPix(&amp;vp, wxPoint(100, 100), &amp;lat, &amp;lon);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chart_navigation"><a class="anchor" href="#_chart_navigation"></a>Chart Navigation</h3>
+<div class="paragraph">
+<p>Center the chart display on a specific position:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">JumpToPosition(47.6062, -122.3321, 50000);  // Lat, Lon, Scale</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_geographic_calculation_functions"><a class="anchor" href="#_geographic_calculation_functions"></a>Geographic Calculation Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These functions provide common cartographic calculations.</p>
+</div>
+<div class="sect2">
+<h3 id="_distance_and_bearing_calculations"><a class="anchor" href="#_distance_and_bearing_calculations"></a>Distance and Bearing Calculations</h3>
+<div class="paragraph">
+<p>Calculate bearing and distance between two points:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">double bearing, distance;
+DistanceBearingMercator_Plugin(
+    start_lat, start_lon,  // Starting position
+    end_lat, end_lon,      // Ending position
+    &amp;bearing,              // Output bearing in degrees true
+    &amp;distance              // Output distance in nautical miles
+);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Calculate destination point given starting point, bearing, and distance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">double dest_lat, dest_lon;
+PositionBearingDistanceMercator_Plugin(
+    start_lat, start_lon,     // Starting position
+    bearing_degrees,          // Bearing in degrees true
+    distance_nautical_miles,  // Distance in nautical miles
+    &amp;dest_lat, &amp;dest_lon      // Output destination position
+);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Calculate great circle distance:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">double distance_nm = DistGreatCircle_Plugin(
+    start_lat, start_lon,  // Starting position
+    end_lat, end_lon       // Ending position
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_projection_conversions"><a class="anchor" href="#_projection_conversions"></a>Projection Conversions</h3>
+<div class="paragraph">
+<p>Convert between geographic and projected coordinates:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Geographic to Transverse Mercator
+double x, y;
+toTM_Plugin(lat, lon, ref_lat, ref_lon, &amp;x, &amp;y);
+
+// Transverse Mercator to geographic
+double lat, lon;
+fromTM_Plugin(x, y, ref_lat, ref_lon, &amp;lat, &amp;lon);
+
+// Geographic to Simple Mercator
+double x, y;
+toSM_Plugin(lat, lon, ref_lat, ref_lon, &amp;x, &amp;y);
+
+// Simple Mercator to geographic
+double lat, lon;
+fromSM_Plugin(x, y, ref_lat, ref_lon, &amp;lat, &amp;lon);
+
+// Geographic to Elliptical Simple Mercator
+double x, y;
+toSM_ECC_Plugin(lat, lon, ref_lat, ref_lon, &amp;x, &amp;y);
+
+// Elliptical Simple Mercator to geographic
+double lat, lon;
+fromSM_ECC_Plugin(x, y, ref_lat, ref_lon, &amp;lat, &amp;lon);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nmea_data_functions"><a class="anchor" href="#_nmea_data_functions"></a>NMEA Data Functions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_vdo_message_parsing"><a class="anchor" href="#_vdo_message_parsing"></a>VDO Message Parsing</h3>
+<div class="paragraph">
+<p>Parse a single VDO (Own Ship AIS) message:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Position_Fix_Ex pos;
+wxString accuracy;
+
+if (DecodeSingleVDOMessage(nmea_sentence, &amp;pos, &amp;accuracy)) {
+    // VDO message successfully decoded
+    // Position data is in pos
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pushing_nmea_data"><a class="anchor" href="#_pushing_nmea_data"></a>Pushing NMEA Data</h3>
+<div class="paragraph">
+<p>Send an NMEA sentence to OpenCPN:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PushNMEABuffer("$GPGLL,4915.21,N,12314.32,W,225444,A");</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_localization_functions"><a class="anchor" href="#_localization_functions"></a>Localization Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add a locale catalog for translations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">AddLocaleCatalog("opencpn-myPlugin");</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chart_database_functions"><a class="anchor" href="#_chart_database_functions"></a>Chart Database Functions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Get chart database entry as XML:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxXmlDocument chart_doc = GetChartDatabaseEntryXML(chart_index, true);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Update the chart database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxArrayString directories;
+directories.Add("/path/to/charts");
+directories.Add("/path/to/more/charts");
+
+bool success = UpdateChartDBInplace(directories, true, true);</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Get the list of chart directories:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxArrayString chart_dirs = GetChartDBDirArrayString();</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_utility_classes_and_structures"><a class="anchor" href="#_utility_classes_and_structures"></a>Utility Classes and Structures</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_hyperlinks"><a class="anchor" href="#_hyperlinks"></a>Hyperlinks</h3>
+<div class="paragraph">
+<p>Create and manage hyperlinks for waypoints or routes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">Plugin_Hyperlink *link = new Plugin_Hyperlink();
+link-&gt;DescrText = "OpenCPN Website";
+link-&gt;Link = "https://opencpn.org";
+link-&gt;Type = "Website";
+
+// Add to waypoint
+waypoint-&gt;m_HyperlinkList-&gt;Append(link);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_waypoints"><a class="anchor" href="#_waypoints"></a>Waypoints</h3>
+<div class="paragraph">
+<p>Create waypoints:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Waypoint *waypoint = new PlugIn_Waypoint(
+    lat, lon,                  // Position
+    "triangle",            // Icon name
+    "My Waypoint",         // Waypoint name
+    wxEmptyString              // GUID (empty for auto-generated)
+);
+
+// Set additional properties
+waypoint-&gt;m_MarkDescription = "An important waypoint";
+waypoint-&gt;m_IsVisible = true;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_routes"><a class="anchor" href="#_routes"></a>Routes</h3>
+<div class="paragraph">
+<p>Create routes with waypoints:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Route *route = new PlugIn_Route();
+route-&gt;m_NameString = "My Route";
+route-&gt;m_StartString = "Start Point";
+route-&gt;m_EndString = "End Point";
+
+// Add waypoints to route
+route-&gt;pWaypointList-&gt;Append(start_waypoint);
+route-&gt;pWaypointList-&gt;Append(middle_waypoint);
+route-&gt;pWaypointList-&gt;Append(end_waypoint);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tracks"><a class="anchor" href="#_tracks"></a>Tracks</h3>
+<div class="paragraph">
+<p>Create tracks with points:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Track *track = new PlugIn_Track();
+track-&gt;m_NameString = "My Track";
+track-&gt;m_StartString = "Track Start";
+track-&gt;m_EndString = "Track End";
+
+// Add track points
+track-&gt;pWaypointList-&gt;Append(point1);
+track-&gt;pWaypointList-&gt;Append(point2);
+track-&gt;pWaypointList-&gt;Append(point3);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_common_utility_implementations"><a class="anchor" href="#_common_utility_implementations"></a>Common Utility Implementations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following examples demonstrate implementations of common utility functions that aren&#8217;t directly provided by the API but are useful for many plugins.</p>
+</div>
+<div class="sect2">
+<h3 id="_parse_latitudelongitude_string"><a class="anchor" href="#_parse_latitudelongitude_string"></a>Parse Latitude/Longitude String</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool ParseLatLon(const wxString&amp; str, double *lat, double *lon) {
+    // Various formats:
+    // - 12°34.56'N 123°45.67'W
+    // - 12 34.56N 123 45.67W
+    // - 12.3456 -123.4567
+
+    wxString work = str;
+    work.Trim(true).Trim(false);  // Remove leading/trailing whitespace
+
+    // Try decimal format first
+    wxRegEx reDec("(-?[0-9]+\\.[0-9]+)\\s+(-?[0-9]+\\.[0-9]+)");
+    if (reDec.Matches(work)) {
+        wxString sLat = reDec.GetMatch(work, 1);
+        wxString sLon = reDec.GetMatch(work, 2);
+
+        sLat.ToDouble(lat);
+        sLon.ToDouble(lon);
+        return true;
+    }
+
+    // Try degrees-decimal minutes format
+    wxRegEx reDDM("([0-9]+)\\s*[°\\s]\\s*([0-9]+\\.[0-9]+)[′'\\s]\\s*([NS])\\s+([0-9]+)\\s*[°\\s]\\s*([0-9]+\\.[0-9]+)[′'\\s]\\s*([EW])");
+    if (reDDM.Matches(work)) {
+        wxString sLatDeg = reDDM.GetMatch(work, 1);
+        wxString sLatMin = reDDM.GetMatch(work, 2);
+        wxString sLatDir = reDDM.GetMatch(work, 3);
+        wxString sLonDeg = reDDM.GetMatch(work, 4);
+        wxString sLonMin = reDDM.GetMatch(work, 5);
+        wxString sLonDir = reDDM.GetMatch(work, 6);
+
+        double latDeg, latMin, lonDeg, lonMin;
+        sLatDeg.ToDouble(&amp;latDeg);
+        sLatMin.ToDouble(&amp;latMin);
+        sLonDeg.ToDouble(&amp;lonDeg);
+        sLonMin.ToDouble(&amp;lonMin);
+
+        *lat = latDeg + (latMin / 60.0);
+        *lon = lonDeg + (lonMin / 60.0);
+
+        if (sLatDir.Upper() == "S")
+            *lat = -(*lat);
+        if (sLonDir.Upper() == "W")
+            *lon = -(*lon);
+
+        return true;
+    }
+
+    // More formats could be added here...
+
+    return false;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_format_latitudelongitude_as_string"><a class="anchor" href="#_format_latitudelongitude_as_string"></a>Format Latitude/Longitude as String</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxString FormatLatLon(double lat, double lon, int format = 0) {
+    // Format:
+    // 0: Decimal degrees: 12.3456 -123.4567
+    // 1: Degrees decimal minutes: 12° 34.56' N 123° 45.67' W
+    // 2: Degrees, minutes, seconds: 12° 34' 56" N 123° 45' 67" W
+
+    wxString result;
+
+    switch (format) {
+        case 0: {
+            // Decimal degrees
+            result = wxString::Format("%.6f %.6f", lat, lon);
+            break;
+        }
+        case 1: {
+            // Degrees decimal minutes
+            int latDeg = (int)fabs(lat);
+            double latMin = (fabs(lat) - latDeg) * 60.0;
+            int lonDeg = (int)fabs(lon);
+            double lonMin = (fabs(lon) - lonDeg) * 60.0;
+
+            result = wxString::Format("%d° %.5f' %c %d° %.5f' %c",
+                latDeg, latMin, (lat &gt;= 0) ? 'N' : 'S',
+                lonDeg, lonMin, (lon &gt;= 0) ? 'E' : 'W');
+            break;
+        }
+        case 2: {
+            // Degrees, minutes, seconds
+            int latDeg = (int)fabs(lat);
+            double latMinFull = (fabs(lat) - latDeg) * 60.0;
+            int latMin = (int)latMinFull;
+            double latSec = (latMinFull - latMin) * 60.0;
+
+            int lonDeg = (int)fabs(lon);
+            double lonMinFull = (fabs(lon) - lonDeg) * 60.0;
+            int lonMin = (int)lonMinFull;
+            double lonSec = (lonMinFull - lonMin) * 60.0;
+
+            result = wxString::Format("%d° %d' %.2f\" %c %d° %d' %.2f\" %c",
+                latDeg, latMin, latSec, (lat &gt;= 0) ? 'N' : 'S',
+                lonDeg, lonMin, lonSec, (lon &gt;= 0) ? 'E' : 'W');
+            break;
+        }
+    }
+
+    return result;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_calculate_rhumb_line_distance_and_bearing"><a class="anchor" href="#_calculate_rhumb_line_distance_and_bearing"></a>Calculate Rhumb Line Distance and Bearing</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void RhumbDistanceAndBearing(double lat1, double lon1, double lat2, double lon2,
+                            double *distance, double *bearing) {
+    // Convert to radians
+    double lat1Rad = lat1 * M_PI / 180.0;
+    double lon1Rad = lon1 * M_PI / 180.0;
+    double lat2Rad = lat2 * M_PI / 180.0;
+    double lon2Rad = lon2 * M_PI / 180.0;
+
+    double dLon = lon2Rad - lon1Rad;
+
+    // If crossing the anti-meridian, adjust longitude
+    if (fabs(dLon) &gt; M_PI) {
+        if (dLon &gt; 0) {
+            dLon = -(2 * M_PI - dLon);
+        } else {
+            dLon = 2 * M_PI + dLon;
+        }
+    }
+
+    // Calculate projection factor for latitude difference
+    double dPhi = log(tan(lat2Rad / 2 + M_PI / 4) / tan(lat1Rad / 2 + M_PI / 4));
+
+    // Calculate q, the east-west component of the displacement
+    double q = (fabs(dPhi) &gt; 1e-10) ? (lat2Rad - lat1Rad) / dPhi : cos(lat1Rad);
+
+    // Calculate distance (in radians)
+    double distRad = sqrt(pow(lat2Rad - lat1Rad, 2) + pow(q * dLon, 2));
+
+    // Convert to nautical miles
+    *distance = distRad * 60 * 180 / M_PI;
+
+    // Calculate bearing
+    *bearing = atan2(dLon, dPhi) * 180 / M_PI;
+    if (*bearing &lt; 0) {
+        *bearing += 360;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_a_rhumb_line_route"><a class="anchor" href="#_create_a_rhumb_line_route"></a>Create a Rhumb Line Route</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">PlugIn_Route *CreateRhumbLineRoute(double startLat, double startLon,
+                                 double endLat, double endLon,
+                                 double interval, const wxString &amp;routeName) {
+    // Create route
+    PlugIn_Route *route = new PlugIn_Route();
+    route-&gt;m_NameString = routeName;
+    route-&gt;m_StartString = "Start";
+    route-&gt;m_EndString = "End";
+
+    // Calculate route length
+    double distance, bearing;
+    RhumbDistanceAndBearing(startLat, startLon, endLat, endLon, &amp;distance, &amp;bearing);
+
+    // Create waypoints
+    int numPoints = (int)(distance / interval) + 1;
+
+    for (int i = 0; i &lt;= numPoints; i++) {
+        double fraction = (numPoints &gt; 0) ? (double)i / numPoints : 0;
+        double lat, lon;
+
+        if (i == 0) {
+            lat = startLat;
+            lon = startLon;
+        } else if (i == numPoints) {
+            lat = endLat;
+            lon = endLon;
+        } else {
+            // Calculate intermediate point
+            double d = fraction * distance;
+            double b = bearing * M_PI / 180.0;
+
+            // Convert to radians
+            double lat1 = startLat * M_PI / 180.0;
+            double lon1 = startLon * M_PI / 180.0;
+
+            // Calculate intermediate point
+            double latRad = lat1 + (d / 60) * cos(b) * M_PI / 180.0;
+            double dPhi = log(tan(latRad / 2 + M_PI / 4) / tan(lat1 / 2 + M_PI / 4));
+            double q = (fabs(dPhi) &gt; 1e-10) ? (latRad - lat1) / dPhi : cos(lat1);
+            double dLon = (d / 60) * sin(b) * M_PI / 180.0 / q;
+            double lonRad = lon1 + dLon;
+
+            // Convert back to degrees
+            lat = latRad * 180.0 / M_PI;
+            lon = lonRad * 180.0 / M_PI;
+
+            // Normalize longitude to -180 to 180
+            if (lon &gt; 180) lon -= 360;
+            if (lon &lt; -180) lon += 360;
+        }
+
+        // Create waypoint
+        wxString name = (i == 0) ? "Start" :
+                       (i == numPoints) ? "End" :
+                       wxString::Format("Point %d", i);
+
+        PlugIn_Waypoint *wp = new PlugIn_Waypoint(
+            lat, lon,
+            (i == 0 || i == numPoints) ? "triangle") : _T("circle",
+            name
+        );
+
+        // Add to route
+        route-&gt;pWaypointList-&gt;Append(wp);
+    }
+
+    return route;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_calculate_sun_riseset_times"><a class="anchor" href="#_calculate_sun_riseset_times"></a>Calculate Sun Rise/Set Times</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void CalculateSunRiseSet(double lat, double lon, int year, int month, int day,
+                       double *sunrise, double *sunset) {
+    // Ported from NOAA Solar Calculator
+    // http://www.esrl.noaa.gov/gmd/grad/solcalc/
+
+    // Convert to Julian Day
+    int a = (month &gt; 2) ? 0 : -1;
+    int b = year + 4800 + a;
+    int c = month + 12 * a - 3;
+    int jd = day + (153 * c + 2) / 5 + 365 * b + b / 4 - b / 100 + b / 400 - 32045;
+
+    // Calculate solar position
+    double d = jd - 2451545.0;
+
+    // Solar Mean Anomaly
+    double g = 357.529 + 0.98560028 * d;
+    g = fmod(g, 360.0);
+
+    // Ecliptic Longitude
+    double q = 280.459 + 0.98564736 * d;
+    q = fmod(q, 360.0);
+
+    // Solar Transit
+    double L = q + 1.915 * sin(g * M_PI / 180.0) + 0.020 * sin(2 * g * M_PI / 180.0);
+    L = fmod(L, 360.0);
+
+    // Sun's declination
+    double e = 23.439 - 0.00000036 * d;
+    double sinDec = sin(e * M_PI / 180.0) * sin(L * M_PI / 180.0);
+    double cosDec = sqrt(1 - sinDec * sinDec);
+
+    // Hour angle for given sun elevation
+    double elevation = -0.83; // -0.83 for sun rise/set
+    double cosH = (sin(elevation * M_PI / 180.0) - sin(lat * M_PI / 180.0) * sinDec) /
+                  (cos(lat * M_PI / 180.0) * cosDec);
+
+    // No sunrise/sunset if |cosH| &gt; 1
+    if (cosH &gt; 1.0) {
+        // Sun never rises
+        *sunrise = -1;
+        *sunset = -1;
+        return;
+    } else if (cosH &lt; -1.0) {
+        // Sun never sets
+        *sunrise = 0;
+        *sunset = 24;
+        return;
+    }
+
+    // Hour angle
+    double H = acos(cosH) * 180.0 / M_PI;
+
+    // Solar transit (noon)
+    double T = 12.0 - lon / 15.0;
+
+    // Sunrise and sunset in hours (UTC)
+    *sunrise = (T - H / 15.0);
+    *sunset = (T + H / 15.0);
+
+    // Ensure values are in 0-24 range
+    while (*sunrise &lt; 0) *sunrise += 24;
+    while (*sunrise &gt;= 24) *sunrise -= 24;
+    while (*sunset &lt; 0) *sunset += 24;
+    while (*sunset &gt;= 24) *sunset -= 24;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Error handling</strong>: Always check function return values and handle errors gracefully</p>
+</li>
+<li>
+<p><strong>Parameter validation</strong>: Validate input parameters before calling utility functions</p>
+</li>
+<li>
+<p><strong>Performance</strong>: Be mindful of performance implications, especially for functions called frequently</p>
+</li>
+<li>
+<p><strong>Resource management</strong>: Properly clean up resources when they&#8217;re no longer needed</p>
+</li>
+<li>
+<p><strong>Consistency</strong>: Use consistent conventions for geographic coordinates and units</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
