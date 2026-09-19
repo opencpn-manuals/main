@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Plugin Communication :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/ocpn-dev-manual/0.1/pm-plugin-api-plugin-communication.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ocpn-dev-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">OpenCPN Developer Manual</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developer Manual</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-AboutThisManual.html">About this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Background.html">Background</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Terminology.html">Terminology</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../opencpn-dev/index.html">Opencpn development</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Plugin Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-devel-overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-plugin-dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-plugin-api-overview.html">Plugin API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-versions.html">Plugin API and ABI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="using-the-api.html">Using the API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="system-events.html">Using API system events</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-core-classes.html">Core Plugin Classes and Lifecycle</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-capabilities.html">Plugin Capabilities System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-ui-integration.html">UI Integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-rendering.html">Chart Display and Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-custom-charts.html">Custom Chart Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-navigation-data.html">Navigation Data Access</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-plugin-communication.html">Plugin Communication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-utility-functions.html">Utility Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-deployment.html">Deployment overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-workflow.html">Workflow overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-compat.html">Compatibility and tweaks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dm-i18n.html">Translations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Plugin-Pi-Adaptation.html">Plugin Installer Code Adaptation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-tp-template.html">Testplugin Template</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-workflow.html">Workflow Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-services.html">Prerequisite Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-overview-prereq-other.html">Cloudsmith Setup</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="pm-tp-system-structure.html">System Structure</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-dev-setup.html">Developer Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-config-template.html">Configure Template</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text">Build Locally</span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-adapt-plugin.html">Adapt Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-deploy.html">Deploy Details</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pi_installer_dev_procedure.html">PI Manager Dev Procedure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-update-library.html">Update the Library</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-language-nuance.html">Language Nuances</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../opencpn-dev/odraw-messaging.html">Odapi Messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-odapi.html">Odapi for oDraw</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-ocpn_draw_odapi.html">Ocpn_Draw Odapi</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../AlternativeWorkflow/index.html">Shipdriver Template</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plugin-installer/Home.html">Plugin Manager Installer Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://opencpn-manuals.github.io/main/opencpn-plugins/index.html">Plugins  Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-legacy-plugins.html">Legacy Plugin Packaging</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-manual-maint.html">Maintenance of this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-i18n.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Resources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-prebuilt-build-files.html">Prebuilt Build Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-online-tools.html">Online Nmea Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ECDIS_testdata.html">ECDIS testdata</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prerequisites.html">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="compile_mac_osx.html">Compiling on macOS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rpi2.html">Compile on Raspberry PI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="building-on-armhf-linux-armbian-orange-pi.html">armhf linux - Armbian - Orange Pi</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenCPN Developer Manual</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenCPN Developer Manual</a></li>
+    <li>Developer Manual</li>
+    <li>Plugin Development</li>
+    <li><a href="pm-plugin-api-overview.html">Plugin API</a></li>
+    <li><a href="pm-plugin-api-plugin-communication.html">Plugin Communication</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/opencpn-manuals/development/edit/main/modules/ROOT/pages/pm-plugin-api-plugin-communication.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Plugin Communication</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains how plugins can communicate with each other and with the OpenCPN core application. Plugin communication allows for sharing data, coordinating actions, and creating plugin ecosystems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenCPN provides a messaging system that allows plugins to send and receive messages. This system enables:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Communication between plugins</p>
+</li>
+<li>
+<p>Publishing and subscribing to data streams</p>
+</li>
+<li>
+<p>Coordinating actions between plugins</p>
+</li>
+<li>
+<p>Creating extensible plugin ecosystems</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plugin_messaging_capability"><a class="anchor" href="#_plugin_messaging_capability"></a>Plugin Messaging Capability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To participate in plugin messaging, a plugin must declare the <code>WANTS_PLUGIN_MESSAGING</code> capability:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::Init(void) {
+    // Initialize resources
+    // ...
+
+    // Return capabilities
+    return WANTS_PLUGIN_MESSAGING;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_receiving_messages"><a class="anchor" href="#_receiving_messages"></a>Receiving Messages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To receive messages, your plugin must implement the <code>SetPluginMessage()</code> method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::SetPluginMessage(wxString &amp;message_id, wxString &amp;message_body) {
+    // Process the message based on its ID
+    if (message_id == "OCPN_WPT_ARRIVING") {
+        // Handle waypoint arrival message
+        // message_body contains waypoint information
+        ProcessWaypointArrival(message_body);
+    }
+    else if (message_id == "OCPN_ROUTE_ACTIVATED") {
+        // Handle route activation message
+        // message_body contains route information
+        ProcessRouteActivation(message_body);
+    }
+    else if (message_id == "MY_CUSTOM_MESSAGE") {
+        // Handle custom message from another plugin
+        ProcessCustomMessage(message_body);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sending_messages"><a class="anchor" href="#_sending_messages"></a>Sending Messages</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To send a message to other plugins, use the <code>SendPluginMessage()</code> function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::SendMyMessage() {
+    // Create message ID and body
+    wxString message_id = "MY_PLUGIN_UPDATE";
+    wxString message_body = "{\"status\":\"active\",\"data\":\"42\"}";
+
+    // Send the message
+    SendPluginMessage(message_id, message_body);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All plugins that have declared the <code>WANTS_PLUGIN_MESSAGING</code> capability will receive this message through their <code>SetPluginMessage()</code> method.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_message_format_conventions"><a class="anchor" href="#_message_format_conventions"></a>Message Format Conventions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While the plugin messaging system doesn&#8217;t enforce a specific format for message bodies, several conventions have emerged:</p>
+</div>
+<div class="sect2">
+<h3 id="_json_format"><a class="anchor" href="#_json_format"></a>JSON Format</h3>
+<div class="paragraph">
+<p>JSON is a popular format for structured messages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxString message_body = "{\"command\":\"update\",\"params\":{\"lat\":47.6,\"lon\":-122.3}}";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parsing JSON messages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;wx/json_defs.h&gt;
+#include &lt;wx/jsonreader.h&gt;
+#include &lt;wx/jsonwriter.h&gt;
+
+void MyPlugin::ProcessJsonMessage(const wxString &amp;message_body) {
+    wxJSONValue root;
+    wxJSONReader reader;
+
+    int errors = reader.Parse(message_body, &amp;root);
+    if (errors &gt; 0) {
+        // Handle parsing error
+        return;
+    }
+
+    // Extract data from JSON
+    if (root.HasMember("command")) {
+        wxString command = root["command"].AsString();
+
+        if (command == "update") {
+            // Process update command
+            if (root["params")].HasMember(_T("lat") &amp;&amp;
+                root["params")].HasMember(_T("lon")) {
+
+                double lat = root["params")][_T("lat"].AsDouble();
+                double lon = root["params")][_T("lon"].AsDouble();
+
+                // Process lat/lon
+                // ...
+            }
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_simple_key_value_format"><a class="anchor" href="#_simple_key_value_format"></a>Simple Key-Value Format</h3>
+<div class="paragraph">
+<p>For simpler messages, a key-value format can be used:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxString message_body = "lat=47.6;lon=-122.3;spd=5.2;cog=120";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parsing key-value messages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::ProcessKeyValueMessage(const wxString &amp;message_body) {
+    // Split by semicolons
+    wxArrayString pairs = wxStringTokenize(message_body, ";");
+
+    // Initialize variables
+    double lat = 0.0, lon = 0.0, spd = 0.0, cog = 0.0;
+
+    // Process each key-value pair
+    for (size_t i = 0; i &lt; pairs.GetCount(); i++) {
+        wxArrayString pair = wxStringTokenize(pairs[i], "=");
+
+        if (pair.GetCount() == 2) {
+            wxString key = pair[0];
+            wxString value = pair[1];
+
+            if (key == "lat") value.ToDouble(&amp;lat);
+            else if (key == "lon") value.ToDouble(&amp;lon);
+            else if (key == "spd") value.ToDouble(&amp;spd);
+            else if (key == "cog") value.ToDouble(&amp;cog);
+        }
+    }
+
+    // Process extracted values
+    // ...
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_xml_format"><a class="anchor" href="#_xml_format"></a>XML Format</h3>
+<div class="paragraph">
+<p>For more complex structured data, XML can be used:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxString message_body = "&lt;data&gt;&lt;position lat=\"47.6\" lon=\"-122.3\"/&gt;&lt;speed value=\"5.2\"/&gt;&lt;/data&gt;";</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Parsing XML messages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">#include &lt;wx/xml/xml.h&gt;
+
+void MyPlugin::ProcessXmlMessage(const wxString &amp;message_body) {
+    wxStringInputStream stream(message_body);
+    wxXmlDocument doc;
+
+    if (!doc.Load(stream)) {
+        // Handle parsing error
+        return;
+    }
+
+    wxXmlNode *root = doc.GetRoot();
+    if (root &amp;&amp; root-&gt;GetName() == "data") {
+        // Process data node
+        wxXmlNode *child = root-&gt;GetChildren();
+        while (child) {
+            if (child-&gt;GetName() == "position") {
+                // Get position attributes
+                double lat = 0.0, lon = 0.0;
+                wxString lat_str = child-&gt;GetAttribute("lat"), _T("0");
+                wxString lon_str = child-&gt;GetAttribute("lon"), _T("0");
+
+                lat_str.ToDouble(&amp;lat);
+                lon_str.ToDouble(&amp;lon);
+
+                // Process position
+                // ...
+            }
+            else if (child-&gt;GetName() == "speed") {
+                // Get speed attribute
+                double spd = 0.0;
+                wxString spd_str = child-&gt;GetAttribute("value"), _T("0");
+
+                spd_str.ToDouble(&amp;spd);
+
+                // Process speed
+                // ...
+            }
+
+            child = child-&gt;GetNext();
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_standard_message_ids"><a class="anchor" href="#_standard_message_ids"></a>Standard Message IDs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenCPN defines several standard message IDs for common events. Plugins can listen for these messages to be notified of system events.</p>
+</div>
+<div class="sect2">
+<h3 id="_core_opencpn_messages"><a class="anchor" href="#_core_opencpn_messages"></a>Core OpenCPN Messages</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Message ID</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OCPN_WPT_ARRIVED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sent when the vessel arrives at a waypoint. Message body contains waypoint information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OCPN_ROUTE_ACTIVATED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sent when a route is activated. Message body contains route information.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OCPN_ROUTE_DEACTIVATED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sent when a route is deactivated. Message body contains route information.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_plugin_to_plugin_communication"><a class="anchor" href="#_plugin_to_plugin_communication"></a>Plugin-to-Plugin Communication</h3>
+<div class="paragraph">
+<p>When creating messages for plugin-to-plugin communication, follow these naming conventions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Use a prefix based on your plugin name to avoid conflicts</p>
+</li>
+<li>
+<p>Make message IDs descriptive of their purpose</p>
+</li>
+<li>
+<p>Consider versioning for evolving message formats</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example naming scheme:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Weather plugin messages
+wxString MSG_WEATHER_UPDATE = "WEATHER_PLUGIN_UPDATE_V1";
+wxString MSG_WEATHER_FORECAST = "WEATHER_PLUGIN_FORECAST_V1";
+
+// Navigation plugin messages
+wxString MSG_NAV_POSITION = "NAV_PLUGIN_POSITION_V1";
+wxString MSG_NAV_DESTINATION = "NAV_PLUGIN_DESTINATION_V1";</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plugin_communication_patterns"><a class="anchor" href="#_plugin_communication_patterns"></a>Plugin Communication Patterns</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_publisher_subscriber_pattern"><a class="anchor" href="#_publisher_subscriber_pattern"></a>Publisher-Subscriber Pattern</h3>
+<div class="paragraph">
+<p>In this pattern, one plugin publishes data that other plugins can subscribe to:</p>
+</div>
+<div class="paragraph">
+<p><strong>Publisher Plugin:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Weather plugin publishing forecast data
+void WeatherPlugin::PublishForecast() {
+    // Create forecast data
+    wxString forecast_data = CreateForecastJson();
+
+    // Publish to subscribers
+    SendPluginMessage("WEATHER_FORECAST_V1", forecast_data);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Subscriber Plugin:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Navigation plugin subscribing to weather forecasts
+void NavigationPlugin::SetPluginMessage(wxString &amp;message_id, wxString &amp;message_body) {
+    if (message_id == "WEATHER_FORECAST_V1") {
+        // Process weather forecast data
+        ProcessWeatherForecast(message_body);
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_request_response_pattern"><a class="anchor" href="#_request_response_pattern"></a>Request-Response Pattern</h3>
+<div class="paragraph">
+<p>In this pattern, one plugin requests information from another:</p>
+</div>
+<div class="paragraph">
+<p><strong>Requester Plugin:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Request current weather data
+void NavigationPlugin::RequestWeatherData() {
+    // Create a unique request ID
+    m_request_id = wxDateTime::Now().GetTicks();
+
+    // Build request message
+    wxString request = wxString::Format(
+        "{\"request_id\":%ld,\"type\":\"current_weather\",\"lat\":%.6f,\"lon\":%.6f}",
+        m_request_id, m_current_lat, m_current_lon);
+
+    // Send request
+    SendPluginMessage("WEATHER_DATA_REQUEST", request);
+}
+
+// Handle response
+void NavigationPlugin::SetPluginMessage(wxString &amp;message_id, wxString &amp;message_body) {
+    if (message_id == "WEATHER_DATA_RESPONSE") {
+        // Parse response to get request_id
+        wxJSONValue root;
+        wxJSONReader reader;
+
+        int errors = reader.Parse(message_body, &amp;root);
+        if (errors &gt; 0) return;
+
+        // Check if this is our response
+        if (root.HasMember("request_id") &amp;&amp;
+            root["request_id"].AsLong() == m_request_id) {
+
+            // Process weather data
+            ProcessWeatherResponse(root);
+        }
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Responder Plugin:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Handle request and send response
+void WeatherPlugin::SetPluginMessage(wxString &amp;message_id, wxString &amp;message_body) {
+    if (message_id == "WEATHER_DATA_REQUEST") {
+        // Parse request
+        wxJSONValue request_root;
+        wxJSONReader reader;
+
+        int errors = reader.Parse(message_body, &amp;request_root);
+        if (errors &gt; 0) return;
+
+        // Extract request parameters
+        if (request_root.HasMember("request_id") &amp;&amp;
+            request_root.HasMember("type") &amp;&amp;
+            request_root.HasMember("lat") &amp;&amp;
+            request_root.HasMember("lon")) {
+
+            long request_id = request_root["request_id"].AsLong();
+            wxString type = request_root["type"].AsString();
+            double lat = request_root["lat"].AsDouble();
+            double lon = request_root["lon"].AsDouble();
+
+            // Generate weather data for the requested location
+            wxString weather_data = GenerateWeatherData(type, lat, lon);
+
+            // Create response
+            wxJSONValue response_root;
+            response_root["request_id"] = request_id;
+            response_root["type"] = type;
+            response_root["data"] = weather_data;
+
+            // Serialize to string
+            wxJSONWriter writer;
+            wxString response;
+            writer.Write(response_root, response);
+
+            // Send response
+            SendPluginMessage("WEATHER_DATA_RESPONSE", response);
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_broadcast_pattern"><a class="anchor" href="#_broadcast_pattern"></a>Broadcast Pattern</h3>
+<div class="paragraph">
+<p>In this pattern, a plugin broadcasts information to all interested plugins without expecting a response:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Broadcast vessel position
+void PositionPlugin::BroadcastPosition() {
+    // Create position message
+    wxString position = wxString::Format(
+        "lat=%.6f;lon=%.6f;cog=%.1f;sog=%.1f;timestamp=%ld",
+        m_current_lat, m_current_lon, m_current_cog, m_current_sog,
+        wxDateTime::Now().GetTicks());
+
+    // Broadcast to all plugins
+    SendPluginMessage("VESSEL_POSITION_BROADCAST", position);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_plugin_api_extension_pattern"><a class="anchor" href="#_plugin_api_extension_pattern"></a>Plugin API Extension Pattern</h3>
+<div class="paragraph">
+<p>In this pattern, a plugin exposes a rich API through the messaging system, allowing other plugins to interact with its features:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Plugin exposing API functions
+void RoutingPlugin::SetPluginMessage(wxString &amp;message_id, wxString &amp;message_body) {
+    if (message_id == "ROUTING_API") {
+        // Parse API request
+        wxJSONValue request;
+        wxJSONReader reader;
+
+        int errors = reader.Parse(message_body, &amp;request);
+        if (errors &gt; 0) return;
+
+        // Process API command
+        if (request.HasMember("command")) {
+            wxString command = request["command"].AsString();
+
+            if (command == "calculate_route") {
+                // Extract parameters
+                double start_lat = request["start_lat"].AsDouble();
+                double start_lon = request["start_lon"].AsDouble();
+                double end_lat = request["end_lat"].AsDouble();
+                double end_lon = request["end_lon"].AsDouble();
+
+                // Calculate route
+                RouteResult result = CalculateRoute(start_lat, start_lon, end_lat, end_lon);
+
+                // Build response
+                wxJSONValue response;
+                response["success"] = result.success;
+                response["message"] = result.message;
+
+                if (result.success) {
+                    // Add route points
+                    wxJSONValue points;
+                    for (size_t i = 0; i &lt; result.points.size(); i++) {
+                        wxJSONValue point;
+                        point["lat"] = result.points[i].lat;
+                        point["lon"] = result.points[i].lon;
+                        points.Append(point);
+                    }
+                    response["points"] = points;
+                    response["distance"] = result.total_distance;
+                    response["time"] = result.estimated_time;
+                }
+
+                // Serialize and send response
+                wxJSONWriter writer;
+                wxString response_str;
+                writer.Write(response, response_str);
+
+                SendPluginMessage("ROUTING_API_RESPONSE", response_str);
+            }
+            // Other API commands...
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plugin_discovery"><a class="anchor" href="#_plugin_discovery"></a>Plugin Discovery</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In some cases, plugins need to discover what other plugins are available and what capabilities they support. This can be done through a discovery protocol:</p>
+</div>
+<div class="sect2">
+<h3 id="_plugin_advertising"><a class="anchor" href="#_plugin_advertising"></a>Plugin Advertising</h3>
+<div class="paragraph">
+<p>When a plugin starts, it can advertise its presence and capabilities:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::Init() {
+    // ... other initialization
+
+    // Advertise plugin presence and capabilities
+    wxJSONValue capabilities;
+    capabilities["name")] = _T("MyPlugin";
+    capabilities["version")] = _T("1.2.3";
+    capabilities["api_version")] = _T("1.0";
+
+    // List supported features
+    wxJSONValue features;
+    features.Append("weather_data");
+    features.Append("routing");
+    capabilities["features"] = features;
+
+    // List supported message types
+    wxJSONValue messages;
+    messages.Append("WEATHER_DATA_REQUEST");
+    messages.Append("WEATHER_FORECAST_V1");
+    capabilities["messages"] = messages;
+
+    // Serialize to string
+    wxJSONWriter writer;
+    wxString advert;
+    writer.Write(capabilities, advert);
+
+    // Broadcast capabilities
+    SendPluginMessage("PLUGIN_ADVERTISE", advert);
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_plugin_discovery_2"><a class="anchor" href="#_plugin_discovery_2"></a>Plugin Discovery</h3>
+<div class="paragraph">
+<p>Other plugins can listen for these advertisements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyOtherPlugin::SetPluginMessage(wxString &amp;message_id, wxString &amp;message_body) {
+    if (message_id == "PLUGIN_ADVERTISE") {
+        // Parse advertisement
+        wxJSONValue capabilities;
+        wxJSONReader reader;
+
+        int errors = reader.Parse(message_body, &amp;capabilities);
+        if (errors &gt; 0) return;
+
+        // Check if this plugin has features we need
+        if (capabilities.HasMember("features")) {
+            bool has_weather = false;
+            wxJSONValue features = capabilities["features"];
+
+            for (int i = 0; i &lt; features.Size(); i++) {
+                if (features[i].AsString() == "weather_data") {
+                    has_weather = true;
+                    break;
+                }
+            }
+
+            if (has_weather) {
+                // Found a plugin that provides weather data
+                m_weather_plugin_name = capabilities["name"].AsString();
+                m_weather_plugin_found = true;
+
+                // Now we know we can use WEATHER_DATA_REQUEST messages
+            }
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rest_api_integration"><a class="anchor" href="#_rest_api_integration"></a>REST API Integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From API version 1.19, the plugin messaging system also integrates with OpenCPN&#8217;s REST interface. This means:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Messages from external applications via REST can be received by plugins</p>
+</li>
+<li>
+<p>Plugins can send messages that will be forwarded to REST clients</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This enables integration with web applications, mobile apps, and other external systems.</p>
+</div>
+<div class="sect2">
+<h3 id="_receiving_rest_messages"><a class="anchor" href="#_receiving_rest_messages"></a>Receiving REST Messages</h3>
+<div class="paragraph">
+<p>REST messages appear as normal plugin messages with special message IDs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::SetPluginMessage(wxString &amp;message_id, wxString &amp;message_body) {
+    // Check if this is a REST message
+    if (message_id.StartsWith("REST.")) {
+        // Extract the REST endpoint from the message ID
+        wxString endpoint = message_id.Mid(5);  // Skip "REST."
+
+        // Process REST request
+        if (endpoint == "myplugin/data") {
+            // Handle data request
+            ProcessRestDataRequest(message_body);
+        }
+        else if (endpoint == "myplugin/command") {
+            // Handle command
+            ProcessRestCommand(message_body);
+        }
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_responding_to_rest_messages"><a class="anchor" href="#_responding_to_rest_messages"></a>Responding to REST Messages</h3>
+<div class="paragraph">
+<p>To send a response back to a REST client, use a corresponding response message ID:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::ProcessRestDataRequest(const wxString &amp;request_body) {
+    // Create response data
+    wxJSONValue response;
+    response["status")] = _T("ok";
+    response["data"] = CreateDataResponse();
+
+    // Serialize to string
+    wxJSONWriter writer;
+    wxString response_str;
+    writer.Write(response, response_str);
+
+    // Send response back to REST client
+    SendPluginMessage("REST.myplugin/data", response_str);
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_performance_considerations"><a class="anchor" href="#_performance_considerations"></a>Performance Considerations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Message Size</strong>: Keep messages small when possible</p>
+</li>
+<li>
+<p><strong>Message Frequency</strong>: Avoid sending messages too frequently</p>
+</li>
+<li>
+<p><strong>Processing Time</strong>: Keep message processing fast to avoid delays</p>
+</li>
+<li>
+<p><strong>Batching</strong>: Batch updates when multiple changes occur in quick succession</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_error_handling"><a class="anchor" href="#_error_handling"></a>Error Handling</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Validate Input</strong>: Always validate incoming message data</p>
+</li>
+<li>
+<p><strong>Error Responses</strong>: Use clear error responses for invalid requests</p>
+</li>
+<li>
+<p><strong>Timeouts</strong>: Implement timeouts for request-response patterns</p>
+</li>
+<li>
+<p><strong>Versioning</strong>: Include version information in messages for compatibility</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_message_design"><a class="anchor" href="#_message_design"></a>Message Design</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Clear IDs</strong>: Use descriptive, namespaced message IDs</p>
+</li>
+<li>
+<p><strong>Structured Data</strong>: Use JSON or XML for complex data</p>
+</li>
+<li>
+<p><strong>Minimal Data</strong>: Only include necessary information</p>
+</li>
+<li>
+<p><strong>Documentation</strong>: Document your message formats for other developers</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_security_considerations"><a class="anchor" href="#_security_considerations"></a>Security Considerations</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Validation</strong>: Always validate message data before using it</p>
+</li>
+<li>
+<p><strong>Sensitive Data</strong>: Be careful with sensitive information in messages</p>
+</li>
+<li>
+<p><strong>Permissions</strong>: Consider implementing permission checks for critical operations</p>
+</li>
+<li>
+<p><strong>Rate Limiting</strong>: Protect against message flooding</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
