@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Offline planning, running fixes and sight analysis :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/celestial_navigation/offline-planning.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="celestial_navigation" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-explore is-active" data-panel="explore">
+  <div class="context">
+    <span class="title">Celestial Navigation</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/0.1/index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/rgleason/celestial_navigation_pi/edit/master/manual/modules/ROOT/pages/offline-planning.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Offline planning, running fixes and sight analysis</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The navigation-planning tools are designed for offshore use. They perform no
+network access and do not depend on the optional eclipse data packs. Ordinary
+Sun, Moon, planet and star calculations use the same bundled VSOP87D,
+ELP2000/82 and navigational-star implementation used by sight reduction.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sun_moon_and_sight_planner"><a class="anchor" href="#_sun_moon_and_sight_planner"></a>Sun, Moon and Sight Planner</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open <strong>Sun &amp; Moon…</strong> on the main Celestial Navigation window. The common header
+selects both a position and a UTC. A completely manual position and time are
+always available. Current boat position, chart cursor, selected-sight DR and
+the most recent calculated fix are conveniences and are used only when the
+corresponding source is available. While <strong>Chart cursor</strong> is selected,
+the position and results follow the OpenCPN chart cursor at a throttled rate;
+select <strong>Manual</strong> to freeze that position for planning. <strong>Waypoint or place&#8230;&#8203;</strong>
+opens a searchable list of OpenCPN marks, waypoints and named route points. The
+selected item&#8217;s stable identifier is saved; the planner resolves its current
+coordinates each time it is opened and falls back to the retained manual
+position if the item has since been deleted.</p>
+</div>
+<div class="paragraph">
+<p>Date and time are entered with separate calendar and clock controls. The input
+can be interpreted as UTC, the computer&#8217;s local civil time, or ship zone time;
+changing that choice preserves the instant and all calculations are normalized
+to UTC. Ship zone time defaults to the conventional whole-hour offset suggested
+by longitude. Disable <strong>Auto zone from longitude</strong> to select a manual offset in
+half-hour increments; UTC date rollover is handled automatically. The zone
+offset controls are enabled only when ship-zone input or fixed-offset display
+uses them. A temporarily blank or invalid offset retains the last valid value
+rather than silently becoming the western limit.</p>
+</div>
+<div class="paragraph">
+<p>The default entry presentation is unambiguous nautical <code>YYYY-MM-DD</code> and
+24-hour <code>HH:MM:SS</code>. <strong>OpenCPN / platform format</strong> instead uses the operating
+system&#8217;s native controls without changing the represented instant. Event times
+can independently be displayed as UTC, the computer&#8217;s local civil time and
+zone, local mean time derived from longitude, or a fixed UTC offset. The
+computer-local display observes the operating system&#8217;s daylight-saving rules
+for the event date. The ordinary planner validates dates from 1900 through
+2100. The bold <strong>Resolved UTC</strong> line is the authoritative instant shared by all
+planner tabs, independent of entry or display format.</p>
+</div>
+<div class="paragraph">
+<p>Editing an automatically supplied latitude/longitude changes the position
+source to <strong>Manual</strong>. Editing an automatically supplied date/time changes the
+time source to <strong>Manual date/time</strong>. Valid context, motion, zone-offset and
+eye-height edits refresh the calculations after a short debounce; <strong>Calculate /
+refresh</strong> remains available for an explicit update. Planner choices such as
+COG/SOG and entry/display formats persist. A newly opened planner starts at
+<strong>Now</strong>, and its eye height is initialized from the main plugin defaults. Eye
+height affects visible-horizon dip for rise/set, not the geometric body-centre
+Hc in the table.</p>
+</div>
+<div class="paragraph">
+<p>Enable <strong>Time-tagged moving observer</strong> to define the position at the displayed
+reference UTC and propagate it along COG (true) and SOG. Each event row then
+also reports the propagated observer position.</p>
+</div>
+<div class="sect2">
+<h3 id="_events"><a class="anchor" href="#_events"></a>Events</h3>
+<div class="paragraph">
+<p>The daily table contains astronomical, nautical and civil dawn/dusk, sunrise,
+local apparent noon, sunset, Moon rise/transit/set and the next four principal
+Moon phases. Rise and set calculations solve apparent upper-limb altitude,
+including refraction, semidiameter, parallax and eye-height dip. Twilight uses
+the conventional geometric Sun-centre altitudes of -6, -12 and -18 degrees.
+Polar day/night and circumpolar Moon states are reported instead of inventing
+an event.</p>
+</div>
+<div class="paragraph">
+<p>The table covers the UTC calendar day containing the planning time. At far
+eastern or western longitudes, the corresponding local rise and set can
+therefore carry different local calendar dates; both the always-present UTC
+column and the selected display-time column make this explicit.</p>
+</div>
+<div class="paragraph">
+<p>The Moon summary includes illumination, named phase, waxing/waning state,
+approximate lunar age, altitude, true azimuth and angular separation from the
+Sun.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bodies_and_best_sights"><a class="anchor" href="#_bodies_and_best_sights"></a>Bodies and best sights</h3>
+<div class="paragraph">
+<p>The body table reports Hc, Zn true, GHA, declination, approximate visual
+magnitude and a planning score for every catalogued body above the geometric
+horizon. Click a heading to sort that column and again to reverse it. <strong>Limit
+recommendations by Hc</strong> optionally applies its editable minimum and maximum only
+to suggested pairs and triads; the initial preferred range is 10 to 75 degrees.
+Bodies outside that preferred range remain visible in the table. The individual
+score gives 65% weight to altitude near 40 degrees and 35% to brightness, with
+a daylight/twilight penalty for stars. Planets do not currently receive an
+equivalent twilight penalty, so score alone is not a guarantee of practical
+visibility. Recommended pairs additionally favour a near-right-angle crossing;
+triads use the determinant of their two-dimensional bearing information matrix.</p>
+</div>
+<div class="paragraph">
+<p>The polar sky plot has independent magnitude limits of 1, 2 or 3 and can show
+bodies below the horizon. The Sun is yellow, Moon blue, planets red, daylight
+stars grey and below-horizon bodies hollow. Only the first 14 score-ranked
+bodies are considered for labels, and overlapping labels are suppressed. An
+unlabeled dot does not mean that the body is missing. The explanation and plot
+make the recommendation auditable but do not replace the navigator&#8217;s assessment
+of cloud, glare, horizon and identification risk.</p>
+</div>
+<div class="paragraph">
+<p>Select a row and use <strong>Create selected sight…</strong> to open the normal Sight dialog
+with body, time and DR already filled. No zero-altitude observation is silently
+created.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_almanac"><a class="anchor" href="#_almanac"></a>Almanac</h3>
+<div class="paragraph">
+<p>The almanac page produces an hourly, 24-hour table of body GHA, SHA,
+declination, GHA Aries, local hour angle of Aries, Hc and Zn for the Sun, Moon,
+visible planets and Polaris. Longitude is signed east-positive, so local hour
+angle is <code>GHA + longitude</code>, wrapped to 0–360 degrees. <strong>Export CSV…</strong> writes a
+plain-text file suitable for a spreadsheet or an offline printed worksheet.
+Exported UTC timestamps use ISO 8601 form such as
+<code>2026-08-13T04:48:00Z</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_noon_and_polaris"><a class="anchor" href="#_noon_and_polaris"></a>Noon and Polaris</h3>
+<div class="paragraph">
+<p>The special-workflow page reports local apparent noon and can solve latitude
+from a corrected Sun meridian altitude or a corrected Polaris altitude. Local
+apparent noon is solved as the instant when the moving observer&#8217;s solar local
+hour angle is zero, rather than by sampling for the highest displayed altitude.
+The result is a workflow aid: index error, dip, refraction, limb choice, time
+and DR uncertainty still apply. The Polaris workflow reports its predicted Hc
+and refuses a latitude solution when Polaris is below the observer&#8217;s geometric
+horizon. Equal-altitude Sun pairs may be entered as ordinary time-tagged sights
+and solved with the running-fix mode described below.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_time_tagged_numerical_running_fix"><a class="anchor" href="#_time_tagged_numerical_running_fix"></a>Time-tagged numerical running fix</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Open <strong>Fix…</strong> and enable <strong>Propagate every sight to a common epoch</strong>. When any
+visible altitude or horizon sight already has a non-zero saved DR Shift, the
+dialog selects this option and <strong>Each sight&#8217;s DR Shift</strong> automatically. Otherwise
+it retains the stationary Fix default. The selection can be changed. Enter the
+common epoch with the calendar and clock controls, selecting UTC or computer
+local civil time as appropriate. Choose <strong>One COG and SOG</strong> when the vessel
+maintained a constant course and speed, then enter COG true and SOG. Choose
+<strong>Each sight&#8217;s DR Shift</strong> when you have entered the distance and bearing travelled
+from each sight to the selected common epoch; this allows the vessel to tack or
+change speed between sights. The last sight at that epoch normally has a zero
+shift. The dialog initially chooses the latest visible sight&#8217;s corrected UTC
+as the common epoch; confirm that the saved shifts were measured to that time.
+Do not also apply COG/SOG in this mode. The value is
+normalized to UTC before calculation. The latitude/longitude labelled DR are
+the initial estimate at that epoch. For each visible altitude or horizon
+event, the solver:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>propagates the candidate epoch position to the observation UTC on a great
+circle;</p>
+</li>
+<li>
+<p>calculates Hc for the body&#8217;s position at that UTC;</p>
+</li>
+<li>
+<p>forms the weighted Ho-Hc residual; and</p>
+</li>
+<li>
+<p>iterates a two-parameter nonlinear least-squares solution for epoch latitude
+and longitude.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The table shows each included sight&#8217;s saved DR distance and bearing, marking
+magnetic or true bearings and showing the true bearing used by the solver.
+These inputs remain visible if the calculation fails. The result also includes
+each sight&#8217;s residual, RMS and an approximate uncertainty ellipse. The selected
+motion source is applied once: manual DR Shifts are
+ignored in the COG/SOG mode, and COG/SOG is ignored in the per-sight mode. The
+legacy stationary plane/sphere/cone solvers remain selectable when running-fix
+mode is off; they exclude shifted sights and show the exclusion in the dialog.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_horizon_event_observations"><a class="anchor" href="#_horizon_event_observations"></a>Horizon-event observations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use <strong>Horizon Event…</strong> to record the first visible upper limb at sunrise or the
+last visible upper limb at sunset. Enter or capture UTC, its uncertainty, eye
+height, pressure, temperature and horizon quality. An optional compass bearing
+can be entered as true, or as magnetic with explicit variation and compass
+deviation. The saved sight retains all of this context and contributes an
+approximate line of position to the ordinary or running fix.</p>
+</div>
+<div class="paragraph">
+<p>The chart shows the time-based altitude LOP and its entered horizon/time
+uncertainty band. A bearing adds all nominal position candidates, often one
+in each hemisphere. Use DR or other observations to distinguish them. The
+markers are not fixes or confidence areas. Bearing error does not convert to
+a constant NM-per-degree radius, so the former filled disc is no longer
+plotted. The Fix solver uses the altitude constraint, not the optional bearing.
+An easterly bearing belongs to sunrise and a westerly bearing to sunset;
+the dialog reports a mismatch instead of plotting an unrelated candidate.</p>
+</div>
+<div class="paragraph">
+<p>Use the full UTC date as well as the time. Near Hawaii, a sunset at 05:55 UTC
+on 16 July precedes a sunrise at 16:51 UTC that same day: it is the previous
+local evening. Propagate observations taken while underway to one common
+epoch using the running-fix controls. A Sun bearing is a celestial azimuth
+constraint, not a straight terrestrial bearing line through an assumed boat
+position.</p>
+</div>
+<div class="paragraph">
+<p>The method applies the ordinary astronomical triangle to upper-limb contact
+with the visible sea horizon, with dip, refraction, semidiameter and parallax
+corrections. See the <a href="https://aa.usno.navy.mil/faq/RST_defs">US Naval Observatory
+rise/set definitions</a>. Refraction, haze, land or an indistinct horizon often
+dominate the result; a sub-arcminute horizon uncertainty is usually too
+optimistic. Retain independent navigation evidence.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sight_sequence_analyzer"><a class="anchor" href="#_sight_sequence_analyzer"></a>Sight Sequence Analyzer</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Analyze Sights…</strong> compares visible calculated altitude sights with a stationary
+or moving known/DR track. It plots and lists Ho-Hc, reports mean and standard
+deviation, robust median/MAD, a time trend and possible outliers. The median is
+reported as a possible personal bias but is never silently applied to a sight.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scope_and_safety"><a class="anchor" href="#_scope_and_safety"></a>Scope and safety</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>These tools support planning, training and independent navigation. Approximate
+stellar/planet magnitudes are only ranking inputs. Event accuracy near a
+refracting or obstructed horizon is normally limited by real atmospheric and
+horizon conditions. Always retain raw observations, time-source information
+and an independent DR, and verify important results by another method.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>
