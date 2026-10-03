@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['b_5fincompressallcharts_0',['b_incompressallcharts',['../gui__vars_8h.html#ab9fa81be1da48fcc90ec847a25a64027',1,'b_inCompressAllCharts:&#160;gui_vars.cpp'],['../gui__vars_8cpp.html#a60c5fcd6355771136d0e37102a5036f8',1,'b_inCompressAllCharts:&#160;gui_vars.cpp']]],
+  ['b_5fquilt_1',['b_quilt',['../classPlugIn__ViewPort.html#af79dcca78a0bd747bfb713a03b6cc921',1,'PlugIn_ViewPort']]],
+  ['b_5fskiptoodeep_2',['b_skipTooDeep',['../classIDX__entry.html#acacca0147158dcd278b5a7e813e1e539',1,'IDX_entry']]],
+  ['b_5fusescamin_3',['b_usescamin',['../classPlugIn__Waypoint__Ex.html#a33ad678958f1f5a5051ac04ee81f02b6',1,'PlugIn_Waypoint_Ex::b_useScamin'],['../classPlugIn__Waypoint__ExV2.html#a9f98e159ecf688cff526ef0783d2c290',1,'PlugIn_Waypoint_ExV2::b_useScamin']]],
+  ['battenais_4',['bAttenAIS',['../classcanvasConfig.html#aeb7bf370333336cdb0d7c47700ba361b',1,'canvasConfig']]],
+  ['bcourseup_5',['bCourseUp',['../classcanvasConfig.html#a3e8fe04a164c25d7dcc2a025f5e747f9',1,'canvasConfig']]],
+  ['bcpa_5fvalid_6',['bCPA_Valid',['../classPlugIn__AIS__Target.html#a4a076e2c355aa315f0926982172bec7f',1,'PlugIn_AIS_Target']]],
+  ['bfollow_7',['bFollow',['../classcanvasConfig.html#a4a604ae49ac801b5671bcc04f7277520',1,'canvasConfig']]],
+  ['bgpsvalid_8',['bgpsvalid',['../own__ship_8h.html#a088b81d4dd6af77a983dea5f51ca0b95',1,'bGPSValid:&#160;own_ship.cpp'],['../own__ship_8cpp.html#a088b81d4dd6af77a983dea5f51ca0b95',1,'bGPSValid:&#160;own_ship.cpp']]],
+  ['bheadup_9',['bHeadUp',['../classcanvasConfig.html#ad765df72c74524d7f4c202da83260547',1,'canvasConfig']]],
+  ['bisassociable_10',['bIsAssociable',['../classPI__S57Obj.html#a6723c88fb637cb33f4f9c250ae8808ff',1,'PI_S57Obj']]],
+  ['bisaton_11',['bIsAton',['../classPI__S57Obj.html#ae57e5026f6318f3f25b6511d71d5d01a',1,'PI_S57Obj']]],
+  ['bisclone_12',['bIsClone',['../classPI__S57Obj.html#abd59f6b31aa78690307b908761257564',1,'PI_S57Obj']]],
+  ['blookahead_13',['bLookahead',['../classcanvasConfig.html#ad633b7ec979591b39dcb4fae220c70f0',1,'canvasConfig']]],
+  ['bquilt_14',['bQuilt',['../classcanvasConfig.html#a4931281d8afe640bf00757ef7e8c33a6',1,'canvasConfig']]],
+  ['brg_15',['Brg',['../classPlugIn__AIS__Target.html#a5017f605cec3a9f8ca659358496f4c91',1,'PlugIn_AIS_Target']]],
+  ['bshowais_16',['bShowAIS',['../classcanvasConfig.html#a714bbed8dceb44dfdd010a6e99f16ad2',1,'canvasConfig']]],
+  ['bshowcurrents_17',['bShowCurrents',['../classcanvasConfig.html#aba400338c5e51d4676eb04a72c572c6b',1,'canvasConfig']]],
+  ['bshowdepthunits_18',['bShowDepthUnits',['../classcanvasConfig.html#a393d3c925bbc994335149761e31e7f12',1,'canvasConfig']]],
+  ['bshowenctext_19',['bShowENCText',['../classcanvasConfig.html#a644653cf556c444574e35a6b769afda1',1,'canvasConfig']]],
+  ['bshowgrid_20',['bShowGrid',['../classcanvasConfig.html#aac0b521adb0af2d9b2399a4d504c4379',1,'canvasConfig']]],
+  ['bshowoutlines_21',['bShowOutlines',['../classcanvasConfig.html#a32c3a8f63642615f9d28adf7550a7d1e',1,'canvasConfig']]],
+  ['bshowtides_22',['bShowTides',['../classcanvasConfig.html#abe90aeffba8fcef36f0fbe01d1aba569',1,'canvasConfig']]],
+  ['btw_23',['Btw',['../classPlugin__Active__Leg__Info.html#ad239e263ccb108951154962df25f4f34',1,'Plugin_Active_Leg_Info']]],
+  ['bvalid_24',['bValid',['../classPlugIn__ViewPort.html#ad351efe056c3479200604ebaaef0244a',1,'PlugIn_ViewPort']]]
+];

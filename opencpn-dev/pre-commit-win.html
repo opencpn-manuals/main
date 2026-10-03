@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Pre-commit on windows example :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/opencpn-dev/pre-commit-win.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="opencpn-dev" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">OpenCPN Programming Manual</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Core Developer Manual</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Compiling</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="cmake.html">CMake</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="android.html">Android</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="linux.html">Linux</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="linux.html#_flatpak">Flatpak</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="windows.html">Windows</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="mac-osx.html">MacOS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="docker.html">Docker container</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="create-deb-package.html">Create Debian packages</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="unit-tests.html">Unit tests</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="rest-interface.html">REST server</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="plugin-api.html">Plugin API</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="odraw-messaging.html">ODraw Messaging API</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="plugin-messaging.html">New Message Plugin API</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="messaging-debug.html">Data Monitor concepts</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="gui-model.html">Model - Gui code organization</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="comm-overview.html">Communication Overview</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="coding-guidelines.html">Coding Guidelines</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="pre-commit-win.html">pre-commit on Windows</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="user-interface-styling.html">User Interface Styling</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="stacktrace.html">Creating a stack trace</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenCPN Programming Manual</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/0.1/index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenCPN Programming Manual</a></li>
+    <li>Core Developer Manual</li>
+    <li><a href="coding-guidelines.html">Coding Guidelines</a></li>
+    <li><a href="pre-commit-win.html">pre-commit on Windows</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/opencpn/OpenCPN/edit/master/manual/modules/ROOT/pages/pre-commit-win.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Pre-commit on windows example</h1>
+<div class="sect1">
+<h2 id="_general_steps"><a class="anchor" href="#_general_steps"></a>General steps</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One route known to occasionally work:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install python as administrator on the command line using chocolatey:
+<code>choco install python</code></p>
+</li>
+<li>
+<p>Start <em>Windows Settings</em> | <em>Apps</em>.</p>
+</li>
+<li>
+<p>Scroll to the <em>Python</em> app, click <em>Modify</em></p>
+</li>
+<li>
+<p>In python app settings, click <em>Modify</em>.</p>
+</li>
+<li>
+<p>Check the <em>Py Launcher checkbox</em>, click <em>Next</em></p>
+</li>
+<li>
+<p>Click <em>Install</em>.</p>
+</li>
+<li>
+<p>Install pre-commit on the command line using <code>py -m pip install pre-commit</code>.
+This often creates warnings about missing PATH; these can be ignored.</p>
+</li>
+<li>
+<p>On the command line in the plugin directory activate pre-commit in the
+project using <code>py -m pre_commit install</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_more_detailed_example"><a class="anchor" href="#_more_detailed_example"></a>More detailed example</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Python already installed on Windows 11</strong></p>
+</div>
+<div class="paragraph">
+<p>Python had already been installed with chocolatey.
+The 'py' command was not available.
+Either add the <code>py</code> launcher as of above or get Python Install Manager
+from the Microsoft Store.
+Python 3.14.6 was then installed.</p>
+</div>
+<div class="paragraph">
+<p>Using the command line <code>py -m pip install pre-commit</code> resulted in warnings about the
+paths missing for parts of the pre-commit installation.
+These can be ignored. However:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Installing collected packages: distlib, pyyaml, platformdirs, nodeenv, identify, filelock, cfgv, python-discovery, virtualenv, pre-commit
+   -------- -------------------------------  2/10 [platformdirs]  WARNING: The script nodeenv.exe is installed in 'C:\Users\rasba\AppData\Local\Python\pythoncore-3.14-64\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script identify-cli.exe is installed in 'C:\Users\rasba\AppData\Local\Python\pythoncore-3.14-64\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+   -------------------------------- -------  8/10 [virtualenv]  WARNING: The script virtualenv.exe is installed in 'C:\Users\rasba\AppData\Local\Python\pythoncore-3.14-64\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script pre-commit.exe is installed in 'C:\Users\rasba\AppData\Local\Python\pythoncore-3.14-64\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed cfgv-3.5.0 distlib-0.4.3 filelock-3.29.4 identify-2.6.19 nodeenv-1.10.0 platformdirs-4.10.0 pre-commit-4.6.0 python-discovery-1.4.2 pyyaml-6.0.3 virtualenv-21.5.1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>'C:\Users\rasba\AppData\Local\Python\pythoncore-3.14-64\Scripts'  was added to PATH. The command prompt was closed.</p>
+</div>
+<div class="paragraph">
+<p>With a new command prompt ran <code>py -m pip install pre-commit</code>. pre-commit installed without warnings.</p>
+</div>
+<div class="paragraph">
+<p>On first using pre-commit:</p>
+</div>
+<div class="paragraph">
+<p><code>&gt;git commit --allow-empty -m "With pre-commit added"`</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+[WARNING] repo `https://github.com/pre-commit/pre-commit-hooks` uses deprecated stage names (commit, push) which will be removed in a future version.  Hint: often `pre-commit autoupdate --repo https://github.com/pre-commit/pre-commit-hooks` will fix this.  if it does not -- consider reporting an issue to that repo.
+[INFO] Initializing environment for https://github.com/pre-commit/mirrors-clang-format.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>&gt;pre-commit autoupdate --repo <a href="https://github.com/pre-commit/pre-commit-hooks" class="bare">https://github.com/pre-commit/pre-commit-hooks</a></code></p>
+</div>
+<div class="paragraph">
+<p>This updated pre-commit from version 2.0 to version 4.6.0.</p>
+</div>
+<div class="paragraph">
+<p>Another commit to test pre-commit.</p>
+</div>
+<div class="paragraph">
+<p><code>&gt;git commit -m "pre-commit updated"</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[ERROR] Your pre-commit configuration is unstaged.
+`git add .pre-commit-config.yaml` to fix this.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>&gt;git add .pre-commit-config.yaml</code></p>
+</div>
+<div class="paragraph">
+<p>A test_format file with format errors was added to the repo.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/pre-commit-test-file.png" alt="pre-commit-test-file.png" width="572" height="564"></span></p>
+</div>
+<div class="paragraph">
+<p><code>&gt;git commit -m "For testing pre_commit"</code></p>
+</div>
+<div class="paragraph">
+<p>A tab had been used instead of spaces. pre-commit changed the tab to spaces. The lines without the 0 e.g.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>long double ld = -.5L; //Should read long double ld = -0.5L;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The commit failed.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="_images/pre-commit.png" alt="pre-commit.png" width="572" height="564"></span></p>
+</div>
+<div class="paragraph">
+<p>Editing is now needed for the commit to work.
+In most cases the editing is done, and committing again makes the trick.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>
