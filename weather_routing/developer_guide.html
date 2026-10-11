@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Weather Routing Plugin Developer&#8217;s Guide :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/weather_routing/developer_guide.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="weather_routing" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-explore is-active" data-panel="explore">
+  <div class="context">
+    <span class="title">Weather Routing</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/0.1/index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/rgleason/weather_routing_pi/edit/master/manual/modules/ROOT/pages/developer_guide.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Weather Routing Plugin Developer&#8217;s Guide</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">1. Introduction</a></li>
+<li><a href="#_architecture_overview">2. Architecture Overview</a>
+<ul class="sectlevel2">
+<li><a href="#_core_classes_hierarchy">2.1. Core Classes Hierarchy</a></li>
+</ul>
+</li>
+<li><a href="#_key_classes_and_data_model">3. Key Classes and Data Model</a>
+<ul class="sectlevel2">
+<li><a href="#_route_configuration_routemapconfiguration">3.1. Route Configuration: <code>RouteMapConfiguration</code></a></li>
+<li><a href="#_position_classes_routepoint_position_plotdata">3.2. Position Classes: <code>RoutePoint</code>, <code>Position</code>, <code>PlotData</code></a></li>
+<li><a href="#_isochrone_classes_isoroute_and_isochron">3.3. Isochrone Classes: <code>IsoRoute</code> and <code>IsoChron</code></a></li>
+<li><a href="#_skipposition">3.4. <code>SkipPosition</code></a></li>
+</ul>
+</li>
+<li><a href="#_the_routing_algorithm">4. The Routing Algorithm</a>
+<ul class="sectlevel2">
+<li><a href="#_overview">4.1. Overview</a></li>
+<li><a href="#_key_algorithm_components">4.2. Key Algorithm Components</a></li>
+</ul>
+</li>
+<li><a href="#_adding_new_features">5. Adding New Features</a>
+<ul class="sectlevel2">
+<li><a href="#_adding_new_constraints">5.1. Adding New Constraints</a></li>
+<li><a href="#_supporting_new_weather_data">5.2. Supporting New Weather Data</a></li>
+<li><a href="#_improving_performance">5.3. Improving Performance</a></li>
+</ul>
+</li>
+<li><a href="#_debugging_tips">6. Debugging Tips</a>
+<ul class="sectlevel2">
+<li><a href="#_understanding_propagation_errors">6.1. Understanding Propagation Errors</a></li>
+<li><a href="#_visualizing_isochrones">6.2. Visualizing Isochrones</a></li>
+</ul>
+</li>
+<li><a href="#_data_model_details">7. Data Model Details</a>
+<ul class="sectlevel2">
+<li><a href="#_handling_boat_polars">7.1. Handling Boat Polars</a></li>
+<li><a href="#_weather_data_interface">7.2. Weather Data Interface</a></li>
+</ul>
+</li>
+<li><a href="#_ui_integration">8. UI Integration</a></li>
+<li><a href="#_integration_with_opencpn">9. Integration with OpenCPN</a>
+<ul class="sectlevel2">
+<li><a href="#_plugin_entry_points">9.1. Plugin Entry Points</a></li>
+<li><a href="#_interacting_with_opencpn_features">9.2. Interacting with OpenCPN Features</a></li>
+</ul>
+</li>
+<li><a href="#_conclusion">10. Conclusion</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This guide is intended for developers who want to contribute to the Weather Routing plugin for OpenCPN. The Weather Routing plugin calculates optimal sailing routes based on weather forecasts, boat polar performance diagrams, and various sailing parameters.</p>
+</div>
+<div class="paragraph">
+<p>Rather than duplicating the general plugin development information in the <a href="https://opencpn-manuals.github.io/main/ocpn-dev-manual/0.1/pm-plugin-api-overview.html">OpenCPN Developer Manual</a>, this guide focuses specifically on the core classes and algorithms of the Weather Routing plugin.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_architecture_overview"><a class="anchor" href="#_architecture_overview"></a>2. Architecture Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Weather Routing plugin is built around an isochrone-based routing algorithm. The main components are:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Data Model</strong>: Configuration objects, boat polars, GRIB weather data</p>
+</li>
+<li>
+<p><strong>Routing Engine</strong>: The core algorithm for calculating routes based on isochrones</p>
+</li>
+<li>
+<p><strong>UI Components</strong>: Dialogs for configuring and displaying routes</p>
+</li>
+<li>
+<p><strong>Plugin Integration</strong>: Connection to OpenCPN</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_core_classes_hierarchy"><a class="anchor" href="#_core_classes_hierarchy"></a>2.1. Core Classes Hierarchy</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">weather_routing_pi (plugin)
+├── WeatherRouting (main UI dialog)
+│   ├── RouteMapOverlay (calculation/display engine)
+│   │   └── RouteMap (core routing algorithm)
+│   └── WeatherRoute (UI representation of routes)
+└── Configuration Classes
+    ├── RouteMapConfiguration
+    ├── Boat (with Polars)
+    └── Position &amp; IsoChron classes</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_key_classes_and_data_model"><a class="anchor" href="#_key_classes_and_data_model"></a>3. Key Classes and Data Model</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_route_configuration_routemapconfiguration"><a class="anchor" href="#_route_configuration_routemapconfiguration"></a>3.1. Route Configuration: <code>RouteMapConfiguration</code></h3>
+<div class="paragraph">
+<p><code>RouteMapConfiguration</code> is the central configuration class that holds all settings for route computation, including:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Start and end positions</p>
+</li>
+<li>
+<p>Time parameters (start time, time step)</p>
+</li>
+<li>
+<p>Boat characteristics and polar data</p>
+</li>
+<li>
+<p>Environmental constraints (max wind, max waves, etc.)</p>
+</li>
+<li>
+<p>Land and boundary avoidance settings</p>
+</li>
+<li>
+<p>Weather data sources (GRIB/climatology)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This class not only stores the settings but also manages the state during routing calculation.</p>
+</div>
+<div class="paragraph">
+<p>Key properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">struct RouteMapConfiguration {
+    // Position settings
+    wxString Start;
+    wxString End;
+    double StartLat, StartLon, EndLat, EndLon;
+
+    // Time settings
+    wxDateTime StartTime;
+    double DeltaTime;
+
+    // Boat settings
+    Boat boat;
+    wxString boatFileName;
+
+    // Constraints
+    double MaxSearchAngle;      // Max course change at each step
+    double MaxTrueWindKnots;    // Max wind to allow
+    double MaxSwellMeters;      // Max wave height to allow
+    double SafetyMarginLand;    // Distance to keep from land
+
+    // Weather settings
+    bool UseGrib;
+    enum ClimatologyDataType ClimatologyType;
+
+    // Land avoidance
+    bool DetectLand;
+    bool DetectBoundary;
+};</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_position_classes_routepoint_position_plotdata"><a class="anchor" href="#_position_classes_routepoint_position_plotdata"></a>3.2. Position Classes: <code>RoutePoint</code>, <code>Position</code>, <code>PlotData</code></h3>
+<div class="paragraph">
+<p>These classes represent geographical points along a route:</p>
+</div>
+<div class="sect3">
+<h4 id="_routepoint"><a class="anchor" href="#_routepoint"></a>3.2.1. <code>RoutePoint</code></h4>
+<div class="paragraph">
+<p>Base class for a point on a map with methods to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Get weather data at that point</p>
+</li>
+<li>
+<p>Test for land intersections</p>
+</li>
+<li>
+<p>Propagate to a destination point</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_position"><a class="anchor" href="#_position"></a>3.2.2. <code>Position</code></h4>
+<div class="paragraph">
+<p>Extends <code>RoutePoint</code> with routing-specific data:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Links to parent/child positions</p>
+</li>
+<li>
+<p>Directional information (parent_heading, parent_bearing)</p>
+</li>
+<li>
+<p>Propagation status tracking</p>
+</li>
+<li>
+<p>Error handling</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_plotdata"><a class="anchor" href="#_plotdata"></a>3.2.3. <code>PlotData</code></h4>
+<div class="paragraph">
+<p>Extends <code>RoutePoint</code> with detailed navigation data for visualization:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Time information</p>
+</li>
+<li>
+<p>Speed and course (ground and water)</p>
+</li>
+<li>
+<p>Wind and current details</p>
+</li>
+<li>
+<p>Wave height and other environmental data</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_isochrone_classes_isoroute_and_isochron"><a class="anchor" href="#_isochrone_classes_isoroute_and_isochron"></a>3.3. Isochrone Classes: <code>IsoRoute</code> and <code>IsoChron</code></h3>
+<div class="paragraph">
+<p>These classes represent the expanding wavefront of possible positions:</p>
+</div>
+<div class="sect3">
+<h4 id="_isoroute"><a class="anchor" href="#_isoroute"></a>3.3.1. <code>IsoRoute</code></h4>
+<div class="paragraph">
+<p>Represents a closed loop of positions that can be reached in the same time:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Maintains a circular linked list of positions</p>
+</li>
+<li>
+<p>Provides methods for testing containment and intersections</p>
+</li>
+<li>
+<p>Handles merging and normalizing (removing intersections)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_isochron"><a class="anchor" href="#_isochron"></a>3.3.2. <code>IsoChron</code></h4>
+<div class="paragraph">
+<p>Manages a collection of IsoRoute objects that together represent reachable areas:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Contains routes reachable in the same time</p>
+</li>
+<li>
+<p>Stores time and weather data for the specific interval</p>
+</li>
+<li>
+<p>Provides methods for propagation and containment testing</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_skipposition"><a class="anchor" href="#_skipposition"></a>3.4. <code>SkipPosition</code></h3>
+<div class="paragraph">
+<p>An optimization class that speeds up route traversal by grouping consecutive positions in the same directional quadrant.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_routing_algorithm"><a class="anchor" href="#_the_routing_algorithm"></a>4. The Routing Algorithm</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_overview"><a class="anchor" href="#_overview"></a>4.1. Overview</h3>
+<div class="paragraph">
+<p>The Weather Routing plugin uses an isochrone-based algorithm:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Start from an initial position</p>
+</li>
+<li>
+<p>Calculate all possible positions reachable within a time step</p>
+</li>
+<li>
+<p>Connect these positions to form isochrones (lines of equal travel time)</p>
+</li>
+<li>
+<p>Repeat steps 2-3 until the destination is reached or max iterations exceeded</p>
+</li>
+<li>
+<p>Trace back the optimal route from destination to start</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_key_algorithm_components"><a class="anchor" href="#_key_algorithm_components"></a>4.2. Key Algorithm Components</h3>
+<div class="sect3">
+<h4 id="_position_propagation"><a class="anchor" href="#_position_propagation"></a>4.2.1. Position Propagation</h4>
+<div class="paragraph">
+<p>The <code>Position::Propagate()</code> method is the core of the routing algorithm:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool Position::Propagate(IsoRouteList&amp; routelist, RouteMapConfiguration&amp; configuration) {
+    // Skip if already propagated
+    if (propagated) {
+        propagation_error = PROPAGATION_ALREADY_PROPAGATED;
+        return false;
+    }
+    propagated = true;
+
+    // Get environmental data (wind, waves, etc.)
+    // Check if position is valid (not exceeding constraints)
+
+    // For each possible course angle:
+    for (auto it = configuration.DegreeSteps.begin(); it != configuration.DegreeSteps.end(); it++) {
+        double twa = heading_resolve(*it);  // True wind angle
+
+        // Calculate boat speed using polar data
+        // Calculate new position after time step
+        // Check if new position violates constraints
+        // (land, boundaries, environmental limits)
+
+        // Create new position and add to route list
+    }
+
+    // Build route from positions
+    routelist.push_back(new IsoRoute(points-&gt;BuildSkipList()));
+    return true;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_isochrone_merging_and_normalization"><a class="anchor" href="#_isochrone_merging_and_normalization"></a>4.2.2. Isochrone Merging and Normalization</h4>
+<div class="paragraph">
+<p>The routing algorithm must handle intersecting isochrones with the <code>Normalize()</code> function:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Detect intersections between line segments</p>
+</li>
+<li>
+<p>Swap connections to form valid non-intersecting regions</p>
+</li>
+<li>
+<p>Handle inverted regions (holes in the isochrone)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_route_map_propagation"><a class="anchor" href="#_route_map_propagation"></a>4.2.3. Route Map Propagation</h4>
+<div class="paragraph">
+<p>The <code>RouteMap::Propagate()</code> method manages the overall routing process:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool RouteMap::Propagate() {
+    // Determine time step
+    // Create new list for this propagation step
+    IsoRouteList routelist;
+
+    // Get latest isochrone and propagate each position
+    IsoChron *last = origin.back();
+    last-&gt;PropagateIntoList(routelist, m_Configuration);
+
+    // Reduce and normalize the routes
+    IsoRouteList reduced;
+    if(!ReduceList(reduced, routelist, m_Configuration))
+        return false;
+
+    // Test if destination reached
+    // Create new isochrone and add to list
+    IsoChron *isochrone = new IsoChron(reduced, time, dt, m_SharedNewGrib, m_Configuration.grib_is_data_deficient);
+    origin.push_back(isochrone);
+
+    return true;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_adding_new_features"><a class="anchor" href="#_adding_new_features"></a>5. Adding New Features</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_adding_new_constraints"><a class="anchor" href="#_adding_new_constraints"></a>5.1. Adding New Constraints</h3>
+<div class="paragraph">
+<p>To add a new constraint to the routing algorithm:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Add the parameter to <code>RouteMapConfiguration</code></p>
+</li>
+<li>
+<p>Add constraint checking in <code>Position::Propagate()</code></p>
+</li>
+<li>
+<p>Add UI controls to <code>ConfigurationDialog</code> class</p>
+</li>
+<li>
+<p>Update serialization in both <code>WeatherRouting::SaveXML()</code> and <code>OpenXML()</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_supporting_new_weather_data"><a class="anchor" href="#_supporting_new_weather_data"></a>5.2. Supporting New Weather Data</h3>
+<div class="paragraph">
+<p>To add support for a new weather data source:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Modify the <code>ReadWindAndCurrents()</code> function</p>
+</li>
+<li>
+<p>Add new data source type to <code>RouteMapConfiguration::ClimatologyDataType</code></p>
+</li>
+<li>
+<p>Create interface functions to fetch data from the new source</p>
+</li>
+<li>
+<p>Update UI to allow selecting the new data source</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_improving_performance"><a class="anchor" href="#_improving_performance"></a>5.3. Improving Performance</h3>
+<div class="paragraph">
+<p>The routing algorithm is computationally intensive. Some areas to optimize:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>SkipPosition optimization for faster intersection detection</p>
+</li>
+<li>
+<p>Parallel computation of position propagation</p>
+</li>
+<li>
+<p>More efficient isochrone normalization algorithm</p>
+</li>
+<li>
+<p>Smarter filtering of positions to reduce the search space</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_debugging_tips"><a class="anchor" href="#_debugging_tips"></a>6. Debugging Tips</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_understanding_propagation_errors"><a class="anchor" href="#_understanding_propagation_errors"></a>6.1. Understanding Propagation Errors</h3>
+<div class="paragraph">
+<p>When a position fails to propagate, a <code>propagation_error</code> code is set. Common errors:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>PROPAGATION_WIND_DATA_FAILED</code>: No wind data for the position</p>
+</li>
+<li>
+<p><code>PROPAGATION_EXCEEDED_MAX_WIND</code>: Wind exceeds maximum configured limit</p>
+</li>
+<li>
+<p><code>PROPAGATION_EXCEEDED_MAX_SWELL</code>: Waves exceed maximum configured limit</p>
+</li>
+<li>
+<p><code>PROPAGATION_LAND_INTERSECTION</code>: Path crosses land</p>
+</li>
+<li>
+<p><code>PROPAGATION_BOUNDARY_INTERSECTION</code>: Path crosses a boundary</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_visualizing_isochrones"><a class="anchor" href="#_visualizing_isochrones"></a>6.2. Visualizing Isochrones</h3>
+<div class="paragraph">
+<p>When debugging, it can be helpful to visualize the isochrones. The plugin already renders these on the map, but you can add additional debug visualization by:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding debug information to <code>RouteMapOverlay::DrawLine()</code></p>
+</li>
+<li>
+<p>Dumping isochrone data to a file with <code>IsoRoute::Print()</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_model_details"><a class="anchor" href="#_data_model_details"></a>7. Data Model Details</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_handling_boat_polars"><a class="anchor" href="#_handling_boat_polars"></a>7.1. Handling Boat Polars</h3>
+<div class="paragraph">
+<p>Polars define a boat&#8217;s performance characteristics based on wind speed and angle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">class Polar {
+    // Wind speeds for which we have polar data
+    std::vector&lt;double&gt; wind_speeds;
+
+    // Boat speeds indexed by [wind speed][true wind angle]
+    std::vector&lt;std::map&lt;double, double&gt;&gt; speeds;
+
+    // Get boat speed for given wind conditions
+    double Speed(double WindAngle, double WindSpeed,
+                 PolarSpeedStatus* status = nullptr,
+                 bool bound = true, bool optimize = false);
+};</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_weather_data_interface"><a class="anchor" href="#_weather_data_interface"></a>7.2. Weather Data Interface</h3>
+<div class="paragraph">
+<p>The plugin can use weather data from:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>GRIB files via OpenCPN&#8217;s GRIB plugin</p>
+</li>
+<li>
+<p>Climatology data using statistical weather patterns</p>
+</li>
+<li>
+<p>Current data from various sources</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Weather data queries are handled by functions like:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Get wind data at a position
+static bool GribWind(RouteMapConfiguration&amp; configuration,
+                    double lat, double lon,
+                    double&amp; twd, double&amp; tws);
+
+// Get current data at a position
+static bool GribCurrent(RouteMapConfiguration&amp; configuration,
+                       double lat, double lon,
+                       double&amp; currentDir, double&amp; currentSpeed);
+
+// Get combined weather data
+static bool ReadWindAndCurrents(RouteMapConfiguration&amp; configuration,
+                               RoutePoint* p, double&amp; twd, double&amp; tws,
+                               double&amp; windDirOverWater, double&amp; windSpeedOverWater,
+                               double&amp; currentDir, double&amp; currentSpeed,
+                               climatology_wind_atlas&amp; atlas, int&amp; data_mask);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ui_integration"><a class="anchor" href="#_ui_integration"></a>8. UI Integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The main UI classes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>WeatherRouting</code>: Primary dialog for the plugin</p>
+</li>
+<li>
+<p><code>ConfigurationDialog</code>: For configuring route parameters</p>
+</li>
+<li>
+<p><code>BoatDialog</code>: For managing boat polars</p>
+</li>
+<li>
+<p><code>StatisticsDialog</code>: For route statistics</p>
+</li>
+<li>
+<p><code>ReportDialog</code>: For detailed route reports</p>
+</li>
+<li>
+<p><code>PlotDialog</code>: For visualizing route data</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_integration_with_opencpn"><a class="anchor" href="#_integration_with_opencpn"></a>9. Integration with OpenCPN</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_plugin_entry_points"><a class="anchor" href="#_plugin_entry_points"></a>9.1. Plugin Entry Points</h3>
+<div class="paragraph">
+<p>The plugin integration starts with the <code>weather_routing_pi</code> class, which:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initializes the plugin with <code>Init()</code></p>
+</li>
+<li>
+<p>Renders routes on the OpenCPN chart with <code>RenderOverlay()</code> and <code>RenderGLOverlay()</code></p>
+</li>
+<li>
+<p>Handles toolbar tool callbacks with <code>OnToolbarToolCallback()</code></p>
+</li>
+<li>
+<p>Processes position fixes with <code>SetPositionFixEx()</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interacting_with_opencpn_features"><a class="anchor" href="#_interacting_with_opencpn_features"></a>9.2. Interacting with OpenCPN Features</h3>
+<div class="paragraph">
+<p>The plugin interacts with OpenCPN through:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Getting boat position from PlugIn_Position_Fix_Ex</p>
+</li>
+<li>
+<p>Detecting land with the PlugIn_GSHHS_CrossesLand function</p>
+</li>
+<li>
+<p>Detecting boundaries with the ODFindClosestBoundaryLineCrossing function</p>
+</li>
+<li>
+<p>Exchanging weather data with the GRIB plugin</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>10. Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Weather Routing plugin is a sophisticated tool based on advanced routing algorithms and detailed boat performance modeling. By understanding its core classes and algorithms, you can contribute effectively to its development and extend its capabilities.</p>
+</div>
+<div class="paragraph">
+<p>Remember to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Follow the existing code style and architecture</p>
+</li>
+<li>
+<p>Test thoroughly with different weather conditions and boat polars</p>
+</li>
+<li>
+<p>Ensure backward compatibility with existing configuration files</p>
+</li>
+<li>
+<p>Document your changes both in code and for users</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>
