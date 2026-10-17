@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Plugin Capabilities System :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/ocpn-dev-manual/0.1/pm-plugin-api-capabilities.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ocpn-dev-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">OpenCPN Developer Manual</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developer Manual</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-AboutThisManual.html">About this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Background.html">Background</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Terminology.html">Terminology</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../opencpn-dev/index.html">Opencpn development</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Plugin Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-devel-overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-plugin-dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-plugin-api-overview.html">Plugin API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-versions.html">Plugin API and ABI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="using-the-api.html">Using the API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="system-events.html">Using API system events</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-core-classes.html">Core Plugin Classes and Lifecycle</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-capabilities.html">Plugin Capabilities System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-ui-integration.html">UI Integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-rendering.html">Chart Display and Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-custom-charts.html">Custom Chart Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-navigation-data.html">Navigation Data Access</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-plugin-communication.html">Plugin Communication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-utility-functions.html">Utility Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-deployment.html">Deployment overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-workflow.html">Workflow overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-compat.html">Compatibility and tweaks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dm-i18n.html">Translations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Plugin-Pi-Adaptation.html">Plugin Installer Code Adaptation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-tp-template.html">Testplugin Template</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-workflow.html">Workflow Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-services.html">Prerequisite Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-overview-prereq-other.html">Cloudsmith Setup</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="pm-tp-system-structure.html">System Structure</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-dev-setup.html">Developer Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-config-template.html">Configure Template</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text">Build Locally</span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-adapt-plugin.html">Adapt Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-deploy.html">Deploy Details</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pi_installer_dev_procedure.html">PI Manager Dev Procedure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-update-library.html">Update the Library</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-language-nuance.html">Language Nuances</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../opencpn-dev/odraw-messaging.html">Odapi Messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-odapi.html">Odapi for oDraw</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-ocpn_draw_odapi.html">Ocpn_Draw Odapi</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../AlternativeWorkflow/index.html">Shipdriver Template</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plugin-installer/Home.html">Plugin Manager Installer Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://opencpn-manuals.github.io/main/opencpn-plugins/index.html">Plugins  Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-legacy-plugins.html">Legacy Plugin Packaging</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-manual-maint.html">Maintenance of this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-i18n.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Resources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-prebuilt-build-files.html">Prebuilt Build Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-online-tools.html">Online Nmea Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ECDIS_testdata.html">ECDIS testdata</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prerequisites.html">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="compile_mac_osx.html">Compiling on macOS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rpi2.html">Compile on Raspberry PI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="building-on-armhf-linux-armbian-orange-pi.html">armhf linux - Armbian - Orange Pi</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenCPN Developer Manual</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenCPN Developer Manual</a></li>
+    <li>Developer Manual</li>
+    <li>Plugin Development</li>
+    <li><a href="pm-plugin-api-overview.html">Plugin API</a></li>
+    <li><a href="pm-plugin-api-capabilities.html">Plugin Capabilities System</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/opencpn-manuals/development/edit/main/modules/ROOT/pages/pm-plugin-api-capabilities.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Plugin Capabilities System</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The capabilities system is a key part of the OpenCPN plugin architecture. It allows plugins to declare what features they implement and what information they need from OpenCPN. This chapter explains how capabilities work and how to use them effectively in your plugins.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_understanding_capabilities"><a class="anchor" href="#_understanding_capabilities"></a>Understanding Capabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Capabilities are declared as a set of flags returned from your plugin&#8217;s <code>Init()</code> method. Each flag is a bit in a bitfield that tells OpenCPN:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>What callbacks your plugin wants to receive</p>
+</li>
+<li>
+<p>What UI elements your plugin will add</p>
+</li>
+<li>
+<p>What special features your plugin implements</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>OpenCPN uses this information to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Determine which plugin methods to call</p>
+</li>
+<li>
+<p>Allocate resources for plugin features</p>
+</li>
+<li>
+<p>Enable or disable certain integration points</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_declaring_capabilities"><a class="anchor" href="#_declaring_capabilities"></a>Declaring Capabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your plugin declares its capabilities by returning a bitwise OR of capability flags from the <code>Init()</code> method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::Init(void) {
+    // Initialize resources
+    // ...
+
+    // Return capabilities
+    return WANTS_OVERLAY_CALLBACK |
+           WANTS_TOOLBAR_CALLBACK |
+           INSTALLS_TOOLBAR_TOOL;
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Only declare capabilities that your plugin actually implements. Declaring a capability means you must implement the corresponding methods in your plugin class.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_categories_of_capabilities"><a class="anchor" href="#_categories_of_capabilities"></a>Categories of Capabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Plugin capabilities can be broadly categorized into two types:</p>
+</div>
+<div class="sect2">
+<h3 id="_wants_capabilities"><a class="anchor" href="#_wants_capabilities"></a>WANTS_* Capabilities</h3>
+<div class="paragraph">
+<p>These capabilities indicate that your plugin wants to receive certain types of information or callbacks from OpenCPN. Examples include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>WANTS_OVERLAY_CALLBACK</code> - Receive calls to render custom graphics on the chart</p>
+</li>
+<li>
+<p><code>WANTS_CURSOR_LATLON</code> - Receive updates about cursor position</p>
+</li>
+<li>
+<p><code>WANTS_NMEA_SENTENCES</code> - Receive all NMEA sentences</p>
+</li>
+<li>
+<p><code>WANTS_AIS_SENTENCES</code> - Receive AIS information</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you declare a WANTS_* capability, you must implement the corresponding method in your plugin class.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_installs_capabilities"><a class="anchor" href="#_installs_capabilities"></a>INSTALLS_* Capabilities</h3>
+<div class="paragraph">
+<p>These capabilities indicate that your plugin will add or modify UI elements or provide new functionality to OpenCPN. Examples include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INSTALLS_TOOLBAR_TOOL</code> - Add buttons to the toolbar</p>
+</li>
+<li>
+<p><code>INSTALLS_CONTEXTMENU_ITEMS</code> - Add items to the right-click context menu</p>
+</li>
+<li>
+<p><code>INSTALLS_PLUGIN_CHART</code> - Provide a new chart type</p>
+</li>
+<li>
+<p><code>INSTALLS_TOOLBOX_PAGE</code> - Add pages to the settings dialog</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When you declare an INSTALLS_* capability, you must implement the corresponding methods to create and manage these elements.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_complete_list_of_capability_flags"><a class="anchor" href="#_complete_list_of_capability_flags"></a>Complete List of Capability Flags</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Flag</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_OVERLAY_CALLBACK</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to draw custom overlay graphics on the chart. Implement <code>RenderOverlay()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_CURSOR_LATLON</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to receive cursor position updates. Implement <code>SetCursorLatLon()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_TOOLBAR_CALLBACK</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to be notified when its toolbar buttons are clicked. Implement <code>OnToolbarToolCallback()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INSTALLS_TOOLBAR_TOOL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin will add one or more toolbar buttons. Implement <code>GetToolbarToolCount()</code> and related methods.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_CONFIG</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin needs access to configuration storage. Use <code>GetOCPNConfigObject()</code> to access settings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INSTALLS_TOOLBOX_PAGE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin will add pages to the settings dialog. Implement <code>GetToolboxPanelCount()</code> and related methods.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INSTALLS_CONTEXTMENU_ITEMS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin will add items to the right-click menu. Use <code>AddCanvasContextMenuItem()</code> and implement <code>OnContextMenuItemCallback()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_NMEA_SENTENCES</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to receive raw NMEA sentences. Implement <code>SetNMEASentence()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_NMEA_EVENTS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to receive decoded NMEA events. Implement <code>SetPositionFix()</code> or <code>SetPositionFixEx()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_AIS_SENTENCES</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to receive AIS target information. Implement handling for AIS data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>USES_AUI_MANAGER</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin uses the wxAuiManager for window management. Implement <code>UpdateAuiStatus()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_PREFERENCES</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin will add page(s) to preferences dialog. Implement <code>ShowPreferencesDialog()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INSTALLS_PLUGIN_CHART</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin provides new chart type. Implement chart-related classes and methods.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_ONPAINT_VIEWPORT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants callbacks during chart viewport painting. Implement viewport painting methods.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_PLUGIN_MESSAGING</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to participate in plugin-to-plugin messaging. Implement <code>SetPluginMessage()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_OPENGL_OVERLAY_CALLBACK</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to render overlay graphics in OpenGL mode. Implement <code>RenderGLOverlay()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_DYNAMIC_OPENGL_OVERLAY_CALLBACK</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin provides dynamic OpenGL overlays that may change frequently.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_LATE_INIT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to delay full initialization. Implement <code>LateInit()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INSTALLS_PLUGIN_CHART_GL</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin provides new chart type with OpenGL support.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_MOUSE_EVENTS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to receive mouse events. Implement <code>MouseEventHook()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_VECTOR_CHART_OBJECT_INFO</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants information about vector chart objects. Implement <code>SendVectorChartObjectInfo()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_KEYBOARD_EVENTS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants to receive keyboard events. Implement <code>KeyboardEventHook()</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>WANTS_PRESHUTDOWN_HOOK</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Plugin wants notification before OpenCPN shuts down. Implement <code>PreShutdownHook()</code>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_capability_combinations"><a class="anchor" href="#_capability_combinations"></a>Capability Combinations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Different types of plugins typically use different combinations of capabilities:</p>
+</div>
+<div class="sect2">
+<h3 id="_navigation_tool_plugin_example"><a class="anchor" href="#_navigation_tool_plugin_example"></a>Navigation Tool Plugin Example</h3>
+<div class="paragraph">
+<p>A plugin that shows navigation data might use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">return WANTS_OVERLAY_CALLBACK |
+       WANTS_CURSOR_LATLON |
+       WANTS_NMEA_EVENTS |
+       WANTS_CONFIG;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chart_enhancement_plugin_example"><a class="anchor" href="#_chart_enhancement_plugin_example"></a>Chart Enhancement Plugin Example</h3>
+<div class="paragraph">
+<p>A plugin that adds features to the chart display might use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">return WANTS_OVERLAY_CALLBACK |
+       WANTS_OPENGL_OVERLAY_CALLBACK |
+       WANTS_CURSOR_LATLON |
+       WANTS_VECTOR_CHART_OBJECT_INFO |
+       WANTS_MOUSE_EVENTS;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_instrument_plugin_example"><a class="anchor" href="#_instrument_plugin_example"></a>Instrument Plugin Example</h3>
+<div class="paragraph">
+<p>A plugin that shows instrument data in a separate window might use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">return WANTS_NMEA_SENTENCES |
+       WANTS_CONFIG |
+       USES_AUI_MANAGER |
+       INSTALLS_TOOLBAR_TOOL |
+       WANTS_TOOLBAR_CALLBACK;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_custom_chart_plugin_example"><a class="anchor" href="#_custom_chart_plugin_example"></a>Custom Chart Plugin Example</h3>
+<div class="paragraph">
+<p>A plugin that adds support for a new chart format might use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">return INSTALLS_PLUGIN_CHART |
+       WANTS_CONFIG |
+       WANTS_PREFERENCES;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementation_requirements"><a class="anchor" href="#_implementation_requirements"></a>Implementation Requirements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you declare a capability, you must implement the corresponding methods in your plugin class. Here are some examples:</p>
+</div>
+<div class="sect2">
+<h3 id="_for_wants_overlay_callback"><a class="anchor" href="#_for_wants_overlay_callback"></a>For WANTS_OVERLAY_CALLBACK</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool MyPlugin::RenderOverlay(wxDC &amp;dc, PlugIn_ViewPort *vp) {
+    // Draw on the chart
+    dc.SetPen(wxPen(*wxRED, 2));
+    dc.DrawLine(0, 0, vp-&gt;pix_width, vp-&gt;pix_height);
+    return true;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_for_wants_toolbar_callback_installs_toolbar_tool"><a class="anchor" href="#_for_wants_toolbar_callback_installs_toolbar_tool"></a>For WANTS_TOOLBAR_CALLBACK + INSTALLS_TOOLBAR_TOOL</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::GetToolbarToolCount(void) {
+    return 1; // Number of tools to add
+}
+
+void MyPlugin::OnToolbarToolCallback(int id) {
+    // Handle tool click
+    if (id == m_toolbar_item_id) {
+        // Do something when the tool is clicked
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_for_wants_nmea_events"><a class="anchor" href="#_for_wants_nmea_events"></a>For WANTS_NMEA_EVENTS</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::SetPositionFix(PlugIn_Position_Fix &amp;pfix) {
+    // Process position update
+    m_current_lat = pfix.Lat;
+    m_current_lon = pfix.Lon;
+    m_current_sog = pfix.Sog;
+    m_current_cog = pfix.Cog;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Declare only what you need</strong>: Only enable capabilities your plugin actually implements</p>
+</li>
+<li>
+<p><strong>Implement required methods</strong>: Make sure to implement all method overrides required by your declared capabilities</p>
+</li>
+<li>
+<p><strong>Consider performance</strong>: Be careful with high-frequency callbacks like <code>WANTS_CURSOR_LATLON</code> or <code>WANTS_NMEA_SENTENCES</code></p>
+</li>
+<li>
+<p><strong>Handle capabilities gracefully</strong>: Your plugin should work even if some capabilities are unavailable in certain OpenCPN versions</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
