@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Chart Display and Rendering :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/ocpn-dev-manual/0.1/pm-plugin-api-rendering.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ocpn-dev-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">OpenCPN Developer Manual</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developer Manual</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-AboutThisManual.html">About this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Background.html">Background</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Terminology.html">Terminology</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../opencpn-dev/index.html">Opencpn development</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Plugin Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-devel-overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-plugin-dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-plugin-api-overview.html">Plugin API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-versions.html">Plugin API and ABI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="using-the-api.html">Using the API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="system-events.html">Using API system events</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-core-classes.html">Core Plugin Classes and Lifecycle</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-capabilities.html">Plugin Capabilities System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-ui-integration.html">UI Integration</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-rendering.html">Chart Display and Rendering</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-custom-charts.html">Custom Chart Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-navigation-data.html">Navigation Data Access</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-plugin-communication.html">Plugin Communication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-utility-functions.html">Utility Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-deployment.html">Deployment overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-workflow.html">Workflow overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-compat.html">Compatibility and tweaks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dm-i18n.html">Translations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Plugin-Pi-Adaptation.html">Plugin Installer Code Adaptation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-tp-template.html">Testplugin Template</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-workflow.html">Workflow Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-services.html">Prerequisite Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-overview-prereq-other.html">Cloudsmith Setup</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="pm-tp-system-structure.html">System Structure</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-dev-setup.html">Developer Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-config-template.html">Configure Template</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text">Build Locally</span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-adapt-plugin.html">Adapt Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-deploy.html">Deploy Details</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pi_installer_dev_procedure.html">PI Manager Dev Procedure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-update-library.html">Update the Library</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-language-nuance.html">Language Nuances</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../opencpn-dev/odraw-messaging.html">Odapi Messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-odapi.html">Odapi for oDraw</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-ocpn_draw_odapi.html">Ocpn_Draw Odapi</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../AlternativeWorkflow/index.html">Shipdriver Template</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plugin-installer/Home.html">Plugin Manager Installer Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://opencpn-manuals.github.io/main/opencpn-plugins/index.html">Plugins  Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-legacy-plugins.html">Legacy Plugin Packaging</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-manual-maint.html">Maintenance of this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-i18n.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Resources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-prebuilt-build-files.html">Prebuilt Build Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-online-tools.html">Online Nmea Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ECDIS_testdata.html">ECDIS testdata</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prerequisites.html">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="compile_mac_osx.html">Compiling on macOS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rpi2.html">Compile on Raspberry PI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="building-on-armhf-linux-armbian-orange-pi.html">armhf linux - Armbian - Orange Pi</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenCPN Developer Manual</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenCPN Developer Manual</a></li>
+    <li>Developer Manual</li>
+    <li>Plugin Development</li>
+    <li><a href="pm-plugin-api-overview.html">Plugin API</a></li>
+    <li><a href="pm-plugin-api-rendering.html">Chart Display and Rendering</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/opencpn-manuals/development/edit/main/modules/ROOT/pages/pm-plugin-api-rendering.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Chart Display and Rendering</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains how plugins can render custom graphics on OpenCPN&#8217;s chart display. Plugins can draw overlays, add visual indicators, highlight features, and create custom visualizations that integrate with the chart view.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rendering_overview"><a class="anchor" href="#_rendering_overview"></a>Rendering Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenCPN provides several methods for plugins to render content on the chart display:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Standard Rendering</strong>: Using <code>RenderOverlay()</code> for traditional drawing</p>
+</li>
+<li>
+<p><strong>OpenGL Rendering</strong>: Using <code>RenderGLOverlay()</code> for hardware-accelerated drawing</p>
+</li>
+<li>
+<p><strong>Multi-Canvas Rendering</strong>: Using canvas-specific rendering methods for split-screen displays</p>
+</li>
+<li>
+<p><strong>Viewport Painting</strong>: Using <code>OnPaintViewport()</code> for more direct chart integration</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each approach has different capabilities and performance characteristics.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_viewport_structure"><a class="anchor" href="#_viewport_structure"></a>Viewport Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before diving into rendering, it&#8217;s important to understand the <code>PlugIn_ViewPort</code> structure. This structure contains all the information about the current chart view, including center position, scale, rotation, and dimensions.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">class PlugIn_ViewPort {
+public:
+    double clat;           // Center latitude in decimal degrees
+    double clon;           // Center longitude in decimal degrees
+    double view_scale_ppm; // Display scale in pixels per meter
+    double skew;           // Display skew angle in radians
+    double rotation;       // Display rotation angle in radians
+
+    float chart_scale;     // Conventional chart scale (e.g., 1:50000)
+
+    int pix_width;         // Viewport width in pixels
+    int pix_height;        // Viewport height in pixels
+    wxRect rv_rect;        // Rectangle defining the rendered view area
+    bool b_quilt;          // True if viewport is in quilt mode
+    int m_projection_type; // Chart projection type
+
+    double lat_min;        // Minimum latitude of viewport
+    double lat_max;        // Maximum latitude of viewport
+    double lon_min;        // Minimum longitude of viewport
+    double lon_max;        // Maximum longitude of viewport
+
+    bool bValid;           // True if viewport is valid
+};</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This structure is passed to all rendering methods and provides the context needed to correctly position and scale your graphics.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_standard_canvas_rendering"><a class="anchor" href="#_standard_canvas_rendering"></a>Standard Canvas Rendering</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_declaring_standard_rendering_capability"><a class="anchor" href="#_declaring_standard_rendering_capability"></a>Declaring Standard Rendering Capability</h3>
+<div class="paragraph">
+<p>To render overlays in standard (non-OpenGL) mode, declare the <code>WANTS_OVERLAY_CALLBACK</code> capability:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::Init(void) {
+    // Initialize resources
+    // ...
+
+    // Return capabilities
+    return WANTS_OVERLAY_CALLBACK;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_implementing_renderoverlay"><a class="anchor" href="#_implementing_renderoverlay"></a>Implementing RenderOverlay</h3>
+<div class="paragraph">
+<p>Implement one of the <code>RenderOverlay()</code> methods depending on your plugin API version:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// For API 1.6 to 1.15
+bool MyPlugin::RenderOverlay(wxDC &amp;dc, PlugIn_ViewPort *vp) {
+    // Check if viewport is valid
+    if (!vp || !vp-&gt;bValid) return false;
+
+    // Perform drawing
+    dc.SetPen(wxPen(*wxRED, 2));
+    dc.DrawLine(0, 0, vp-&gt;pix_width, vp-&gt;pix_height);
+
+    // Draw something at a specific geographic position
+    wxPoint point;
+    GetCanvasPixLL(vp, &amp;point, 45.0, -120.0);  // Convert lat/lon to screen coords
+    dc.DrawCircle(point.x, point.y, 10);
+
+    return true;
+}
+
+// For API 1.16+
+bool MyPlugin::RenderOverlayMultiCanvas(wxDC &amp;dc, PlugIn_ViewPort *vp, int canvasIndex) {
+    // Check if viewport is valid
+    if (!vp || !vp-&gt;bValid) return false;
+
+    // Check if this is the canvas we want to draw on
+    if (canvasIndex != m_target_canvas) return false;
+
+    // Same drawing code as above
+    dc.SetPen(wxPen(*wxRED, 2));
+    dc.DrawLine(0, 0, vp-&gt;pix_width, vp-&gt;pix_height);
+
+    wxPoint point;
+    GetCanvasPixLL(vp, &amp;point, 45.0, -120.0);
+    dc.DrawCircle(point.x, point.y, 10);
+
+    return true;
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The return value indicates whether anything was actually drawn. Return <code>true</code> if you drew something, <code>false</code> if not.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_common_drawing_operations"><a class="anchor" href="#_common_drawing_operations"></a>Common Drawing Operations</h3>
+<div class="paragraph">
+<p>Here are some common drawing operations you might perform:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Draw a line
+dc.SetPen(wxPen(*wxRED, 2));
+dc.DrawLine(x1, y1, x2, y2);
+
+// Draw a circle
+dc.SetPen(wxPen(*wxBLUE, 1));
+dc.SetBrush(wxBrush(*wxTRANSPARENT_BRUSH));
+dc.DrawCircle(x, y, radius);
+
+// Draw a filled polygon
+wxPoint points[] = {
+    wxPoint(x1, y1),
+    wxPoint(x2, y2),
+    wxPoint(x3, y3)
+};
+dc.SetPen(wxPen(*wxBLACK, 1));
+dc.SetBrush(wxBrush(*wxGREEN));
+dc.DrawPolygon(3, points);
+
+// Draw text
+dc.SetFont(wxFont(10, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL));
+dc.SetTextForeground(*wxBLACK);
+dc.DrawText(_("My Label"), x, y);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_drawing_with_geographic_coordinates"><a class="anchor" href="#_drawing_with_geographic_coordinates"></a>Drawing with Geographic Coordinates</h3>
+<div class="paragraph">
+<p>To draw at specific geographic positions, use the coordinate conversion functions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Convert lat/lon to screen coordinates
+wxPoint point;
+GetCanvasPixLL(vp, &amp;point, latitude, longitude);
+
+// Draw at the converted position
+dc.DrawCircle(point.x, point.y, 10);
+
+// Draw a line between two geographic positions
+wxPoint point1, point2;
+GetCanvasPixLL(vp, &amp;point1, lat1, lon1);
+GetCanvasPixLL(vp, &amp;point2, lat2, lon2);
+dc.DrawLine(point1.x, point1.y, point2.x, point2.y);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_drawing_based_on_zoom_level"><a class="anchor" href="#_drawing_based_on_zoom_level"></a>Drawing Based on Zoom Level</h3>
+<div class="paragraph">
+<p>Adjust your drawing based on the viewport scale:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Get the current view scale
+double scale = vp-&gt;chart_scale;
+
+// Adjust drawing based on scale
+if (scale &lt; 50000) {
+    // Detailed rendering for close zoom
+    // Draw detailed graphics
+} else if (scale &lt; 500000) {
+    // Medium detail for medium zoom
+    // Draw simplified graphics
+} else {
+    // Low detail for far zoom
+    // Draw minimal graphics or nothing
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opengl_rendering"><a class="anchor" href="#_opengl_rendering"></a>OpenGL Rendering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For better performance, especially with complex graphics or animations, use OpenGL rendering.</p>
+</div>
+<div class="sect2">
+<h3 id="_declaring_opengl_rendering_capability"><a class="anchor" href="#_declaring_opengl_rendering_capability"></a>Declaring OpenGL Rendering Capability</h3>
+<div class="paragraph">
+<p>To render overlays in OpenGL mode, declare the <code>WANTS_OPENGL_OVERLAY_CALLBACK</code> capability:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::Init(void) {
+    // Initialize resources
+    // ...
+
+    // Return capabilities
+    return WANTS_OPENGL_OVERLAY_CALLBACK;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_implementing_rendergloverlay"><a class="anchor" href="#_implementing_rendergloverlay"></a>Implementing RenderGLOverlay</h3>
+<div class="paragraph">
+<p>Implement one of the <code>RenderGLOverlay()</code> methods depending on your plugin API version:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// For API 1.7 to 1.15
+bool MyPlugin::RenderGLOverlay(wxGLContext *pcontext, PlugIn_ViewPort *vp) {
+    // Check if viewport is valid
+    if (!vp || !vp-&gt;bValid) return false;
+
+    // Use the same drawing code as in RenderOverlay()
+    wxDC *pdc = NULL;  // Will use default OpenGL DC
+    piDC dc(pdc);      // Create piDC wrapper for drawing
+
+    dc.SetPen(wxPen(*wxRED, 2));
+    dc.DrawLine(0, 0, vp-&gt;pix_width, vp-&gt;pix_height);
+
+    return true;
+}
+
+// For API 1.16+
+bool MyPlugin::RenderGLOverlayMultiCanvas(wxGLContext *pcontext, PlugIn_ViewPort *vp,
+                                         int canvasIndex, int priority) {
+    // Check if viewport is valid
+    if (!vp || !vp-&gt;bValid) return false;
+
+    // Check if this is the canvas we want to draw on
+    if (canvasIndex != m_target_canvas) return false;
+
+    // For API 1.18+: Check if this is the priority we want to draw at
+    if (priority != OVERLAY_LEGACY &amp;&amp; priority != m_drawing_priority) return false;
+
+    // Same drawing code using piDC
+    wxDC *pdc = NULL;  // Will use default OpenGL DC
+    piDC dc(pdc);      // Create piDC wrapper for drawing
+
+    dc.SetPen(wxPen(*wxRED, 2));
+    dc.DrawLine(0, 0, vp-&gt;pix_width, vp-&gt;pix_height);
+
+    return true;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_advanced_opengl_drawing"><a class="anchor" href="#_advanced_opengl_drawing"></a>Advanced OpenGL Drawing</h3>
+<div class="paragraph">
+<p>For more advanced OpenGL drawing, you can use direct OpenGL commands:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool MyPlugin::RenderGLOverlay(wxGLContext *pcontext, PlugIn_ViewPort *vp) {
+    // Check if viewport is valid
+    if (!vp || !vp-&gt;bValid) return false;
+
+    // Direct OpenGL drawing
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    glColor4f(1.0f, 0.0f, 0.0f, 0.5f);  // Red with 50% opacity
+
+    glBegin(GL_TRIANGLES);
+    glVertex2f(100.0f, 100.0f);
+    glVertex2f(200.0f, 100.0f);
+    glVertex2f(150.0f, 200.0f);
+    glEnd();
+
+    return true;
+}</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When using direct OpenGL commands, be careful to restore the OpenGL state when you&#8217;re done to avoid affecting OpenCPN&#8217;s rendering.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_multi_canvas_support"><a class="anchor" href="#_multi_canvas_support"></a>Multi-Canvas Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For plugins that support split-screen or multiple chart displays, use the multi-canvas rendering methods.</p>
+</div>
+<div class="sect2">
+<h3 id="_declaring_multi_canvas_rendering_capability"><a class="anchor" href="#_declaring_multi_canvas_rendering_capability"></a>Declaring Multi-Canvas Rendering Capability</h3>
+<div class="paragraph">
+<p>The capabilities are the same as for single-canvas rendering:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::Init(void) {
+    // Initialize resources
+    // ...
+
+    // Return capabilities
+    return WANTS_OVERLAY_CALLBACK | WANTS_OPENGL_OVERLAY_CALLBACK;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_implementing_multi_canvas_rendering"><a class="anchor" href="#_implementing_multi_canvas_rendering"></a>Implementing Multi-Canvas Rendering</h3>
+<div class="paragraph">
+<p>For API 1.16+, implement the multi-canvas rendering methods:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool MyPlugin::RenderOverlayMultiCanvas(wxDC &amp;dc, PlugIn_ViewPort *vp, int canvasIndex) {
+    // Check if viewport is valid
+    if (!vp || !vp-&gt;bValid) return false;
+
+    // Perform canvas-specific drawing
+    // Different canvases might need different content
+    if (canvasIndex == 0) {
+        // Draw on first canvas
+        dc.SetPen(wxPen(*wxRED, 2));
+        dc.DrawLine(0, 0, vp-&gt;pix_width, vp-&gt;pix_height);
+    } else if (canvasIndex == 1) {
+        // Draw on second canvas
+        dc.SetPen(wxPen(*wxBLUE, 2));
+        dc.DrawCircle(vp-&gt;pix_width/2, vp-&gt;pix_height/2, 50);
+    }
+
+    return true;
+}
+
+bool MyPlugin::RenderGLOverlayMultiCanvas(wxGLContext *pcontext, PlugIn_ViewPort *vp,
+                                         int canvasIndex) {
+    // Similar implementation for OpenGL rendering
+    // ...
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For API 1.18+, implement multi-canvas rendering with priority support:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool MyPlugin::RenderOverlayMultiCanvas(wxDC &amp;dc, PlugIn_ViewPort *vp,
+                                       int canvasIndex, int priority) {
+    // Check if viewport is valid
+    if (!vp || !vp-&gt;bValid) return false;
+
+    // Different drawing for different priorities
+    if (priority == OVERLAY_LEGACY) {
+        // Legacy drawing (for backward compatibility)
+        // ...
+    } else if (priority == OVERLAY_OVER_SHIPS) {
+        // Draw content that should appear over ship icons
+        // ...
+    } else if (priority == OVERLAY_OVER_UI) {
+        // Draw content that should appear over UI elements
+        // ...
+    }
+
+    return true;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overlay_priorities"><a class="anchor" href="#_overlay_priorities"></a>Overlay Priorities</h3>
+<div class="paragraph">
+<p>For API 1.18+, you can specify the drawing priority of your overlays:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OVERLAY_LEGACY</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Default priority (0) for backward compatibility</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OVERLAY_OVER_SHIPS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Draw over ship icons but under UI elements (64)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OVERLAY_OVER_EMBOSS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Draw over embossed text (96)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>OVERLAY_OVER_UI</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Draw over UI elements (128)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Using priorities allows you to control whether your overlay appears above or below other elements on the chart.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_coordinate_transformations"><a class="anchor" href="#_coordinate_transformations"></a>Coordinate Transformations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When drawing on the chart, you&#8217;ll frequently need to convert between different coordinate systems:</p>
+</div>
+<div class="sect2">
+<h3 id="_geographic_to_screen_coordinates"><a class="anchor" href="#_geographic_to_screen_coordinates"></a>Geographic to Screen Coordinates</h3>
+<div class="paragraph">
+<p>To convert from latitude/longitude to screen pixels:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxPoint point;
+GetCanvasPixLL(vp, &amp;point, latitude, longitude);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_screen_to_geographic_coordinates"><a class="anchor" href="#_screen_to_geographic_coordinates"></a>Screen to Geographic Coordinates</h3>
+<div class="paragraph">
+<p>To convert from screen pixels to latitude/longitude:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">double lat, lon;
+GetCanvasLLPix(vp, wxPoint(x, y), &amp;lat, &amp;lon);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mercator_projection_helpers"><a class="anchor" href="#_mercator_projection_helpers"></a>Mercator Projection Helpers</h3>
+<div class="paragraph">
+<p>OpenCPN provides helper functions for Mercator projection calculations:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Calculate destination point given distance and bearing
+double dest_lat, dest_lon;
+PositionBearingDistanceMercator_Plugin(
+    start_lat, start_lon,    // Starting position
+    bearing_degrees,         // Bearing in degrees true
+    distance_nautical_miles, // Distance in nautical miles
+    &amp;dest_lat, &amp;dest_lon     // Destination position (output)
+);
+
+// Calculate bearing and distance between two points
+double bearing, distance;
+DistanceBearingMercator_Plugin(
+    from_lat, from_lon, // Starting position
+    to_lat, to_lon,     // Destination position
+    &amp;bearing,           // Bearing in degrees true (output)
+    &amp;distance           // Distance in nautical miles (output)
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_great_circle_functions"><a class="anchor" href="#_great_circle_functions"></a>Great Circle Functions</h3>
+<div class="paragraph">
+<p>For more accurate long-distance calculations, use great circle functions:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Calculate great circle distance between two points
+double distance_nm = DistGreatCircle_Plugin(
+    start_lat, start_lon, // Starting position
+    end_lat, end_lon      // Ending position
+);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_projection_conversions"><a class="anchor" href="#_projection_conversions"></a>Projection Conversions</h3>
+<div class="paragraph">
+<p>For more specialized needs, OpenCPN provides conversion functions for various projections:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// Convert lat/lon to Transverse Mercator coordinates
+double x, y;
+toTM_Plugin(lat, lon, ref_lat, ref_lon, &amp;x, &amp;y);
+
+// Convert Transverse Mercator coordinates to lat/lon
+double lat, lon;
+fromTM_Plugin(x, y, ref_lat, ref_lon, &amp;lat, &amp;lon);
+
+// Convert lat/lon to Simple Mercator coordinates
+double x, y;
+toSM_Plugin(lat, lon, ref_lat, ref_lon, &amp;x, &amp;y);
+
+// Convert Simple Mercator coordinates to lat/lon
+double lat, lon;
+fromSM_Plugin(x, y, ref_lat, ref_lon, &amp;lat, &amp;lon);
+
+// Convert lat/lon to Elliptical Simple Mercator coordinates
+double x, y;
+toSM_ECC_Plugin(lat, lon, ref_lat, ref_lon, &amp;x, &amp;y);
+
+// Convert Elliptical Simple Mercator coordinates to lat/lon
+double lat, lon;
+fromSM_ECC_Plugin(x, y, ref_lat, ref_lon, &amp;lat, &amp;lon);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_special_rendering_requirements"><a class="anchor" href="#_special_rendering_requirements"></a>Special Rendering Requirements</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_color_schemes"><a class="anchor" href="#_color_schemes"></a>Color Schemes</h3>
+<div class="paragraph">
+<p>Make sure your rendering respects the current color scheme:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::SetColorScheme(PI_ColorScheme cs) {
+    // Store current color scheme
+    m_color_scheme = cs;
+
+    // Adjust rendering colors based on scheme
+    switch (cs) {
+        case PI_GLOBAL_COLOR_SCHEME_DAY:
+            m_line_color = wxColour(255, 0, 0);  // Bright red for day
+            m_fill_color = wxColour(0, 255, 0);  // Bright green for day
+            break;
+
+        case PI_GLOBAL_COLOR_SCHEME_DUSK:
+            m_line_color = wxColour(192, 0, 0);  // Darker red for dusk
+            m_fill_color = wxColour(0, 192, 0);  // Darker green for dusk
+            break;
+
+        case PI_GLOBAL_COLOR_SCHEME_NIGHT:
+            m_line_color = wxColour(128, 0, 0);  // Darkest red for night
+            m_fill_color = wxColour(0, 128, 0);  // Darkest green for night
+            break;
+
+        default:
+            // Use day colors as default
+            m_line_color = wxColour(255, 0, 0);
+            m_fill_color = wxColour(0, 255, 0);
+            break;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_viewport_updates"><a class="anchor" href="#_viewport_updates"></a>Viewport Updates</h3>
+<div class="paragraph">
+<p>Implement <code>SetCurrentViewPort()</code> to stay informed about viewport changes:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyPlugin::SetCurrentViewPort(PlugIn_ViewPort &amp;vp) {
+    // Store a copy of the viewport
+    m_last_vp = vp;
+
+    // Adjust drawing parameters based on new viewport
+    // For example, simplify graphics for zoomed-out views
+    if (vp.chart_scale &gt; 500000) {
+        m_simplified_drawing = true;
+    } else {
+        m_simplified_drawing = false;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_performance_considerations"><a class="anchor" href="#_performance_considerations"></a>Performance Considerations</h3>
+<div class="paragraph">
+<p>Rendering can impact performance significantly. Follow these guidelines:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Limit redrawing</strong>: Only draw what&#8217;s necessary</p>
+</li>
+<li>
+<p><strong>Scale detail with zoom</strong>: Show less detail at zoomed-out scales</p>
+</li>
+<li>
+<p><strong>Cache calculations</strong>: Don&#8217;t recalculate values on every render</p>
+</li>
+<li>
+<p><strong>Use clipping</strong>: Only draw what&#8217;s in the visible area</p>
+</li>
+<li>
+<p><strong>Optimize loops</strong>: Avoid expensive operations in tight loops</p>
+</li>
+<li>
+<p><strong>Use OpenGL for complex drawing</strong>: It&#8217;s generally faster</p>
+</li>
+<li>
+<p><strong>Reduce transparency</strong>: Alpha blending can be expensive</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Example of optimizing drawing based on viewport:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool MyPlugin::RenderOverlay(wxDC &amp;dc, PlugIn_ViewPort *vp) {
+    // Only render if viewport is valid
+    if (!vp || !vp-&gt;bValid) return false;
+
+    // Check if any of our data is visible in this viewport
+    if (m_max_lat &lt; vp-&gt;lat_min || m_min_lat &gt; vp-&gt;lat_max ||
+        m_max_lon &lt; vp-&gt;lon_min || m_min_lon &gt; vp-&gt;lon_max) {
+        return false;  // Nothing visible, don't waste time drawing
+    }
+
+    // Adjust detail level based on scale
+    int detail_level;
+    if (vp-&gt;chart_scale &lt; 50000) {
+        detail_level = 3;  // High detail
+    } else if (vp-&gt;chart_scale &lt; 200000) {
+        detail_level = 2;  // Medium detail
+    } else if (vp-&gt;chart_scale &lt; 1000000) {
+        detail_level = 1;  // Low detail
+    } else {
+        detail_level = 0;  // Minimal detail
+    }
+
+    // Draw with appropriate detail level
+    RenderWithDetailLevel(dc, vp, detail_level);
+
+    return true;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_mouse_and_keyboard_interaction"><a class="anchor" href="#_mouse_and_keyboard_interaction"></a>Mouse and Keyboard Interaction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For interactive overlays, implement mouse and keyboard event handlers.</p>
+</div>
+<div class="sect2">
+<h3 id="_mouse_events"><a class="anchor" href="#_mouse_events"></a>Mouse Events</h3>
+<div class="paragraph">
+<p>Declare the <code>WANTS_MOUSE_EVENTS</code> capability and implement <code>MouseEventHook()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::Init(void) {
+    // Initialize resources
+    // ...
+
+    // Return capabilities
+    return WANTS_OVERLAY_CALLBACK | WANTS_MOUSE_EVENTS;
+}
+
+bool MyPlugin::MouseEventHook(wxMouseEvent &amp;event) {
+    // Handle mouse events
+    if (event.LeftDown()) {
+        // Convert screen coordinates to geographic
+        double lat, lon;
+        GetCanvasLLPix(&amp;m_last_vp, event.GetPosition(), &amp;lat, &amp;lon);
+
+        // Check if click is on one of our elements
+        for (size_t i = 0; i &lt; m_elements.size(); i++) {
+            if (IsPointInElement(lat, lon, m_elements[i])) {
+                // Handle click on element
+                SelectElement(i);
+                RequestRefresh(GetOCPNCanvasWindow());  // Request redraw
+                return true;  // We handled this event
+            }
+        }
+    }
+
+    // We didn't handle this event, let OpenCPN process it
+    return false;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_keyboard_events"><a class="anchor" href="#_keyboard_events"></a>Keyboard Events</h3>
+<div class="paragraph">
+<p>Declare the <code>WANTS_KEYBOARD_EVENTS</code> capability and implement <code>KeyboardEventHook()</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::Init(void) {
+    // Initialize resources
+    // ...
+
+    // Return capabilities
+    return WANTS_OVERLAY_CALLBACK | WANTS_KEYBOARD_EVENTS;
+}
+
+bool MyPlugin::KeyboardEventHook(wxKeyEvent &amp;event) {
+    // Handle keyboard events
+    if (event.GetKeyCode() == WXK_ESCAPE) {
+        // Clear selection
+        ClearSelection();
+        RequestRefresh(GetOCPNCanvasWindow());  // Request redraw
+        return true;  // We handled this event
+    }
+
+    // We didn't handle this event, let OpenCPN process it
+    return false;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Balance performance and quality</strong>: Adjust detail level based on scale</p>
+</li>
+<li>
+<p><strong>Respect color schemes</strong>: Make sure your overlays are visible in all schemes</p>
+</li>
+<li>
+<p><strong>Clear visual design</strong>: Make your overlays intuitive and uncluttered</p>
+</li>
+<li>
+<p><strong>Maintain consistency</strong>: Follow OpenCPN&#8217;s visual style</p>
+</li>
+<li>
+<p><strong>Consider all projections</strong>: Test with different projection types</p>
+</li>
+<li>
+<p><strong>Clean up resources</strong>: Properly manage any OpenGL resources</p>
+</li>
+<li>
+<p><strong>Handle multiple canvases</strong>: Support split-screen displays</p>
+</li>
+<li>
+<p><strong>Test on all platforms</strong>: Ensure rendering works on Windows, macOS, and Linux</p>
+</li>
+<li>
+<p><strong>Respect user preferences</strong>: Don&#8217;t override user settings</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Untitled :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/dashboardsk/svginstrument.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../_/css/site.css">
+<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="dashboardsk" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">DashboardSK</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="index.html">DashboardSK</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="installation.html">Installation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="configuration.html">Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Instruments</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="simplenumberinstrument.html">Simple number</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="simplegaugeinstrument.html">Simple gauge</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="compositewindinstrument.html">Composite wind</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="combinedgaugeinstrument.html">Combined gauge</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="svginstrument.html">SVG skin</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="simpletextinstrument.html">Simple text</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="simplepositioninstrument.html">Simple position</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="simplehistograminstrument.html">Simple histogram</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dividerinstrument.html">Divider</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="spacerinstrument.html">Spacer</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="zones.html">Zones</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="skkeys.html">Signal K keys</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#signalk-server_podman_desktop.adoc">Signal K server with Podman Desktop</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">DashboardSK</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../ocpn-dev-manual/0.1/index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">DashboardSK</a></li>
+    <li>Instruments</li>
+    <li><a href="svginstrument.html">SVG skin</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/nohal/dashboardsk_pi/edit/main/manual/modules/ROOT/pages/svginstrument.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<div class="sect1">
+<h2 id="_svg_skin_instrument"><a class="anchor" href="#_svg_skin_instrument"></a>SVG skin instrument</h2>
+<div class="sectionbody">
+<div class="imageblock">
+<div class="content">
+<img src="_images/svginstrument_screenshot.png" alt="SVG skin instrument">
+</div>
+</div>
+<div class="paragraph">
+<p>The SVG skin instrument draws an SVG image you supply and moves, recolors
+and fills in parts of it from up to four Signal K values. The look of the
+instrument is entirely up to the image, so a new gauge needs no programming,
+just an SVG drawn by the rules below.</p>
+</div>
+<div class="sect2">
+<h3 id="_settings"><a class="anchor" href="#_settings"></a>Settings</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Skin</strong> - the skin to draw, picked from the bundled and imported skins. The
+plugin ships <code>wind_angle.svg</code>, a sample apparent wind skin.
+<strong>Import&#8230;&#8203;</strong> checks the selected SVG file and copies it into the <code>svg</code>
+subfolder of the plugin&#8217;s private data folder (<code>DashboardSK_pi</code> in
+OpenCPN&#8217;s private data location, e.g. <code>~/.opencpn/plugins/DashboardSK_pi/svg</code>
+on Linux), where it survives plugin updates. An imported skin with the same
+file name as a bundled one replaces it. To remove an imported skin, delete
+its file from that folder.</p>
+</li>
+<li>
+<p>Signal K paths feeding the value slots <code>v0</code> to <code>v3</code>. Only the slots the
+selected skin actually uses are offered, labelled as the skin names them
+(see <a href="#_slot_names">Slot names</a>), otherwise as <em>Value vN key</em>. Paths of slots hidden
+by the current skin are kept and come back when you switch to a skin using
+them.</p>
+</li>
+<li>
+<p><strong>Label</strong> and <strong>Unit</strong> of a value slot - texts shown next to the value, offered
+only for slots the skin has a place for (see <a href="#_user_text">User text</a>). Leave them
+empty to show nothing. The instrument <strong>Title</strong> works the same way in skins
+showing it.</p>
+</li>
+<li>
+<p><strong>Transformation</strong> and <strong>Format</strong> of a value slot - offered for slots shown as
+text, they override the skin&#8217;s <code>data-dsk-mul</code> and <code>data-dsk-fmt</code> (see
+<a href="#_text">Text</a>). The unit conversions and number formats are the ones known
+from the <a href="simplenumberinstrument.html" class="xref page">simple number</a> instrument, e.g.
+<em>m/s &#8594; kn</em> with <em>9.9</em> shows the speed in knots with one decimal. Leave
+them at <em>None</em> and <em>Skin default</em> to keep the skin&#8217;s.</p>
+</li>
+<li>
+<p><strong>Scale minimum</strong> / <strong>Scale maximum</strong> - range of the dial, offered only by
+skins with an adjustable scale (like the tachometer), in the unit the dial
+shows (rpm for the tachometer). Set both to the same value to get the
+skin&#8217;s default back.</p>
+</li>
+<li>
+<p><strong>Zones</strong> - <a href="zones.html" class="xref page">zones</a> used by the zone color bindings and zone
+bands, offered only if the skin has some. For the slot with the adjustable
+scale the zone limits are in the dial&#8217;s unit too (e.g. <code>3500</code> to <code>4000</code>
+rpm for a red band); for other slots they are in Signal K units. A skin may
+suggest zones, used while none are configured.</p>
+</li>
+<li>
+<p><strong>Instrument size</strong> - width in pixels, the height follows the image&#8217;s aspect
+ratio.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If the file can&#8217;t be loaded the instrument shows the reason in red instead.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bundled_skins"><a class="anchor" href="#_bundled_skins"></a>Bundled skins</h3>
+<div class="paragraph">
+<p>The skins shipped with the plugin also serve as examples for writing your own.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 50.0001%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Skin</th>
+<th class="tableblock halign-left valign-top">Signal K paths</th>
+<th class="tableblock halign-left valign-top">Shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>wind_angle.svg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v0 <code>environment.wind.angleApparent</code>, v1 <code>environment.wind.speedApparent</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rotation of an angle in radians, text readouts, zone colored text.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>tachometer.svg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v0 <code>propulsion.&lt;id&gt;.revolutions</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adjustable scale (default 0-4000 rpm) with labels following it, bands
+drawn from the zones (default red band 3500-4000 rpm), needle colored by
+zones, rpm readout (<code>data-dsk-mul="60"</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>rudder.svg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v0 <code>steering.rudderAngle</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signed angle clamped to ±35°, off-center pivot, non-square image.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>number_1.svg</code>, <code>number_2h.svg</code>, <code>number_2v.svg</code>, <code>number_3v.svg</code>,
+<code>number_4.svg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">any numeric paths, one per value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Generic boxes with 1, 2 (side by side or stacked), 3 (stacked) or 4 (2×2)
+numbers, each with an optional label and unit, the optional instrument title
+on top and zone colored values. Set the transformation and format to convert
+the Signal K value, e.g. <em>°K &#8594; °C</em> and <em>9</em> for a temperature.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="_images/svginstrument_tachometer.png" alt="Tachometer skin">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/svginstrument_rudder.png" alt="Rudder angle skin">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/svginstrument_number_1.png" alt="Number skin with one value">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/svginstrument_number_2h.png" alt="Number skin with two values side by side">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/svginstrument_number_2v.png" alt="Number skin with two stacked values">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/svginstrument_number_3v.png" alt="Number skin with three stacked values">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/svginstrument_number_4.png" alt="Number skin with four values">
+</div>
+</div>
+<div class="paragraph">
+<p>When you switch to a different skin, slots without a path get the skin&#8217;s
+suggested paths, while paths entered for the previous skin stay. Clear a
+field to get the suggestion back. The tachometer suggests
+<code>propulsion.main.revolutions</code>; adjust the engine id to match your boat.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_authoring_rules"><a class="anchor" href="#_authoring_rules"></a>Authoring rules</h3>
+<div class="paragraph">
+<p>The image is rendered by the SVG engine built into wxWidgets, which supports
+only a subset of SVG:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The root <code>&lt;svg&gt;</code> element must have a <code>viewBox</code>.</p>
+</li>
+<li>
+<p>Don&#8217;t use <code>&lt;style&gt;</code> elements or CSS classes, <code>&lt;use&gt;</code> references, filters or
+embedded images. Inkscape&#8217;s <em>Save as plain SVG</em> followed by
+<code>svgo --config</code> with <code>inlineStyles</code>, <code>convertStyleToAttrs</code> and
+<code>removeUselessDefs</code> gets most drawings there.</p>
+</li>
+<li>
+<p>Set colors and font properties as attributes (<code>fill="#ff0000"</code>), not in
+<code>style="&#8230;&#8203;"</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bindings"><a class="anchor" href="#_bindings"></a>Bindings</h3>
+<div class="paragraph">
+<p>Elements are connected to values by <code>data-dsk-*</code> attributes. Each refers to
+a value slot <code>v0</code> to <code>v3</code>. While a slot has no current data, elements bound
+to it are shown as drawn.</p>
+</div>
+<div class="sect3">
+<h4 id="_slot_names"><a class="anchor" href="#_slot_names"></a>Slot names</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"
+     data-dsk-label-v0="Apparent wind angle"
+     data-dsk-label-v1="Apparent wind speed"
+     data-dsk-path-v0="environment.wind.angleApparent"
+     data-dsk-path-v1="environment.wind.speedApparent"&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Optional <code>data-dsk-label-v0</code> &#8230;&#8203; <code>data-dsk-label-v3</code> attributes on the root
+element name the slots in the instrument settings, so users know which
+Signal K path to pick for each.</p>
+</div>
+<div class="paragraph">
+<p>Optional <code>data-dsk-path-v0</code> &#8230;&#8203; <code>data-dsk-path-v3</code> attributes suggest a
+Signal K path for the slot. It is used whenever the slot&#8217;s path is empty:
+for a new instrument, after switching to the skin, or when the user clears
+the field.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rotation"><a class="anchor" href="#_rotation"></a>Rotation</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;path d="M100 18l7 82h-14z" fill="#4da3ff"
+      data-dsk-rotate="v0" data-dsk-pivot="100 100"/&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>data-dsk-rotate</code> - rotates the element by the slot value, clockwise.</p>
+</li>
+<li>
+<p><code>data-dsk-pivot="x y"</code> - center of rotation in <code>viewBox</code> coordinates,
+defaults to the center of the <code>viewBox</code>.</p>
+</li>
+<li>
+<p><code>data-dsk-range="in_min in_max deg_min deg_max"</code> - maps the value linearly
+to an angle, clamped to the range. Without it the value is taken as radians,
+which suits Signal K angles. Example: a 0-10 kn (0-5.14 m/s) speed gauge
+sweeping from -135 to 135 degrees uses <code>data-dsk-range="0 5.14 -135 135"</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Draw the element in its zero position; any <code>transform</code> it already has is
+kept and applied first.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_text"><a class="anchor" href="#_text"></a>Text</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;text x="100" y="128" font-size="16" fill="#f2f2f2" text-anchor="middle"
+      data-dsk-text="v1" data-dsk-mul="1.943844" data-dsk-fmt="%.1f kn"&gt;---&lt;/text&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>data-dsk-text</code> - replaces the text with the slot value, or <code>---</code> without
+data.</p>
+</li>
+<li>
+<p><code>data-dsk-mul</code> - multiplier applied before formatting, for unit conversion
+(<code>57.29578</code> radians to degrees, <code>1.943844</code> m/s to knots).</p>
+</li>
+<li>
+<p><code>data-dsk-fmt</code> - printf style format with exactly one number, e.g.
+<code>%.0f°</code> or <code>%05.1f</code>. Defaults to <code>%.0f</code>; other formats are ignored.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <strong>Transformation</strong> and <strong>Format</strong> settings of the slot, when set, replace
+<code>data-dsk-mul</code> and <code>data-dsk-fmt</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_user_text"><a class="anchor" href="#_user_text"></a>User text</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;text x="100" y="22" font-size="14" fill="#a8a8a8" text-anchor="middle"
+      data-dsk-title="1"&gt;Title&lt;/text&gt;
+&lt;text x="12" y="108" font-size="12" fill="#a8a8a8"
+      data-dsk-caption="v0"&gt;Label&lt;/text&gt;
+&lt;text x="188" y="108" font-size="12" fill="#a8a8a8" text-anchor="end"
+      data-dsk-unit="v0"&gt;Unit&lt;/text&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>data-dsk-title</code> - shows the instrument title (the attribute&#8217;s value is
+ignored).</p>
+</li>
+<li>
+<p><code>data-dsk-caption</code> - shows the <strong>Label</strong> setting of the slot.</p>
+</li>
+<li>
+<p><code>data-dsk-unit</code> - shows the <strong>Unit</strong> setting of the slot.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Empty settings leave the element empty, so it&#8217;s simply not drawn; the rest of
+the drawing stays where it is.
+The text in the file is always replaced, so it&#8217;s only a placeholder for
+editing. Don&#8217;t leave the elements empty, svgo removes empty text.</p>
+</div>
+<div class="paragraph">
+<p>Text, bound or static, is drawn by the plugin on top of the image, using
+only the <code>x</code>, <code>y</code>, <code>font-size</code>, <code>font-weight</code>, <code>fill</code> and <code>text-anchor</code>
+attributes of the <code>&lt;text&gt;</code> element. Text must not be placed inside a
+transformed group.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_zone_colors"><a class="anchor" href="#_zone_colors"></a>Zone colors</h4>
+<div class="paragraph">
+<p><code>data-dsk-zone-fill</code> and <code>data-dsk-zone-stroke</code> replace the element&#8217;s <code>fill</code>
+or <code>stroke</code> with the alert, warning, alarm or emergency color when the slot
+value falls into one of the configured zones. Outside the zones the color
+from the image is used. Both work on text as well.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_adjustable_scale"><a class="anchor" href="#_adjustable_scale"></a>Adjustable scale</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;svg ... data-dsk-scale="v0" data-dsk-scale-range="0 4000"
+     data-dsk-scale-mul="60" data-dsk-zones="3500,4000,alarm"&gt;
+  &lt;path d="..." data-dsk-rotate="v0" data-dsk-sweep="-135 135"/&gt;
+  &lt;text x="..." y="..." data-dsk-tick=".25" data-dsk-mul="0.01"&gt;10&lt;/text&gt;
+  &lt;path d="..." fill="none" stroke="#2e343b" stroke-width="8"
+        data-dsk-zone-arc="v0" data-dsk-radius="86" data-dsk-sweep="-135 135"/&gt;
+&lt;/svg&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>data-dsk-scale</code> on the root names the slot whose range the user can set,
+<code>data-dsk-scale-range="min max"</code> is the default range and
+<code>data-dsk-scale-mul</code> converts the Signal K value to the unit of the range
+(<code>60</code> for Hz to rpm). The <strong>Scale</strong> settings and, for this slot, the zones are
+in that unit.
+<code>data-dsk-scale-step</code> sets the step of the <strong>Scale</strong> settings, which also
+decides how many decimals they show (<code>0.1</code> for one). It defaults to a power
+of ten around a hundredth of the range, e.g. <code>10</code> for 0-4000 or <code>0.01</code> for
+0-2.5.</p>
+</li>
+<li>
+<p><code>data-dsk-sweep="deg_min deg_max"</code> - like <code>data-dsk-range</code>, but maps the
+configured scale onto the angles, so the needle follows the settings.</p>
+</li>
+<li>
+<p><code>data-dsk-tick="fraction"</code> on a <code>&lt;text&gt;</code> - shows the scale value at that
+fraction (<code>0</code> minimum, <code>1</code> maximum), with the optional <code>data-dsk-mul</code> and
+<code>data-dsk-fmt</code>. Put labels where the values come out round for the scales
+your users are likely to set, e.g. quarters.</p>
+</li>
+<li>
+<p><code>data-dsk-zone-arc</code> on a <code>&lt;path&gt;</code> - for each configured zone other than
+nominal, an arc in the zone&#8217;s color is drawn on top of the element at
+<code>data-dsk-radius</code> around <code>data-dsk-pivot</code>, spanning the zone mapped by
+<code>data-dsk-sweep</code> (or <code>data-dsk-range</code>), with the element&#8217;s <code>stroke-width</code>.
+The element itself is drawn as authored, e.g. as a background track.</p>
+</li>
+<li>
+<p><code>data-dsk-zones</code> on the root suggests zones in the same format as the
+instrument setting: <code>lower,upper,state</code> triplets separated by <code>;</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_day_dusk_and_night"><a class="anchor" href="#_day_dusk_and_night"></a>Day, dusk and night</h3>
+<div class="paragraph">
+<p>Like all other instruments, the skin follows OpenCPN&#8217;s color scheme: every
+<code>fill</code>, <code>stroke</code> and <code>stop-color</code> in the image, including zone colors and
+text, has its luminosity reduced at dusk and night. Draw the skin in its day
+colors only.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../_/js/vendor/lunr.js"></script>
+<script src="../_/js/search-ui.js" id="search-ui-script" data-site-root-path=".." data-snippet-length="100" data-stylesheet="../_/css/search.css"></script>
+<script async src="../search-index.js"></script>
+  </body>
+</html>

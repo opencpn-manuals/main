@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Custom Chart Types :: OpenCPN</title>
+    <link rel="canonical" href="https://opencpn-manuals.github.io/main/ocpn-dev-manual/0.1/pm-plugin-api-custom-charts.html">
+    <meta name="generator" content="Antora 3.1.9">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
+    <script>var uiRootPath = '../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <div class="navbar">
+    <div class="ocpn-logo"> </div>
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://opencpn-manuals.github.io/main">OpenCPN</a>
+      <div class="navbar-item search hide-for-print">
+        <div id="search-field" class="field">
+          <input id="search-input" type="text" placeholder="Search the docs">
+        </div>
+      </div>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+       <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+              <a class="navbar-item" href="https://www.opencpn.org/">
+                OpenCPN.org
+              </a>
+              <a class="navbar-item" href="https://github.com/opencpn/OpenCPN">
+                Github Site
+              </a>
+              <a class="navbar-item" href="https://opencpn.org/flyspray/">
+                Bugtracker
+              </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="ocpn-dev-manual" data-version="0.1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html">OpenCPN Developer Manual</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Developer Manual</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Introduction</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-AboutThisManual.html">About this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Background.html">Background</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Community.html">Community</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="intro-Terminology.html">Terminology</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../opencpn-dev/index.html">Opencpn development</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Plugin Development</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-devel-overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-plugin-dependencies.html">Dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-plugin-api-overview.html">Plugin API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-versions.html">Plugin API and ABI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="using-the-api.html">Using the API</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="system-events.html">Using API system events</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-core-classes.html">Core Plugin Classes and Lifecycle</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-capabilities.html">Plugin Capabilities System</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-ui-integration.html">UI Integration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-rendering.html">Chart Display and Rendering</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-custom-charts.html">Custom Chart Types</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-navigation-data.html">Navigation Data Access</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-plugin-communication.html">Plugin Communication</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-plugin-api-utility-functions.html">Utility Functions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-deployment.html">Deployment overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="pm-overview-workflow.html">Workflow overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="plugin-compat.html">Compatibility and tweaks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="dm-i18n.html">Translations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="Plugin-Pi-Adaptation.html">Plugin Installer Code Adaptation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-tp-template.html">Testplugin Template</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-workflow.html">Workflow Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-overview-prereq-services.html">Prerequisite Services</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="pm-overview-prereq-other.html">Cloudsmith Setup</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="pm-tp-system-structure.html">System Structure</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-dev-setup.html">Developer Setup</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-config-template.html">Configure Template</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <span class="nav-text">Build Locally</span>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-adapt-plugin.html">Adapt Plugin</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-deploy.html">Deploy Details</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pi_installer_dev_procedure.html">PI Manager Dev Procedure</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-update-library.html">Update the Library</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-language-nuance.html">Language Nuances</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../opencpn-dev/odraw-messaging.html">Odapi Messages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-odapi.html">Odapi for oDraw</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="pm-tp-ocpn_draw_odapi.html">Ocpn_Draw Odapi</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../AlternativeWorkflow/index.html">Shipdriver Template</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../plugin-installer/Home.html">Plugin Manager Installer Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="https://opencpn-manuals.github.io/main/opencpn-plugins/index.html">Plugins  Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-legacy-plugins.html">Legacy Plugin Packaging</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-manual-maint.html">Maintenance of this Manual</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="dm-i18n.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Resources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-prebuilt-build-files.html">Prebuilt Build Files</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="res-online-tools.html">Online Nmea Tools</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="ECDIS_testdata.html">ECDIS testdata</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Reference</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="languages.html">Internationalization</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="prerequisites.html">Prerequisites</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="compile_mac_osx.html">Compiling on macOS</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="rpi2.html">Compile on Raspberry PI</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="building-on-armhf-linux-armbian-orange-pi.html">armhf linux - Armbian - Orange Pi</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">OpenCPN Developer Manual</span>
+    <span class="version">0.1</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <a class="title" href="../../admiralty/index.html">Admiralty Tide Tables</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rtlsdr/index.html">AIS RTLsdr USB</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ais-vd/0.1/index.html">AIS-vd</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../aisradar/index.html">AISradar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot-rm/0.1/index.html">Autopilot Raymarine</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autopilot_route/index.html">Autopilot Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../autotrackraymarine/index.html">AutoTrackRaymarine Evo</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../calculator/index.html">Calculator</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../celestial_navigation/index.html">Celestial Navigation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartdldr/index.html">Chart Downloader Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../chartscale/index.html">ChartScale</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../climatology/index.html">Climatology</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard/index.html">Dashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboard_tactics/index.html">Dashboard Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dashboardsk/index.html">DashboardSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../debugger/0.1/index.html">Debugger</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../demo_plugin/index.html">Demo Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../deviation/index.html">Deviation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../dead_reckoning/index.html">DR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../e_timer/index.html">e_timer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../earthexplorer/index.html">EarthExplorer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../engine-dash/0.1/index.html">EngineDashboard</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../findit/index.html">FindIt</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../frcurrents/index.html">frcurrents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../gps-odometer/index.html">GPS-Odometer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../route/index.html">Great Circle Route</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../grib/index.html">Grib Weather Data Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../javascript/index.html">Javascript Plugin Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../launcher/0.1/index.html">Launcher</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../logbook/index.html">Logbook</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../ncdf/index.html">NCDF Tidal Currents</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nmea_converter/index.html">NMEA Converter</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nsk/index.html">NSK</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../nv_charts/index.html">nv_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../o-charts/index.html">o-charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../objsearch/0.1/index.html">ObjSearch</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../odraw/index.html">Ocpn_Draw</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../oesenc/0.1/index.html">oesenc</a>
+    </li>
+    <li class="component is-current">
+      <a class="title" href="index.html">OpenCPN Developer Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../manuals/index.html">OpenCPN Manuals</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-plugins/index.html">OpenCPN Plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../opencpn-dev/index.html">OpenCPN Programming Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otcurrent/index.html">oTcurrent</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalplan/index.html">oTidalPlan</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../otidalroute/index.html">oTidalRoute</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../photolayer/index.html">PhotoLayer</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plots/index.html">Plots</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../plugin-installer/Home.html">Plugin Installer Documentation</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../polar/index.html">Polar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../projections/0.1/index.html">Projections</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../pypilot/index.html">Pypilot Autopilot</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../race-start/0.1/index.html">RaceStart</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../radar/0.1/index.html">Radar Manual</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../rotationctrl/index.html">Rotation Control</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../s63_vector_charts/0.1/index.html">s63_vector_charts</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sailawaynmea/index.html">SailawayNMEA</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../sar/index.html">SAR</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../shipdriver/index.html">ShipDriver</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../AlternativeWorkflow/index.html">Shipdriver Managed Workflow for the OpenCPN plugins</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../squiddio/index.html">sQuiddio</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../statusbar/index.html">Statusbar</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../survey/0.1/index.html">Survey</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tactics/index.html">Tactics</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../tidefinder/index.html">TideFinder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../twocan/0.1/index.html">TwoCan Plugin</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../uktides/index.html">UKtides</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vfkaps/index.html">VFkaps</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../vdr/index.html">Voyage Data Recorder</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../watchdog/index.html">Watchdog</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weather_routing/index.html">Weather Routing</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../weatherfax/index.html">WeatherFax</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../windvane/0.1/index.html">Windvane</a>
+    </li>
+    <li class="component">
+      <a class="title" href="../../wmm/index.html">WMM magnetic variations</a>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../manuals/index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">OpenCPN Developer Manual</a></li>
+    <li>Developer Manual</li>
+    <li>Plugin Development</li>
+    <li><a href="pm-plugin-api-overview.html">Plugin API</a></li>
+    <li><a href="pm-plugin-api-custom-charts.html">Custom Chart Types</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/opencpn-manuals/development/edit/main/modules/ROOT/pages/pm-plugin-api-custom-charts.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Custom Chart Types</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter explains how plugins can implement support for custom chart formats in OpenCPN. The plugin API allows you to extend OpenCPN with new chart types beyond those natively supported.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenCPN natively supports several chart formats including S-57 ENC, BSB/KAP, and CM93. The plugin system allows third-party developers to add support for additional proprietary or specialized formats.</p>
+</div>
+<div class="paragraph">
+<p>Implementing a custom chart type is one of the most complex capabilities in the plugin API. It requires implementing the <code>PlugInChartBase</code> class and handling chart loading, rendering, and coordinate transformations.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chart_type_capabilities"><a class="anchor" href="#_chart_type_capabilities"></a>Chart Type Capabilities</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To implement a custom chart type, your plugin must declare the appropriate capabilities:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyPlugin::Init(void) {
+    // Initialize resources
+    // ...
+
+    // For standard view only
+    return INSTALLS_PLUGIN_CHART;
+
+    // For OpenGL view support as well
+    // return INSTALLS_PLUGIN_CHART | INSTALLS_PLUGIN_CHART_GL;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementing_pluginchartbase"><a class="anchor" href="#_implementing_pluginchartbase"></a>Implementing PlugInChartBase</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>PlugInChartBase</code> class is the foundation for custom chart types. Your plugin must create a derived class that implements all required methods:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">class MyCustomChart : public PlugInChartBase {
+public:
+    MyCustomChart();
+    ~MyCustomChart();
+
+    // Required methods
+    wxString GetFileSearchMask(void) override;
+    int Init(const wxString &amp;full_path, int init_flags) override;
+    void SetColorScheme(int cs, bool bApplyImmediate) override;
+    double GetNormalScaleMin(double canvas_scale_factor, bool b_allow_overzoom) override;
+    double GetNormalScaleMax(double canvas_scale_factor, int canvas_width) override;
+    double GetNearestPreferredScalePPM(double target_scale_ppm) override;
+    bool GetChartExtent(ExtentPI *pext) override;
+    wxBitmap &amp;RenderRegionView(const PlugIn_ViewPort &amp;VPoint, const wxRegion &amp;Region) override;
+    bool AdjustVP(PlugIn_ViewPort &amp;vp_last, PlugIn_ViewPort &amp;vp_proposed) override;
+    void GetValidCanvasRegion(const PlugIn_ViewPort &amp;VPoint, wxRegion *pValidRegion) override;
+    wxBitmap *GetThumbnail(int tnx, int tny, int cs) override;
+
+    // Optional coverage methods
+    int GetCOVREntries() override;
+    int GetCOVRTablePoints(int iTable) override;
+    int GetCOVRTablenPoints(int iTable) override;
+    float *GetCOVRTableHead(int iTable) override;
+
+    // Optional raster methods (if your chart is raster-based)
+    void ComputeSourceRectangle(const PlugIn_ViewPort &amp;vp, wxRect *pSourceRect) override;
+    double GetRasterScaleFactor() override;
+    bool GetChartBits(wxRect &amp;source, unsigned char *pPix, int sub_samp) override;
+    int GetSize_X() override;
+    int GetSize_Y() override;
+    void latlong_to_chartpix(double lat, double lon, double &amp;pixx, double &amp;pixy) override;
+    void chartpix_to_latlong(double pixx, double pixy, double *plat, double *plon) override;
+
+private:
+    // Chart-specific data members
+    wxString m_full_path;
+    wxBitmap m_rendered_chart;
+    // ... other chart data
+};</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_registering_chart_classes"><a class="anchor" href="#_registering_chart_classes"></a>Registering Chart Classes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Your plugin must register its chart classes with OpenCPN by implementing the <code>GetDynamicChartClassNameArray()</code> method:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxArrayString MyPlugin::GetDynamicChartClassNameArray(void) {
+    wxArrayString array;
+    array.Add("MyCustomChart");  // Class name as a string
+    return array;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_chart_factory"><a class="anchor" href="#_creating_chart_factory"></a>Creating Chart Factory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You also need to provide a factory function that creates instances of your chart class:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">// In your plugin's global scope
+extern "C" DECL_EXP PlugInChartBase *CreatePlugInChart(const wxString &amp;chart_class, const wxString &amp;full_path) {
+    if (chart_class == "MyCustomChart") {
+        return new MyCustomChart();
+    }
+    return NULL;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_implementing_required_methods"><a class="anchor" href="#_implementing_required_methods"></a>Implementing Required Methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s look at the key methods you need to implement in your chart class:</p>
+</div>
+<div class="sect2">
+<h3 id="_getfilesearchmask"><a class="anchor" href="#_getfilesearchmask"></a>GetFileSearchMask</h3>
+<div class="paragraph">
+<p>This method returns a wildcard pattern for files that your chart class can handle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxString MyCustomChart::GetFileSearchMask(void) {
+    return "*.mchart";  // Custom chart file extension
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_init"><a class="anchor" href="#_init"></a>Init</h3>
+<div class="paragraph">
+<p>The <code>Init</code> method loads a chart file and initializes the chart object:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyCustomChart::Init(const wxString &amp;full_path, int init_flags) {
+    // Store the path
+    m_full_path = full_path;
+
+    // Check init flags to determine how much to load
+    if (init_flags == PI_HEADER_ONLY) {
+        // Load only chart metadata (for chart database)
+        if (!LoadChartHeader(full_path)) {
+            return INIT_FAIL_REMOVE;  // Failed to load chart header
+        }
+    } else {
+        // Load full chart data
+        if (!LoadFullChart(full_path)) {
+            return INIT_FAIL_REMOVE;  // Failed to load chart
+        }
+    }
+
+    // Initialize chart properties
+    m_Chart_Scale = 50000;  // Example scale 1:50000
+    m_Chart_Skew = 0.0;     // No skew
+    m_projection = PI_PROJECTION_MERCATOR;  // Mercator projection
+
+    // Set basic metadata
+    m_FullPath = full_path;
+    m_Name = GetChartTitle();
+    m_Description = GetChartDescription();
+    m_ID = GetChartID();
+    m_DepthUnits = "Meters";
+    m_SoundingsDatum = "MLLW";
+    m_datum_str = "WGS84";
+    m_SE = "1.0";
+    m_EdDate = wxDateTime::Now();
+
+    // Mark as ready to render
+    m_bReadyToRender = true;
+
+    return INIT_OK;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setcolorscheme"><a class="anchor" href="#_setcolorscheme"></a>SetColorScheme</h3>
+<div class="paragraph">
+<p>This method updates the chart colors based on OpenCPN&#8217;s color scheme:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyCustomChart::SetColorScheme(int cs, bool bApplyImmediate) {
+    // Store the color scheme
+    m_ColorScheme = cs;
+
+    // Apply color scheme to chart elements
+    UpdateChartColors(cs);
+
+    // If immediate application requested, invalidate any cached rendering
+    if (bApplyImmediate) {
+        m_rendered_chart = wxBitmap();  // Clear cached rendering
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_getchartextent"><a class="anchor" href="#_getchartextent"></a>GetChartExtent</h3>
+<div class="paragraph">
+<p>This method returns the geographic boundaries of the chart:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool MyCustomChart::GetChartExtent(ExtentPI *pext) {
+    if (!pext)
+        return false;
+
+    // Fill in the extent structure with chart boundaries
+    pext-&gt;NLAT = m_max_lat;  // Northern boundary
+    pext-&gt;SLAT = m_min_lat;  // Southern boundary
+    pext-&gt;ELON = m_max_lon;  // Eastern boundary
+    pext-&gt;WLON = m_min_lon;  // Western boundary
+
+    return true;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_renderregionview"><a class="anchor" href="#_renderregionview"></a>RenderRegionView</h3>
+<div class="paragraph">
+<p>This is the most important method, responsible for rendering the chart:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxBitmap &amp;MyCustomChart::RenderRegionView(const PlugIn_ViewPort &amp;VPoint, const wxRegion &amp;Region) {
+    // Check if we have a cached rendering that's still valid
+    if (m_rendered_chart.IsOk() &amp;&amp;
+        m_last_vp_scale == VPoint.view_scale_ppm &amp;&amp;
+        m_last_vp_rotation == VPoint.rotation &amp;&amp;
+        m_last_vp.Contains(VPoint.clat, VPoint.clon)) {
+        // Return cached bitmap if viewport hasn't changed significantly
+        return m_rendered_chart;
+    }
+
+    // Create a new bitmap for rendering
+    m_rendered_chart = wxBitmap(VPoint.pix_width, VPoint.pix_height);
+
+    // Create memory DC for drawing
+    wxMemoryDC dc;
+    dc.SelectObject(m_rendered_chart);
+
+    // Clear the background
+    dc.SetBackground(wxBrush(GetBackgroundColor()));
+    dc.Clear();
+
+    // Set up drawing parameters
+    dc.SetFont(GetChartFont());
+
+    // For each chart element...
+    // 1. Convert from geographic to screen coordinates
+    // 2. Check if it's in the visible region
+    // 3. Draw it with appropriate style
+
+    // Example: Draw land areas
+    dc.SetPen(wxPen(GetLandOutlineColor(), 1));
+    dc.SetBrush(wxBrush(GetLandFillColor()));
+    for (auto &amp;landArea : m_land_areas) {
+        // Convert polygon points from lat/lon to screen coords
+        wxPoint *points = new wxPoint[landArea.size()];
+        for (size_t i = 0; i &lt; landArea.size(); i++) {
+            GetCanvasPixLL(&amp;VPoint, &amp;points[i], landArea[i].lat, landArea[i].lon);
+        }
+
+        // Draw the polygon
+        dc.DrawPolygon(landArea.size(), points);
+        delete[] points;
+    }
+
+    // Draw depth contours
+    dc.SetPen(wxPen(GetDepthColor(10), 1));  // 10m contour
+    // ... similar drawing code for contours
+
+    // Draw text labels
+    dc.SetTextForeground(GetTextColor());
+    for (auto &amp;label : m_labels) {
+        wxPoint pos;
+        GetCanvasPixLL(&amp;VPoint, &amp;pos, label.lat, label.lon);
+        dc.DrawText(label.text, pos);
+    }
+
+    // Clean up
+    dc.SelectObject(wxNullBitmap);
+
+    // Store viewport for cache validation
+    m_last_vp = ViewPortRegion(VPoint);
+    m_last_vp_scale = VPoint.view_scale_ppm;
+    m_last_vp_rotation = VPoint.rotation;
+
+    return m_rendered_chart;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_scale_methods"><a class="anchor" href="#_scale_methods"></a>Scale Methods</h3>
+<div class="paragraph">
+<p>These methods define the scaling behavior of your chart:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">double MyCustomChart::GetNormalScaleMin(double canvas_scale_factor, bool b_allow_overzoom) {
+    // Return minimum scale factor (maximum zoom in)
+    if (b_allow_overzoom)
+        return 0.125;  // Allow up to 8x zoom
+    else
+        return 0.5;    // Allow up to 2x zoom
+}
+
+double MyCustomChart::GetNormalScaleMax(double canvas_scale_factor, int canvas_width) {
+    // Return maximum scale factor (maximum zoom out)
+    return 2.0;  // Allow 2x zoom out
+}
+
+double MyCustomChart::GetNearestPreferredScalePPM(double target_scale_ppm) {
+    // If you have preferred scales, snap to the nearest one
+    // For most charts, just return the requested scale
+    return target_scale_ppm;
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_viewport_management"><a class="anchor" href="#_viewport_management"></a>Viewport Management</h3>
+<div class="paragraph">
+<p>These methods help OpenCPN manage the chart viewport:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">bool MyCustomChart::AdjustVP(PlugIn_ViewPort &amp;vp_last, PlugIn_ViewPort &amp;vp_proposed) {
+    // Make any necessary adjustments to the proposed viewport
+    // For example, constrain to chart boundaries
+
+    // Most charts don't need special handling, so return false
+    return false;
+}
+
+void MyCustomChart::GetValidCanvasRegion(const PlugIn_ViewPort &amp;VPoint, wxRegion *pValidRegion) {
+    // Define the region on screen where this chart has valid data
+
+    // For rectangular charts, this is often the entire viewport
+    pValidRegion-&gt;Clear();
+    pValidRegion-&gt;Union(0, 0, VPoint.pix_width, VPoint.pix_height);
+
+    // For charts with irregular boundaries, compute the actual valid region
+    // by transforming coverage polygons to screen coordinates
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_thumbnail_generation"><a class="anchor" href="#_thumbnail_generation"></a>Thumbnail Generation</h3>
+<div class="paragraph">
+<p>This method generates a small preview of the chart for the chart manager:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">wxBitmap *MyCustomChart::GetThumbnail(int tnx, int tny, int cs) {
+    // Create a small bitmap for the thumbnail
+    wxBitmap *thumbnail = new wxBitmap(tnx, tny);
+
+    // Set up a memory DC
+    wxMemoryDC dc;
+    dc.SelectObject(*thumbnail);
+
+    // Clear with background color
+    wxColour backColor;
+    if (cs == PI_GLOBAL_COLOR_SCHEME_DAY)
+        backColor = wxColour(255, 255, 255);  // White for day
+    else if (cs == PI_GLOBAL_COLOR_SCHEME_DUSK)
+        backColor = wxColour(80, 80, 80);     // Dark gray for dusk
+    else
+        backColor = wxColour(30, 30, 30);     // Very dark gray for night
+
+    dc.SetBackground(wxBrush(backColor));
+    dc.Clear();
+
+    // Set up a simplified viewport for thumbnail rendering
+    PlugIn_ViewPort vp;
+    vp.pix_width = tnx;
+    vp.pix_height = tny;
+    vp.clat = (m_max_lat + m_min_lat) / 2;  // Center latitude
+    vp.clon = (m_max_lon + m_min_lon) / 2;  // Center longitude
+    vp.rotation = 0;
+    vp.skew = 0;
+
+    // Calculate scale to fit chart in thumbnail
+    double lat_range = m_max_lat - m_min_lat;
+    double lon_range = m_max_lon - m_min_lon;
+    double xscale = tnx / (lon_range * 60 * 1852);  // Lon degrees to pixels
+    double yscale = tny / (lat_range * 60 * 1852);  // Lat degrees to pixels
+    vp.view_scale_ppm = std::min(xscale, yscale);   // Use smaller scale to fit
+
+    // Draw simplified chart elements
+    // ... similar to RenderRegionView but with less detail
+
+    // Clean up
+    dc.SelectObject(wxNullBitmap);
+
+    return thumbnail;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_coverage_tables"><a class="anchor" href="#_coverage_tables"></a>Coverage Tables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Coverage tables define the exact area covered by the chart, which is especially important for non-rectangular charts or charts with multiple coverage areas.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">int MyCustomChart::GetCOVREntries() {
+    // Return the number of coverage areas
+    return m_coverage_areas.size();
+}
+
+int MyCustomChart::GetCOVRTablePoints(int iTable) {
+    // Return the number of points in coverage polygon iTable
+    if (iTable &gt;= 0 &amp;&amp; iTable &lt; (int)m_coverage_areas.size())
+        return m_coverage_areas[iTable].size();
+    return 0;
+}
+
+int MyCustomChart::GetCOVRTablenPoints(int iTable) {
+    // Alternative method for backward compatibility
+    return GetCOVRTablePoints(iTable);
+}
+
+float *MyCustomChart::GetCOVRTableHead(int iTable) {
+    // Return pointer to coverage polygon point array
+    if (iTable &gt;= 0 &amp;&amp; iTable &lt; (int)m_coverage_areas.size())
+        return &amp;m_coverage_tables[iTable][0];
+    return NULL;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_raster_chart_methods"><a class="anchor" href="#_raster_chart_methods"></a>Raster Chart Methods</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If your chart is raster-based (like a bitmap image with georeferencing), you&#8217;ll need to implement these additional methods:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-cpp hljs" data-lang="cpp">void MyCustomChart::ComputeSourceRectangle(const PlugIn_ViewPort &amp;vp, wxRect *pSourceRect) {
+    // Compute the rectangle within the source chart image that
+    // corresponds to the current viewport
+
+    // Convert viewport corners to chart pixel coordinates
+    double xmin, ymin, xmax, ymax;
+    latlong_to_chartpix(vp.lat_min, vp.lon_min, xmin, ymin);
+    latlong_to_chartpix(vp.lat_max, vp.lon_max, xmax, ymax);
+
+    // Create the source rectangle
+    pSourceRect-&gt;x = (int)xmin;
+    pSourceRect-&gt;y = (int)ymin;
+    pSourceRect-&gt;width = (int)(xmax - xmin);
+    pSourceRect-&gt;height = (int)(ymax - ymin);
+}
+
+double MyCustomChart::GetRasterScaleFactor() {
+    // Return the scaling factor for raster charts
+    return m_raster_scale_factor;
+}
+
+bool MyCustomChart::GetChartBits(wxRect &amp;source, unsigned char *pPix, int sub_samp) {
+    // Copy pixel data from chart image to the provided buffer
+
+    // The source rect specifies the region to extract
+    // sub_samp is the subsampling factor (1 = every pixel, 2 = every second pixel, etc.)
+
+    // For an image-based chart:
+    int stride = m_image_width * 3;  // RGB image, 3 bytes per pixel
+
+    for (int y = 0; y &lt; source.height; y += sub_samp) {
+        int source_y = source.y + y;
+        if (source_y &gt;= 0 &amp;&amp; source_y &lt; m_image_height) {
+            for (int x = 0; x &lt; source.width; x += sub_samp) {
+                int source_x = source.x + x;
+                if (source_x &gt;= 0 &amp;&amp; source_x &lt; m_image_width) {
+                    // Get pixel from source image
+                    unsigned char *src_pixel = m_image_data + (source_y * stride) + (source_x * 3);
+
+                    // Put pixel in destination buffer
+                    int dest_idx = ((y / sub_samp) * (source.width / sub_samp) + (x / sub_samp)) * 3;
+                    pPix[dest_idx] = src_pixel[0];     // Red
+                    pPix[dest_idx + 1] = src_pixel[1]; // Green
+                    pPix[dest_idx + 2] = src_pixel[2]; // Blue
+                }
+            }
+        }
+    }
+
+    return true;
+}
+
+int MyCustomChart::GetSize_X() {
+    // Return width of chart in pixels
+    return m_image_width;
+}
+
+int MyCustomChart::GetSize_Y() {
+    // Return height of chart in pixels
+    return m_image_height;
+}
+
+void MyCustomChart::latlong_to_chartpix(double lat, double lon, double &amp;pixx, double &amp;pixy) {
+    // Convert lat/lon to chart pixel coordinates
+
+    // For a simple Mercator projection:
+    double x_origin = m_ref_lon;
+    double y_origin = m_ref_lat;
+
+    // Convert lon to x
+    pixx = (lon - x_origin) * m_pix_per_lon_degree;
+
+    // Convert lat to y (Mercator projection)
+    double lat_in_radians = lat * M_PI / 180.0;
+    double y = log(tan(lat_in_radians) + 1/cos(lat_in_radians));
+
+    double ref_lat_in_radians = y_origin * M_PI / 180.0;
+    double y_ref = log(tan(ref_lat_in_radians) + 1/cos(ref_lat_in_radians));
+
+    pixy = (y_ref - y) * m_pix_per_mercator_unit;
+}
+
+void MyCustomChart::chartpix_to_latlong(double pixx, double pixy, double *plat, double *plon) {
+    // Convert chart pixel coordinates to lat/lon
+
+    // For a simple Mercator projection:
+    double x_origin = m_ref_lon;
+    double y_origin = m_ref_lat;
+
+    // Convert x to lon
+    *plon = x_origin + (pixx / m_pix_per_lon_degree);
+
+    // Convert y to lat (Mercator projection)
+    double ref_lat_in_radians = y_origin * M_PI / 180.0;
+    double y_ref = log(tan(ref_lat_in_radians) + 1/cos(ref_lat_in_radians));
+
+    double y = y_ref - (pixy / m_pix_per_mercator_unit);
+    double lat_in_radians = atan(sinh(y));
+    *plat = lat_in_radians * 180.0 / M_PI;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_opengl_chart_support"><a class="anchor" href="#_opengl_chart_support"></a>OpenGL Chart Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If your plugin declares the <code>INSTALLS_PLUGIN_CHART_GL</code> capability, you&#8217;ll need to provide OpenGL-specific rendering methods in addition to the standard rendering methods.</p>
+</div>
+<div class="paragraph">
+<p>OpenGL chart rendering is more complex and beyond the scope of this basic documentation, but it generally involves:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Creating and managing OpenGL textures for chart data</p>
+</li>
+<li>
+<p>Implementing specialized rendering methods for OpenGL</p>
+</li>
+<li>
+<p>Handling different zoom levels and LOD (Level of Detail)</p>
+</li>
+<li>
+<p>Managing OpenGL resources efficiently</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_and_debugging"><a class="anchor" href="#_testing_and_debugging"></a>Testing and Debugging</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Testing a custom chart implementation requires:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Verifying that OpenCPN correctly identifies and loads your chart files</p>
+</li>
+<li>
+<p>Checking rendering at different zoom levels and rotations</p>
+</li>
+<li>
+<p>Confirming coordinate transformations are accurate</p>
+</li>
+<li>
+<p>Testing with different color schemes</p>
+</li>
+<li>
+<p>Verifying chart selection and quilting behavior</p>
+</li>
+<li>
+<p>Testing performance with large charts</p>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_debugging_tips"><a class="anchor" href="#_debugging_tips"></a>Debugging Tips</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Use log messages to track chart loading and rendering</p>
+</li>
+<li>
+<p>Create a simple test chart with known coordinates for validation</p>
+</li>
+<li>
+<p>Implement a debug mode that shows coordinate grids or boundaries</p>
+</li>
+<li>
+<p>Test edge cases: chart edges, dateline crossing, polar regions</p>
+</li>
+<li>
+<p>Check resource usage, especially for large charts</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_best_practices"><a class="anchor" href="#_best_practices"></a>Best Practices</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Performance</strong>: Optimize rendering for smooth navigation</p>
+</li>
+<li>
+<p><strong>Memory usage</strong>: Be careful with memory, especially for large charts</p>
+</li>
+<li>
+<p><strong>Caching</strong>: Cache rendered results to improve performance</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: Handle charts of various sizes efficiently</p>
+</li>
+<li>
+<p><strong>Standards compliance</strong>: Follow applicable chart standards</p>
+</li>
+<li>
+<p><strong>Error handling</strong>: Provide clear error messages for users</p>
+</li>
+<li>
+<p><strong>Fallbacks</strong>: Implement graceful degradation when resources are limited</p>
+</li>
+<li>
+<p><strong>Documentation</strong>: Document your chart format and parameters</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_real_world_examples"><a class="anchor" href="#_real_world_examples"></a>Real-World Examples</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Several existing OpenCPN plugins implement custom chart types:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>oeSENC Plugin</strong>: Supports encrypted S-63 charts</p>
+</li>
+<li>
+<p><strong>BSB4 Plugin</strong>: Adds support for BSB version 4 charts</p>
+</li>
+<li>
+<p><strong>ChartdldrPI</strong>: Downloads and installs charts from various sources</p>
+</li>
+<li>
+<p><strong>Vfkaps</strong>: Supports VentureFarther KAP charts</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Studying these plugins can provide valuable insights for your own implementation.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.
+     Sources: https://gitlab.com/leamas/antora-ui-default
+  </p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/vendor/lunr.js"></script>
+<script src="../../_/js/search-ui.js" id="search-ui-script" data-site-root-path="../.." data-snippet-length="100" data-stylesheet="../../_/css/search.css"></script>
+<script async src="../../search-index.js"></script>
+  </body>
+</html>
