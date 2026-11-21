@@ -1,0 +1,7 @@
+var classHostApi122 =
+[
+    [ "EventType", "classHostApi122.html#a876fe3ebefa70a9147eaf3027ba4d37e", null ],
+    [ "GetActiveMessages", "classHostApi122.html#a15150fdce297c6bc3f0a8afb15f83818", null ],
+    [ "GetSignalkPayload", "classHostApi122.html#a826dc9730ace18c8c500306921c70841", null ],
+    [ "RegisterApiEventCallback", "classHostApi122.html#a3a7b68163f164821c77fc972f9100706", null ]
+];
