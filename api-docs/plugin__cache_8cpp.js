@@ -1,0 +1,10 @@
+var plugin__cache_8cpp =
+[
+    [ "ocpn::cache_clear", "namespaceocpn.html#a4600acd1d04f361e3824d6d4b470b934", null ],
+    [ "ocpn::cache_file_count", "namespaceocpn.html#a6907fe437d073d9c85c5a2673241dd90", null ],
+    [ "ocpn::cache_size", "namespaceocpn.html#acb81630bc2070fea6c61157421868476", null ],
+    [ "ocpn::lookup_metadata", "namespaceocpn.html#a0b2aa4abd5e2656c1c1966c40dadd94d", null ],
+    [ "ocpn::lookup_tarball", "namespaceocpn.html#a09c97cafd537135c21c5c4aed52a5615", null ],
+    [ "ocpn::store_metadata", "namespaceocpn.html#ab3b891f10d697acfc6e11a5163a941b1", null ],
+    [ "ocpn::store_tarball", "namespaceocpn.html#ac89800a9923c6d74d2b21d3e2ea09a2a", null ]
+];
